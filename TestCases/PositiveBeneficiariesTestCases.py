@@ -62,16 +62,35 @@ class Test_Login:
 
         self.log_test_end("Open Website")
 
+    def verify_field_requirements(self, beneficiary_page, phone=None, first_name=None, last_name=None):
+        """Helper function to fill fields and verify required field validation."""
+        if phone:
+            beneficiary_page.input_phone_number(phone)
+        if first_name:
+            beneficiary_page.input_first_name(first_name)
+        if last_name:
+            beneficiary_page.input_last_name(last_name)
+
+        beneficiary_page.click_on_the_proceed_button()
+
+        # Check if the required fields message is displayed
+        expected_message = "All fields are required"
+        assert expected_message in self.driver.find_element(By.TAG_NAME, "body").text, self.logger.info(
+            "**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***")
+        self.logger.info("***** TEST PASSED: REQUIRED FIELDS VALIDATION WORKS *****")
+
     def test_the_functionality_of_the_beneficiary_navigation(self, setup):
         try:
-            self.log_test_start("")
-            self.open_website_and_log_in_user(setup,self.URL)
+            # Initialize Beneficiary page objects
+            self.log_test_start("Test_the_functionality_of_the_beneficiary_navigation")
+            self.open_website_and_log_in_user(setup, self.URL)
+
             self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
             self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
 
             Common_text_on_page = "New Beneficiary"
             assert Common_text_on_page in self.driver.find_element(By.TAG_NAME, "body").text, self.logger.info(
-                    "**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***")
+                "**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***")
             self.logger.info("***** TEST PASSED: USER'S ACCOUNT WAS CREATED *****")
 
         except AssertionError:
@@ -83,22 +102,61 @@ class Test_Login:
         finally:
             self.driver.quit(f"An unexpected error occurred: {e}")
 
+    def test_creation_of_new_other_beneficiary_without_filling_fields(self, setup):
+        """Test the creation of a new beneficiary without filling the required fields."""
+        try:
+            self.log_test_start("Testing creation of new beneficiary with missing fields.")
+            self.open_website_and_log_in_user(setup, self.URL)
+
+            # Initialize Beneficiary page objects
+            self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
+
+            # Navigate to beneficiary creation page
+
+            self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
+            self.Beneficiary_page_objects.click_on_the_new_beneficiary_button()
+            self.Beneficiary_page_objects.click_on_the_other_beneficiary_option()
+
+            # Test various scenarios of field completion
+            self.verify_field_requirements(self.Beneficiary_page_objects)
+            self.verify_field_requirements(self.Beneficiary_page_objects, phone="08065748322")
+
+            first_name, last_name = SignupObjects(self.driver).generate_names()
+            self.verify_field_requirements(self.Beneficiary_page_objects, phone="08065748322", first_name=first_name)
+            self.verify_field_requirements(self.Beneficiary_page_objects, phone="08065748322", first_name=first_name,
+                                           last_name=last_name)
+
+        except AssertionError:
+            self.logger.error("Assertion Error: User's account was not created as expected.")
+            raise
+
+        except Exception as e:
+            self.logger.error(f"An unexpected error occurred: {e}")
+            raise
+
+        finally:
+            self.driver.quit()
+
     def test_the_creation_of_new_other_beneficiary(self, setup):
         try:
-            self.log_test_start("")
+            self.log_test_start("Test_the_creation_of_new_other_beneficiary")
             self.open_website_and_log_in_user(setup, self.URL)
             self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
             self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
             self.Beneficiary_page_objects.click_on_the_new_beneficiary_button()
             self.Beneficiary_page_objects.click_on_the_other_beneficiary_option()
             self.Beneficiary_page_objects.input_phone_number("08065748322")
+
+            # Generate the names for the creation for the names of the new users
             First_name, Last_name = SignupObjects(self.driver).generate_names()
             self.Beneficiary_page_objects.input_first_name(First_name)
             self.Beneficiary_page_objects.input_last_name(Last_name)
             self.Beneficiary_page_objects.input_email(SignupObjects(self.driver).email_generator())
 
-            message = "find this"
-            assert message in self.driver.find_element(By.TAG_NAME, "body").text, self.logger.info(
+            self.Beneficiary_page_objects.click_on_the_proceed_button()
+
+            creation_successful_message = f"08065748322-{First_name} {Last_name}"
+            assert creation_successful_message in self.driver.find_element(By.TAG_NAME, "body").text, self.logger.info(
                 "**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***")
             self.logger.info("***** TEST PASSED: USER'S ACCOUNT WAS CREATED *****")
         except AssertionError:
