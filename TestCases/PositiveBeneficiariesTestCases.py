@@ -6,6 +6,7 @@ from selenium.webdriver.common.by import By
 from Utilities.RecordLogger import RecordLogger
 from Utilities.ReadProperties import ReadProperties
 from PageObject.LoginObjects import LoginObjects
+from PageObject.SignUpObjects import SignupObjects
 from PageObject.BeneficiaryObject import BeneficiaryObjects
 
 # to run the test use:   pytest -v -s TestCases/invalidLoginTestCase.py--browser chrome to run and also generate
@@ -38,7 +39,6 @@ class Test_Login:
     # from configuration
     logger = RecordLogger.log_generator_info()  # Initialize logger instance
 
-
     # Method to log the start of a test
     def log_test_start(self, test_name):
         self.logger.info(f"****** STARTING TEST: {test_name} ******")
@@ -62,7 +62,6 @@ class Test_Login:
 
         self.log_test_end("Open Website")
 
-
     def test_the_functionality_of_the_beneficiary_navigation(self, setup):
         try:
             self.log_test_start("")
@@ -70,8 +69,8 @@ class Test_Login:
             self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
             self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
 
-            message = "find this"
-            assert message in self.driver.find_element(By.TAG_NAME, "body").text, self.logger.info(
+            Common_text_on_page = "New Beneficiary"
+            assert Common_text_on_page in self.driver.find_element(By.TAG_NAME, "body").text, self.logger.info(
                     "**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***")
             self.logger.info("***** TEST PASSED: USER'S ACCOUNT WAS CREATED *****")
 
@@ -84,12 +83,19 @@ class Test_Login:
         finally:
             self.driver.quit(f"An unexpected error occurred: {e}")
 
-    def test_the_creation_of_new_beneficiary(self, setup):
+    def test_the_creation_of_new_other_beneficiary(self, setup):
         try:
             self.log_test_start("")
             self.open_website_and_log_in_user(setup, self.URL)
             self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
             self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
+            self.Beneficiary_page_objects.click_on_the_new_beneficiary_button()
+            self.Beneficiary_page_objects.click_on_the_other_beneficiary_option()
+            self.Beneficiary_page_objects.input_phone_number("08065748322")
+            First_name, Last_name = SignupObjects(self.driver).generate_names()
+            self.Beneficiary_page_objects.input_first_name(First_name)
+            self.Beneficiary_page_objects.input_last_name(Last_name)
+            self.Beneficiary_page_objects.input_email(SignupObjects(self.driver).email_generator())
 
             message = "find this"
             assert message in self.driver.find_element(By.TAG_NAME, "body").text, self.logger.info(

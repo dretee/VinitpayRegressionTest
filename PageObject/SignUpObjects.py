@@ -5,6 +5,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 
+
 class SignupObjects:
     # Locators for various elements on the signup page
     name_id = "name"
@@ -24,7 +25,8 @@ class SignupObjects:
         Wait up to `timeout` seconds for the element to be visible.
         """
         try:
-            wait = WebDriverWait(self.driver, timeout=timeout, poll_frequency=1, ignored_exceptions=[NoSuchElementException])
+            wait = WebDriverWait(self.driver, timeout=timeout, poll_frequency=1,
+                                 ignored_exceptions=[NoSuchElementException])
             element = wait.until(EC.visibility_of_element_located((By.ID, self.name_id)))
             element.clear()
             element.send_keys(name_input)
@@ -37,7 +39,8 @@ class SignupObjects:
         Wait up to `timeout` seconds for the element to be visible.
         """
         try:
-            wait = WebDriverWait(self.driver, timeout=timeout, poll_frequency=1, ignored_exceptions=[NoSuchElementException])
+            wait = WebDriverWait(self.driver, timeout=timeout, poll_frequency=1,
+                                 ignored_exceptions=[NoSuchElementException])
             element = wait.until(EC.visibility_of_element_located((By.ID, self.email_id)))
             element.clear()
             element.send_keys(email_input)
@@ -50,7 +53,8 @@ class SignupObjects:
         Wait up to `timeout` seconds for the element to be visible.
         """
         try:
-            wait = WebDriverWait(self.driver, timeout=timeout, poll_frequency=1, ignored_exceptions=[NoSuchElementException])
+            wait = WebDriverWait(self.driver, timeout=timeout, poll_frequency=1,
+                                 ignored_exceptions=[NoSuchElementException])
             element = wait.until(EC.visibility_of_element_located((By.ID, self.password_id)))
             element.clear()
             element.send_keys(password_input)
@@ -63,7 +67,8 @@ class SignupObjects:
         Wait up to `timeout` seconds for the element to be visible.
         """
         try:
-            wait = WebDriverWait(self.driver, timeout=timeout, poll_frequency=1, ignored_exceptions=[NoSuchElementException])
+            wait = WebDriverWait(self.driver, timeout=timeout, poll_frequency=1,
+                                 ignored_exceptions=[NoSuchElementException])
             element = wait.until(EC.visibility_of_element_located((By.ID, self.confirm_password_id)))
             element.clear()
             element.send_keys(confirm_password_input)
@@ -76,7 +81,8 @@ class SignupObjects:
         Wait up to `timeout` seconds for the element to be clickable.
         """
         try:
-            wait = WebDriverWait(self.driver, timeout=timeout, poll_frequency=1, ignored_exceptions=[NoSuchElementException])
+            wait = WebDriverWait(self.driver, timeout=timeout, poll_frequency=1,
+                                 ignored_exceptions=[NoSuchElementException])
             element = wait.until(EC.element_to_be_clickable((By.ID, self.sign_up_id)))
             element.click()
         except TimeoutException:
@@ -88,7 +94,8 @@ class SignupObjects:
         Wait up to `timeout` seconds for the element to be clickable.
         """
         try:
-            wait = WebDriverWait(self.driver, timeout=timeout, poll_frequency=1, ignored_exceptions=[NoSuchElementException])
+            wait = WebDriverWait(self.driver, timeout=timeout, poll_frequency=1,
+                                 ignored_exceptions=[NoSuchElementException])
             element = wait.until(EC.element_to_be_clickable((By.XPATH, self.login_link_xpath)))
             element.click()
         except TimeoutException:
@@ -137,3 +144,16 @@ class SignupObjects:
             password = password[:letter] + password[letter].upper() + password[letter + 1:]
 
         return password
+
+    import random
+
+    def generate_names(self):
+        # Use lowercase for variable names as per Python conventions
+        valid_chars = 'abcdefghijklmnopqrstuvwxyz'
+        name_length = random.randint(2, 10)  # Use lowercase for variable names
+
+        firstname = ''.join(random.choice(valid_chars) for _ in range(name_length))
+        lastname = ''.join(random.choice(valid_chars) for _ in range(name_length))
+
+        return firstname.capitalize(), lastname.capitalize()
+
