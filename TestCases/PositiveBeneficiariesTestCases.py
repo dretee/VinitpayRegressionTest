@@ -189,12 +189,27 @@ class Test_Login:
             self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
             self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
 
-            # Deactivation of the beneficiary createdx
-            self.Beneficiary_page_objects.
+            # Deactivation of the beneficiary created
+            self.Beneficiary_page_objects.change_the_status_of_beneficiary()
+            First_name, Last_name = SignupObjects(self.driver).generate_names()
 
-            creation_successful_message = self.Beneficiary_page_objects.get_the_text_for_the_alert_to_the_user()
-            assert creation_successful_message is "New Beneficiary record created successfully", self.logger.info(
-                "**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***")
+            Deactivation_message = self.Beneficiary_page_objects.get_the_text_for_the_alert_to_the_user()
+            assert Deactivation_message is f"08133363256 - {First_name} {Last_name} activated sucessfully", ( self.logger.info("**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***"))
+            self.logger.info("***** TEST PASSED: USER'S ACCOUNT WAS CREATED *****")
+
+        # assert that the button changes text and the status changes to show what the user state is in.
+            assert self.Beneficiary_page_objects.read_the_status_of_the_beneficiary() is "Inactive", ( self.logger.info("**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***"))
+            self.logger.info("***** TEST PASSED: USER'S ACCOUNT WAS CREATED *****")
+
+            Activation_message = self.Beneficiary_page_objects.get_the_text_for_the_alert_to_the_user()
+
+            assert Activation_message is f"08133363256 - {First_name} {Last_name} deactivated", (
+                self.logger.info("**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***"))
+            self.logger.info("***** TEST PASSED: USER'S ACCOUNT WAS CREATED *****")
+
+        # assert thst the button changes text and the status changes to show what the user state is in.
+            assert self.Beneficiary_page_objects.read_the_status_of_the_beneficiary() is "Active", (
+                self.logger.info("**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***"))
             self.logger.info("***** TEST PASSED: USER'S ACCOUNT WAS CREATED *****")
 
         except AssertionError:

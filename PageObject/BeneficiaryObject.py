@@ -10,8 +10,12 @@ from selenium.common.exceptions import TimeoutException,NoSuchElementException
 class BeneficiaryObjects:
     Beneficiary_navigation_xpath = "//a[normalize-space()='Beneficiaries']"
     New_Beneficiary_xpath = "//button[normalize-space()='New Beneficiary']"
+
+    # Deactivation locators
     Deactivate_ana_activate_beneficiary_button_xpath = "//tbody/tr[1]/td[1]"
-    Beneficiary_status_xpath = "//tbody/tr[1]/td[4]"
+    Activation_deactivation_button_text_Xpath = ""
+    Beneficiary_status_xpath = "//tbody/tr[1]/td[4]/span"
+
     # The new beneficiary number is 1-3; 1 is for automobile, 2 is for students, and 3 is for others
     nos = [1, 2, 3]
     New_Beneficiary_option_xpath = f"//section[1]/a[{nos}]"
