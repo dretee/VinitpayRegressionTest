@@ -12,10 +12,12 @@ from PageObject.BeneficiaryObject import BeneficiaryObjects
 # to run the test use:   pytest -v -s TestCases/invalidLoginTestCase.py--browser chrome to run and also generate
 # the html report use: pytest -v -s --html=Reports\reports.html TestCases/validLoginTestCase.py --browser chrome
 """
-Negative test cases for the login page
+Test cases for the beneficiary page
 
 Verify the response of the system when the user click on the proceed button without filling any of the field on the other beneficiary creation 
 Verify the response of the system when any of the fields are left empty 
+Verify the deactivation of a other beneficiary 
+Verify the activation of a other beneficiary
 Verify the response of the system when a url, name and special characters are inputted in the phone number filed and other vaild data
 Verify the response of the system when a url, email,  numbers and special characters (name with special characters) are inputted in the firstname and lastname filed and other vaild data
 Verify the response of the system when a url, numbers and special characters (name with special characters) are inputted in the email filed and other vaild data
@@ -155,10 +157,46 @@ class Test_Login:
 
             self.Beneficiary_page_objects.click_on_the_proceed_button()
 
-            creation_successful_message = f"08065748322-{First_name} {Last_name}"
-            assert creation_successful_message in self.driver.find_element(By.TAG_NAME, "body").text, self.logger.info(
+            creation_successful_message, name_of_beneficiary_on_table = (
+                self.Beneficiary_page_objects.get_the_text_for_the_alert_to_the_user(),
+                f"08065748322-{First_name} {Last_name}")
+
+            """ Assertion for the successful on the table when the user is created"""
+            assert creation_successful_message is "New Beneficiary record created successfully", self.logger.info(
                 "**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***")
             self.logger.info("***** TEST PASSED: USER'S ACCOUNT WAS CREATED *****")
+
+            """ Assertion for the name logged on the table when the user is created"""
+            assert creation_successful_message is "New Beneficiary record created successfully", self.logger.info(
+                "**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***")
+            self.logger.info("***** TEST PASSED: USER'S ACCOUNT WAS CREATED *****")
+
+        except AssertionError:
+            self.logger.error("Assertion Error: User's account was not created as expected.")
+            raise
+
+        except Exception as e:
+            self.logger.error(f"An unexpected error occurred: {e}")
+            raise
+
+        finally:
+            self.driver.quit()
+
+    def test_the_deactivation_of_beneficiary(self, setup):
+        try:
+            self.log_test_start("Test_the_creation_of_new_other_beneficiary")
+            self.open_website_and_log_in_user(setup, self.URL)
+            self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
+            self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
+
+            # Deactivation of the beneficiary createdx
+            self.Beneficiary_page_objects.
+
+            creation_successful_message = self.Beneficiary_page_objects.get_the_text_for_the_alert_to_the_user()
+            assert creation_successful_message is "New Beneficiary record created successfully", self.logger.info(
+                "**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***")
+            self.logger.info("***** TEST PASSED: USER'S ACCOUNT WAS CREATED *****")
+
         except AssertionError:
             self.logger.error("Assertion Error: User's account was not created as expected.")
             raise

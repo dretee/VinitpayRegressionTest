@@ -37,6 +37,9 @@ class BeneficiaryObjects:
     student_phone_number_xpath = "(//input[@type='text'])[4]"
     student_course_xpath = "(//input[@type='text'])[5]"
 
+    # alert locators on the beneficiary page
+    alert_xpath = "//div[@role='alert']"
+
     def __init__(self, driver):
         # Initialize the driver
         self.driver = driver
@@ -125,6 +128,14 @@ class BeneficiaryObjects:
             wait = WebDriverWait(self.driver, timeout=10, poll_frequency=1, ignored_exceptions=[NoSuchElementException])
             element = wait.until(ec.visibility_of_element_located((By.XPATH, self.New_Beneficiary_option_xpath)))
             element.click()
+        except TimeoutException:
+            print(f"Name input field not found within {timeout} seconds")
+
+    def get_the_text_for_the_alert_to_the_user(self, timeout=10):
+        try:
+            wait = WebDriverWait(self.driver, timeout=10, poll_frequency=1, ignored_exceptions=[NoSuchElementException])
+            element = wait.until(ec.presence_of_element_located((By.XPATH, self.alert_xpath)))
+            return element.text
         except TimeoutException:
             print(f"Name input field not found within {timeout} seconds")
 
