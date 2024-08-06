@@ -12,7 +12,7 @@ class BeneficiaryObjects:
     New_Beneficiary_xpath = "//button[normalize-space()='New Beneficiary']"
 
     # Deactivation locators
-    Deactivate_ana_activate_beneficiary_button_xpath = "//tbody/tr[1]/td[1]"
+    Deactivate_ana_activate_beneficiary_button_xpath = "//tbody/tr[1]/td[5]/button"
     Activation_deactivation_button_text_Xpath = ""
     Beneficiary_status_xpath = "//tbody/tr[1]/td[4]/span"
 
