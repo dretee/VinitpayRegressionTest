@@ -18,7 +18,9 @@ class BeneficiaryObjects:
 
     # The new beneficiary number is 1-3; 1 is for automobile, 2 is for students, and 3 is for others
     nos = [1, 2, 3]
-    New_Beneficiary_option_xpath = f"//section[1]/a[{nos}]"
+    New_other_Beneficiary_option_xpath = "//section[@id='actions']/a[3]"
+    New_Automobile_Beneficiary_option_xpath = "//section[@id='actions']/a[1]"
+    New_Students_Beneficiary_option_xpath = "//section[@id='actions']/a[2]"
     Proceed_button_other_xpath = "//button[normalize-space()='Procced']"
 
     # other beneficiary creation
@@ -81,7 +83,7 @@ class BeneficiaryObjects:
     def click_on_the_other_beneficiary_option(self, timeout=10):
         try:
             wait = WebDriverWait(self.driver, timeout=10, poll_frequency=1, ignored_exceptions=[NoSuchElementException])
-            element = wait.until(ec.visibility_of_element_located((By.XPATH, self.New_Beneficiary_option_xpath)))
+            element = wait.until(ec.visibility_of_element_located((By.XPATH, self.New_other_Beneficiary_option_xpath)))
             element.click()
         except TimeoutException:
             print(f"Name input field not found within {timeout} seconds")
@@ -130,7 +132,7 @@ class BeneficiaryObjects:
     def click_on_the_automobile_beneficiary_option(self, timeout=10):
         try:
             wait = WebDriverWait(self.driver, timeout=10, poll_frequency=1, ignored_exceptions=[NoSuchElementException])
-            element = wait.until(ec.visibility_of_element_located((By.XPATH, self.New_Beneficiary_option_xpath)))
+            element = wait.until(ec.visibility_of_element_located((By.XPATH, self.New_Automobile_Beneficiary_option_xpath)))
             element.click()
         except TimeoutException:
             print(f"Name input field not found within {timeout} seconds")
