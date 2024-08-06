@@ -1,9 +1,7 @@
 import configparser
 
 configs = configparser.RawConfigParser()
-configs.read(r"C:\Users\BAB AL SAFA\PycharmProjects\pythonProject1\Configurations\config.ini")
-
-
+configs.read(r"C:\Users\BAB AL SAFA\PycharmProjects\VnitpayRegressionTest\Configurations\config.ini")
 
 class ReadProperties:
 

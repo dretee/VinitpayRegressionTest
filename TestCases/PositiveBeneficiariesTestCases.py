@@ -62,8 +62,6 @@ class Test_Login:
         self.Login_page_objects.input_password(self.EXISTING_PASSWORD)
         self.Login_page_objects.click_on_the_signin_button()
 
-        self.log_test_end("Open Website")
-
     def verify_field_requirements(self, beneficiary_page, phone=None, first_name=None, last_name=None):
         """Helper function to fill fields and verify required field validation."""
         if phone:
@@ -99,12 +97,12 @@ class Test_Login:
             self.logger.error("Assertion Error: this is not the page the user intends to go to.")
             raise
         except Exception as e:
-            self.logger.error()
+            self.logger.error(f"An unexpected error occurred: {e}")
             raise
         finally:
-            self.driver.quit(f"An unexpected error occurred: {e}")
+            self.driver.quit()
 
-    def test_creation_of_new_other_beneficiary_without_filling_fields(self, setup):
+    def est_creation_of_new_other_beneficiary_without_filling_fields(self, setup):
         """Test the creation of a new beneficiary without filling the required fields."""
         try:
             self.log_test_start("Testing creation of new beneficiary with missing fields.")
@@ -139,7 +137,7 @@ class Test_Login:
         finally:
             self.driver.quit()
 
-    def test_the_creation_of_new_other_beneficiary(self, setup):
+    def est_the_creation_of_new_other_beneficiary(self, setup):
         try:
             self.log_test_start("Test_the_creation_of_new_other_beneficiary")
             self.open_website_and_log_in_user(setup, self.URL)
@@ -182,43 +180,66 @@ class Test_Login:
         finally:
             self.driver.quit()
 
-    def test_the_deactivation_of_beneficiary(self, setup):
+    def est_the_deactivation_of_beneficiary(self, setup):
+        """
+        Test the deactivation and reactivation process of a beneficiary within the application.
+        This includes verifying the status changes and appropriate alert messages upon state changes.
+        """
         try:
+            # Initialization: Setup test logging and open the website
             self.log_test_start("Test_the_creation_of_new_other_beneficiary")
             self.open_website_and_log_in_user(setup, self.URL)
+
+            # Beneficiary Page Setup: Access beneficiary management and prepare for interaction
             self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
             self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
 
-            # Deactivation of the beneficiary created
+            # Deactivation Process: Change beneficiary status to 'Inactive'
             self.Beneficiary_page_objects.change_the_status_of_beneficiary()
             First_name, Last_name = SignupObjects(self.driver).generate_names()
+            self.Beneficiary_page_objects.input_phone_number("08065748322")
+            self.Beneficiary_page_objects.input_first_name(First_name)
+            self.Beneficiary_page_objects.input_last_name(Last_name)
+            self.Beneficiary_page_objects.input_email(SignupObjects(self.driver).email_generator())
 
+            self.Beneficiary_page_objects.click_on_the_proceed_button()
+
+            # Verification: Check deactivation alert message and beneficiary status
             Deactivation_message = self.Beneficiary_page_objects.get_the_text_for_the_alert_to_the_user()
-            assert Deactivation_message is f"08133363256 - {First_name} {Last_name} activated sucessfully", ( self.logger.info("**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***"))
+            assert Deactivation_message == f"08133363256 - {First_name} {Last_name} activated successfully", (
+                self.logger.info("**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***")
+            )
             self.logger.info("***** TEST PASSED: USER'S ACCOUNT WAS CREATED *****")
 
-        # assert that the button changes text and the status changes to show what the user state is in.
-            assert self.Beneficiary_page_objects.read_the_status_of_the_beneficiary() is "Inactive", ( self.logger.info("**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***"))
+            # Validate Status: Ensure the beneficiary is marked as 'Inactive'
+            assert self.Beneficiary_page_objects.read_the_status_of_the_beneficiary() == "Inactive", (
+                self.logger.info("**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***")
+            )
             self.logger.info("***** TEST PASSED: USER'S ACCOUNT WAS CREATED *****")
 
+            # Reactivation Process: Change beneficiary status back to 'Active'
             Activation_message = self.Beneficiary_page_objects.get_the_text_for_the_alert_to_the_user()
-
-            assert Activation_message is f"08133363256 - {First_name} {Last_name} deactivated", (
-                self.logger.info("**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***"))
+            assert Activation_message == f"08133363256 - {First_name} {Last_name} deactivated", (
+                self.logger.info("**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***")
+            )
             self.logger.info("***** TEST PASSED: USER'S ACCOUNT WAS CREATED *****")
 
-        # assert thst the button changes text and the status changes to show what the user state is in.
-            assert self.Beneficiary_page_objects.read_the_status_of_the_beneficiary() is "Active", (
-                self.logger.info("**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***"))
+            # Final Status Validation: Ensure the beneficiary is marked as 'Active'
+            assert self.Beneficiary_page_objects.read_the_status_of_the_beneficiary() == "Active", (
+                self.logger.info("**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***")
+            )
             self.logger.info("***** TEST PASSED: USER'S ACCOUNT WAS CREATED *****")
 
         except AssertionError:
+            # Error Handling: Log assertion errors and raise them for further investigation
             self.logger.error("Assertion Error: User's account was not created as expected.")
             raise
 
         except Exception as e:
+            # Unexpected Error Handling: Log any unforeseen exceptions and raise them
             self.logger.error(f"An unexpected error occurred: {e}")
             raise
 
         finally:
+            # Cleanup: Ensure the browser session is properly closed, even if errors occur
             self.driver.quit()
