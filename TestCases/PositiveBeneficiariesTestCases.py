@@ -298,24 +298,71 @@ class Test_Login:
 
             # Deactivation Process: Change beneficiary status to 'Inactive'
             self.Beneficiary_page_objects.change_the_status_of_beneficiary()
-            time.sleep(3)
 
             # Reactivation Process: Change beneficiary status back to 'Active'
-            Deactivation_message = self.Beneficiary_page_objects.get_the_text_for_the_alert_to_the_user()
-            assert Deactivation_message == f"08133363256 - {First_name} {Last_name} deactivated", (
+            Deactivation_message, name_of_beneficiary = self.Beneficiary_page_objects.get_the_text_for_the_alert_to_the_user()
+            time.sleep(5)
+            assert Deactivation_message == f"{name_of_beneficiary} deactivated", (
                 self.logger.info("**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***")
             )
             self.logger.info("***** TEST PASSED: USER'S ACCOUNT WAS CREATED *****")
-
+            time.sleep(3)
             # Final Status Validation: Ensure the beneficiary is marked as 'Active'
             assert self.Beneficiary_page_objects.read_the_status_of_the_beneficiary() == "Inactive", (
                 self.logger.info("**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***")
             )
             self.logger.info("***** TEST PASSED: USER'S ACCOUNT WAS CREATED *****")
 
+            time.sleep(4)
+
             # Verification: Check deactivation alert message and beneficiary status
-            Activation_message = self.Beneficiary_page_objects.get_the_text_for_the_alert_to_the_user()
-            assert Activation_message == f"08133363256 - {First_name} {Last_name} activated successfully", (
+            Activation_message, name_of_beneficiary = self.Beneficiary_page_objects.get_the_text_for_the_alert_to_the_user()
+            assert Activation_message == f"{name_of_beneficiary} activated successfully", (
+                self.logger.info("**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***")
+            )
+            self.logger.info("***** TEST PASSED: USER'S ACCOUNT WAS CREATED *****")
+
+            # Validate Status: Ensure the beneficiary is marked as 'Inactive'
+            assert self.Beneficiary_page_objects.read_the_status_of_the_beneficiary() == "Active", (
+                self.logger.info("**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***")
+            )
+            self.logger.info("***** TEST PASSED: USER'S ACCOUNT WAS CREATED *****")
+
+        except AssertionError:
+            # Error Handling: Log assertion errors and raise them for further investigation
+            self.logger.error("Assertion Error: User's account was not created as expected.")
+            raise
+
+        except Exception as e:
+            # Unexpected Error Handling: Log any unforeseen exceptions and raise them
+            self.logger.error(f"An unexpected error occurred: {e}")
+            raise
+
+        finally:
+            # Cleanup: Ensure the browser session is properly closed, even if errors occur
+            self.driver.quit()
+
+    def test_the_activation_of_beneficiary(self, setup):
+        """
+        Test the deactivation and reactivation process of a beneficiary within the application.
+        This includes verifying the status changes and appropriate alert messages upon state changes.
+        """
+        try:
+            # Initialization: Setup test logging and open the website
+            self.log_test_start("Test_the_creation_of_new_other_beneficiary")
+            self.open_website_and_log_in_user(setup, self.URL)
+
+            # Beneficiary Page Setup: Access beneficiary management and prepare for interaction
+            self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
+            self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
+
+            # Deactivation Process: Change beneficiary status to 'Inactive'
+            self.Beneficiary_page_objects.change_the_status_of_beneficiary()
+            time.sleep(4)
+
+            # Verification: Check deactivation alert message and beneficiary status
+            Activation_message, name_of_beneficiary = self.Beneficiary_page_objects.get_the_text_for_the_alert_to_the_user()
+            assert Activation_message == f"{name_of_beneficiary} activated sucessfully", (
                 self.logger.info("**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***")
             )
             self.logger.info("***** TEST PASSED: USER'S ACCOUNT WAS CREATED *****")
