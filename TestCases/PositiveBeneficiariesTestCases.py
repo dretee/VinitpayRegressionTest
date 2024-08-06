@@ -73,7 +73,7 @@ class Test_Login:
 
             self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
             self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
-
+            time.sleep(5)
             Common_text_on_page = "New Beneficiary"
             assert Common_text_on_page in self.driver.find_element(By.TAG_NAME, "body").text, self.logger.info(
                 "**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***")
@@ -88,7 +88,7 @@ class Test_Login:
         finally:
             self.driver.quit()
 
-    def est_creation_of_new_other_beneficiary_filling_phone_number_fields(self, setup):
+    def test_creation_of_new_other_beneficiary_filling_phone_number_fields(self, setup):
         """Test the creation of a new beneficiary without filling the required fields."""
         try:
             self.log_test_start("Testing creation of new beneficiary with missing fields.")
@@ -203,7 +203,7 @@ class Test_Login:
         finally:
             self.driver.quit()
 
-    def test_creation_of_new_other_beneficiary_filling_email_fields(self, setup):
+    def est_creation_of_new_other_beneficiary_filling_email_fields(self, setup):
         """Test the creation of a new beneficiary without filling the required fields."""
         try:
             self.log_test_start("Testing creation of new beneficiary with missing fields.")
@@ -218,6 +218,7 @@ class Test_Login:
             self.Beneficiary_page_objects.click_on_the_new_beneficiary_button()
             self.Beneficiary_page_objects.click_on_the_other_beneficiary_option()
             self.Beneficiary_page_objects.click_on_the_other_beneficiary_option()
+
             self.Beneficiary_page_objects.input_email(SignupObjects(self.driver).email_generator())
             time.sleep(3)
             self.Beneficiary_page_objects.click_on_the_proceed_button()
