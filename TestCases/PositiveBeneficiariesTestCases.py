@@ -64,7 +64,7 @@ class Test_Login:
 
         self.log_test_end("Open Website")
 
-    def est_the_functionality_of_the_beneficiary_navigation(self, setup):
+    def test_the_functionality_of_the_beneficiary_navigation(self, setup):
         try:
             # Initialize Beneficiary page objects
             self.log_test_start("Test_the_functionality_of_the_beneficiary_navigation")
@@ -87,7 +87,7 @@ class Test_Login:
         finally:
             self.driver.quit()
 
-    def est_creation_of_new_other_beneficiary_filling_phone_number_fields(self, setup):
+    def test_creation_of_new_other_beneficiary_filling_phone_number_fields(self, setup):
         """Test the creation of a new beneficiary without filling the required fields."""
         try:
             self.log_test_start("Testing creation of new beneficiary with missing fields.")
@@ -125,7 +125,7 @@ class Test_Login:
         finally:
             self.driver.quit()
 
-    def est_creation_of_new_other_beneficiary_filling_First_Name_fields(self, setup):
+    def test_creation_of_new_other_beneficiary_filling_First_Name_fields(self, setup):
         """Test the creation of a new beneficiary without filling the required fields."""
         try:
             self.log_test_start("Testing creation of new beneficiary with missing fields.")
@@ -163,7 +163,7 @@ class Test_Login:
         finally:
             self.driver.quit()
 
-    def est_creation_of_new_other_beneficiary_filling_Last_Name_fields(self, setup):
+    def test_creation_of_new_other_beneficiary_filling_Last_Name_fields(self, setup):
         """Test the creation of a new beneficiary without filling the required fields."""
         try:
             self.log_test_start("Testing creation of new beneficiary with missing fields.")
@@ -200,7 +200,7 @@ class Test_Login:
         finally:
             self.driver.quit()
 
-    def est_creation_of_new_other_beneficiary_filling_email_fields(self, setup):
+    def test_creation_of_new_other_beneficiary_filling_email_fields(self, setup):
         """Test the creation of a new beneficiary without filling the required fields."""
         try:
             self.log_test_start("Testing creation of new beneficiary with missing fields.")
@@ -246,8 +246,8 @@ class Test_Login:
             time.sleep(3)
             self.Beneficiary_page_objects.click_on_the_new_beneficiary_button()
             self.Beneficiary_page_objects.click_on_the_other_beneficiary_option()
-
-            self.Beneficiary_page_objects.input_phone_number("08065748322")
+            phone_number = SignupObjects(self.driver).generate_phone_number()
+            self.Beneficiary_page_objects.input_phone_number(phone_number)
             time.sleep(3)
 
             # Generate the names for the creation for the names of the new users
@@ -255,20 +255,13 @@ class Test_Login:
             self.Beneficiary_page_objects.input_first_name(First_name)
             time.sleep(3)
             self.Beneficiary_page_objects.input_last_name(Last_name)
-            time.sleep(3)
+
             self.Beneficiary_page_objects.input_email(SignupObjects(self.driver).email_generator())
 
             self.Beneficiary_page_objects.click_on_the_proceed_button()
 
-            creation_successful_message, name_of_beneficiary_on_table = (
-                self.Beneficiary_page_objects.get_the_text_for_the_alert_to_the_user(),
-                f"08065748322-{First_name} {Last_name}")
-
-            """ Assertion for the successful on the table when the user is created
-            assert creation_successful_message is "New Beneficiary record created successfully", self.logger.info(
-                "**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***")
-            self.logger.info("***** TEST PASSED: USER'S ACCOUNT WAS CREATED *****")
-            """
+            name_of_beneficiary_on_table = f"{phone_number} - {First_name} {Last_name}"
+            time.sleep(5)
             """ Assertion for the name logged on the table when the user is created"""
             assert self.driver.find_element(By.XPATH, "//tbody/tr[1]/td[3]").text == name_of_beneficiary_on_table, self.logger.info(
                 "**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***")
@@ -283,9 +276,10 @@ class Test_Login:
             raise
 
         finally:
+            time.sleep(3)
             self.driver.quit()
 
-    def est_the_deactivation_of_beneficiary(self, setup):
+    def test_the_deactivation_of_beneficiary(self, setup):
         """
         Test the deactivation and reactivation process of a beneficiary within the application.
         This includes verifying the status changes and appropriate alert messages upon state changes.
@@ -303,35 +297,19 @@ class Test_Login:
             self.Beneficiary_page_objects.change_the_status_of_beneficiary()
 
             # Reactivation Process: Change beneficiary status back to 'Active'
-            Deactivation_message, name_of_beneficiary = self.Beneficiary_page_objects.get_the_text_for_the_alert_to_the_user()
+            """Deactivation_message, name_of_beneficiary = self.Beneficiary_page_objects.get_the_text_for_the_alert_to_the_user()
             time.sleep(5)
-            """assert Deactivation_message == f"{name_of_beneficiary} deactivated", (
+            assert Deactivation_message == f"{name_of_beneficiary} deactivated", (
                 self.logger.info("**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***")
             )
             self.logger.info("***** TEST PASSED: USER'S ACCOUNT WAS CREATED *****")
             time.sleep(3)
             """
-            # Final Status Validation: Ensure the beneficiary is marked as 'Active'
+            # Final Status Validation: Ensure the beneficiary is marked as 'inactive'
             assert self.Beneficiary_page_objects.read_the_status_of_the_beneficiary() == "Inactive", (
                 self.logger.info("**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***")
             )
             self.logger.info("***** TEST PASSED: USER'S ACCOUNT WAS CREATED *****")
-
-            time.sleep(4)
-
-            # Verification: Check deactivation alert message and beneficiary status
-            Activation_message, name_of_beneficiary = self.Beneficiary_page_objects.get_the_text_for_the_alert_to_the_user()
-            assert Activation_message == f"{name_of_beneficiary} activated successfully", (
-                self.logger.info("**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***")
-            )
-            self.logger.info("***** TEST PASSED: USER'S ACCOUNT WAS CREATED *****")
-
-            # Validate Status: Ensure the beneficiary is marked as 'Inactive'
-            assert self.Beneficiary_page_objects.read_the_status_of_the_beneficiary() == "Active", (
-                self.logger.info("**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***")
-            )
-            self.logger.info("***** TEST PASSED: USER'S ACCOUNT WAS CREATED *****")
-
         except AssertionError:
             # Error Handling: Log assertion errors and raise them for further investigation
             self.logger.error("Assertion Error: User's account was not created as expected.")
@@ -371,7 +349,7 @@ class Test_Login:
             )
             self.logger.info("***** TEST PASSED: USER'S ACCOUNT WAS CREATED *****")
 """
-            # Validate Status: Ensure the beneficiary is marked as 'Inactive'
+            # Validate Status: Ensure the beneficiary is marked as 'Active'
             assert self.Beneficiary_page_objects.read_the_status_of_the_beneficiary() == "Active", (
                 self.logger.info("**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***")
             )

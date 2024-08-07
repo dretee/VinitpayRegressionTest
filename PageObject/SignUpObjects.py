@@ -157,3 +157,11 @@ class SignupObjects:
 
         return firstname.capitalize(), lastname.capitalize()
 
+    def generate_phone_number(self):
+        # Use lowercase for variable names as per Python conventions
+        valid_chars = "0123456789"
+        initial_part = "080"
+
+        other_part = ''.join(random.choice(valid_chars) for _ in range(8))
+
+        return initial_part + other_part
