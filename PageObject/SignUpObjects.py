@@ -150,7 +150,7 @@ class SignupObjects:
     def generate_names(self):
         # Use lowercase for variable names as per Python conventions
         valid_chars = 'abcdefghijklmnopqrstuvwxyz'
-        name_length = random.randint(2, 10)  # Use lowercase for variable names
+        name_length = random.randint(6, 10)  # Use lowercase for variable names
 
         firstname = ''.join(random.choice(valid_chars) for _ in range(name_length))
         lastname = ''.join(random.choice(valid_chars) for _ in range(name_length))
