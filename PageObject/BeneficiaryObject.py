@@ -56,7 +56,7 @@ class BeneficiaryObjects:
             element = wait.until(ec.presence_of_element_located((By.XPATH, self.Beneficiary_navigation_xpath)))
             element.click()
         except TimeoutException:
-            print(f"Name input field not found within {timeout} seconds")
+            print(f"Beneficiary button field not found within {timeout} seconds")
 
     def click_on_the_new_beneficiary_button(self, timeout=10):
         try:
@@ -64,7 +64,7 @@ class BeneficiaryObjects:
             element = wait.until(ec.presence_of_element_located((By.XPATH, self.New_Beneficiary_xpath)))
             element.click()
         except TimeoutException:
-            print(f"Name input field not found within {timeout} seconds")
+            print(f"New beneficiary button field not found within {timeout} seconds")
 
     def click_on_the_proceed_button(self, timeout=10):
         try:
@@ -134,7 +134,7 @@ class BeneficiaryObjects:
             element = wait.until(ec.visibility_of_element_located((By.XPATH, self.New_Automobile_Beneficiary_option_xpath)))
             element.click()
         except TimeoutException:
-            print(f"Name input field not found within {timeout} seconds")
+            print(f"Automobile beneficiary button field not found within {timeout} seconds")
 
     def get_the_text_for_the_alert_to_the_user(self, timeout=10):
         try:
@@ -144,7 +144,7 @@ class BeneficiaryObjects:
             name_of_beneficiary_on_table = wait.until(ec.presence_of_element_located((By.XPATH, self.name_of_beneficiary_xpath)))
             return element.text, name_of_beneficiary_on_table.text
         except TimeoutException:
-            print(f"Name input field not found within {timeout} seconds")
+            print(f"Alert pop up text not found within {timeout} seconds")
 
     def input_reg_number(self, reg_number, timeout=10):
         try:
@@ -153,7 +153,7 @@ class BeneficiaryObjects:
             element.clear()
             element.send_keys(reg_number)
         except TimeoutException:
-            print(f"Name input field not found within {timeout} seconds")
+            print(f"Registration number input field not found within {timeout} seconds")
 
     def input_vin_number(self, vin_number, timeout=10):
         try:
@@ -162,7 +162,7 @@ class BeneficiaryObjects:
             element.clear()
             element.send_keys(vin_number)
         except TimeoutException:
-            print(f"Name input field not found within {timeout} seconds")
+            print(f"VIN number input field not found within {timeout} seconds")
 
     def click_on_the_next_button(self, timeout=10):
         try:
@@ -171,7 +171,7 @@ class BeneficiaryObjects:
             element.click()
 
         except TimeoutException:
-            print(f"Name input field not found within {timeout} seconds")
+            print(f"Next button input field not found within {timeout} seconds")
 
             """
             This is for the reading and changing of the status of a beneficiary
@@ -184,7 +184,7 @@ class BeneficiaryObjects:
             status = element.text
             return status
         except TimeoutException:
-            print(f"Name input field not found within {timeout} seconds")
+            print(f"Status not found within {timeout} seconds")
 
     def change_the_status_of_beneficiary(self, timeout=10):
         try:
@@ -192,4 +192,4 @@ class BeneficiaryObjects:
             element = wait.until(ec.visibility_of_element_located((By.XPATH, self.Deactivate_ana_activate_beneficiary_button_xpath)))
             element.click()
         except TimeoutException:
-            print(f"Name input field not found within {timeout} seconds")
+            print(f"Change button for the beneficiary input field not found within {timeout} seconds")
