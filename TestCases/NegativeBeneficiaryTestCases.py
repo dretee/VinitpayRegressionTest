@@ -15,10 +15,15 @@ from PageObject.LoginObjects import LoginObjects
 """
 Negative test cases for the Other beneficiary creation
 
-Verify the response of the system when a url, name and special characters are inputted in the phone number filed and other vaild data
-Verify the response of the system when a url, email,  numbers and special characters (name with special characters) are inputted in the firstname and lastname filed and other vaild data
-Verify the response of the system when a url, numbers and special characters (name with special characters) are inputted in the email filed and other vaild data
+Verify the response of the system when the user click on the proceed button without filling any of the field on the 
+other beneficiary creation
 
+Verify the response of the system when a url, name and special characters are inputted in the phone number filed and 
+other vaild data.
+Verify the response of the system when a url, email,  numbers and special characters (name with 
+special characters) are inputted in the firstname and lastname filed and other vaild data.
+Verify the response of the system when a url, numbers and special characters (name with special characters) are inputted in the email filed and 
+other vaild data.
 
 """
 
@@ -322,10 +327,10 @@ class Test_Login:
         finally:
             self.driver.quit()
 
-    def test_the_use_of_wrong_text_format_for_email_field(self, setup):
+    def test_the_use_of_wrong_text_format_for_name_field(self, setup):
         try:
             self.log_test_start(
-                "***** TEST THE RESPONSE OF THE SYSTEM TO AN INVALID FORMAT INPUT IN THE PHONE NUMBER FIELD. *****")
+                "***** TEST THE RESPONSE OF THE SYSTEM TO AN INVALID FORMAT INPUT IN THE NAME FIELD. *****")
             self.open_website_and_log_in_user(setup, self.URL)
             self.open_website_and_log_in_user(setup, self.URL)
             self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
@@ -337,28 +342,34 @@ class Test_Login:
 
             phone_number = SignupObjects(self.driver).generate_phone_number()
             self.Beneficiary_page_objects.input_phone_number(phone_number)
+            self.logger.info("***** Input the phone number into the phone number field  *****")
 
-            First_name, Last_name = SignupObjects(self.driver).generate_names()
-            self.Beneficiary_page_objects.input_first_name(First_name)
-            self.log_test_start("***** USER INPUTS THE THE FIRST NAME IN THE CORRECT FIELD.******")
-            time.sleep(3)
-            self.Beneficiary_page_objects.input_last_name(Last_name)
-            self.log_test_start("***** USER INPUTS THE THE LAST NAME IN THE CORRECT FIELD.******")
+            self.Beneficiary_page_objects.input_email(SignupObjects(self.driver).email_generator())
+            self.logger.info("***** Input the email into the email field  *****")
 
             # The list consist of words, special character + numbers, URL and an incomplete number
-            List_of_inputs = ["Housing", "???334%%%", "htpps://bscscan.com", "08098"]
+            List_of_inputs = ["???334%%%", "htpps://bscscan.com", "08098"]
             Number_of_inputs = len(List_of_inputs)
+            Error_message_list = []
 
             for n in range(Number_of_inputs):
-                self.Beneficiary_page_objects.input_email(List_of_inputs[n])
-                self.log_test_start("***** USER INPUTS THE THE EMAIL IN THE CORRECT FIELD.******")
+                self.Beneficiary_page_objects.input_first_name(List_of_inputs[n])
+                self.logger.info("***** USER INPUTS THE THE FIRST NAME IN THE CORRECT FIELD.******")
+                time.sleep(3)
+                self.Beneficiary_page_objects.input_last_name(List_of_inputs[n])
+                self.logger.info("***** USER INPUTS THE THE LAST NAME IN THE CORRECT FIELD.******")
 
                 self.Beneficiary_page_objects.click_on_the_proceed_button()
-                self.log_test_start("***** USER CLICKS ON THE PROCEED BUTTON.******")
+                self.logger.info("***** USER CLICKS ON THE PROCEED BUTTON.******")
 
-                """
-                      complete this code
-                """
+            if all(Error_message_list):
+                self.logger.info("Test passed: Error message is correctly thrown for all inputs and beneficiary are "
+                                 "not created.")
+            else:
+                self.logger.error("Test failed: Not all inputs triggered the correct error message and beneficiary "
+                                  "was created.")
+                raise AssertionError("User's account was created for an invalid input.")
+
         except AssertionError:
             self.logger.error("Assertion Error: User's account was created.")
             raise

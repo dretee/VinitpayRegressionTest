@@ -14,7 +14,6 @@ from PageObject.BeneficiaryObject import BeneficiaryObjects
 """
 Test cases for the beneficiary page
 
-Verify the response of the system when the user click on the proceed button without filling any of the field on the other beneficiary creation 
 Verify the response of the system when any of the fields are left empty 
 Verify the deactivation of a other beneficiary 
 Verify the activation of a other beneficiary
