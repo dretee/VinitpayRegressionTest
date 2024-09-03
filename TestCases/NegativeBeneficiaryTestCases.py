@@ -237,15 +237,76 @@ class Test_Login:
             # The list consist of words, special character + numbers, URL and an incomplete number
             List_of_inputs = ["Housing", "???334%%%", "htpps://bscscan.com", "08098"]
             Number_of_inputs = len(List_of_inputs)
+            Error_message_list = []
 
             for n in range(Number_of_inputs):
+                time.sleep(2)
                 self.Beneficiary_page_objects.input_phone_number(List_of_inputs[n])
+                self.Beneficiary_page_objects.click_on_the_proceed_button()
+                self.log_test_start("User clicks on the proceed button.")
+
+                Body_text = self.driver.find_element(By.TAG_NAME, "Body").text
+                error_detected = "Only digits are allowed in this field" in Body_text
+                Error_message_list.append(error_detected)
+
+            if all(Error_message_list):
+                self.logger.info("Test passed: Error message is correctly thrown for all inputs.")
+            else:
+                self.logger.error("Test failed: Not all inputs triggered the correct error message.")
+                raise AssertionError("User's account was created for an invalid input.")
+
+        except Exception as e:
+            self.logger.error(f"An unexpected error occurred: {e}")
+            raise
+
+        finally:
+            self.driver.quit()
+
+    def test_the_use_of_wrong_text_format_for_email_field(self, setup):
+        try:
+            self.log_test_start(
+                "***** TEST THE RESPONSE OF THE SYSTEM TO AN INVALID FORMAT INPUT IN THE EMAIL FIELD. *****")
+            self.open_website_and_log_in_user(setup, self.URL)
+            self.open_website_and_log_in_user(setup, self.URL)
+            self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
+
+            self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
+            time.sleep(3)
+            self.Beneficiary_page_objects.click_on_the_new_beneficiary_button()
+            self.Beneficiary_page_objects.click_on_the_other_beneficiary_option()
+
+            phone_number = SignupObjects(self.driver).generate_phone_number()
+            self.Beneficiary_page_objects.input_phone_number(phone_number)
+            self.log_test_start("***** USER INPUTS THE THE PHONE NUMBER IN THE CORRECT FIELD.******")
+
+            First_name, Last_name = SignupObjects(self.driver).generate_names()
+            self.Beneficiary_page_objects.input_first_name(First_name)
+            self.log_test_start("***** USER INPUTS THE THE FIRST NAME IN THE CORRECT FIELD.******")
+            time.sleep(3)
+            self.Beneficiary_page_objects.input_last_name(Last_name)
+            self.log_test_start("***** USER INPUTS THE THE LAST NAME IN THE CORRECT FIELD.******")
+
+            # The list consist of words, special character + numbers, URL and an incomplete number
+            List_of_inputs = ["Housing", "???334%%%", "htpps://bscscan.com", "08098"]
+            Number_of_inputs = len(List_of_inputs)
+            Error_message_list = []
+
+            for n in range(Number_of_inputs):
+                self.Beneficiary_page_objects.input_email(List_of_inputs[n])
+                self.log_test_start("***** USER INPUTS THE THE INVALID DATA FORMAT IN THE EMAIL FIELD.******")
+
                 self.Beneficiary_page_objects.click_on_the_proceed_button()
                 self.log_test_start("***** USER CLICKS ON THE PROCEED BUTTON.******")
 
-            """
-                 complete this code
-            """
+                Body_text = self.driver.find_element(By.TAG_NAME, "Body").text
+                error_detected = "Only digits are allowed in this field" in Body_text
+                Error_message_list.append(error_detected)
+
+            if all(Error_message_list):
+                self.logger.info("Test passed: Error message is correctly thrown for all inputs and beneficiafy are not created.")
+            else:
+                self.logger.error("Test failed: Not all inputs triggered the correct error message and beneficiary was created.")
+                raise AssertionError("User's account was created for an invalid input.")
 
         except AssertionError:
             self.logger.error("Assertion Error: User's account was created.")
