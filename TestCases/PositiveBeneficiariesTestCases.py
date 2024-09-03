@@ -111,8 +111,6 @@ class Test_Login:
         finally:
             self.driver.quit()
 
-
-
     def test_the_creation_of_new_other_beneficiary(self, setup):
         try:
             self.log_test_start("***** TESTING THE CREATION OF NEW OTHER BENEFICIARY.******")

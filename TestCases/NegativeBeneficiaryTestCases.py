@@ -33,7 +33,6 @@ class Test_Login:
     EXISTING_PASSWORD = UserPassword  # Get existing password
     # from configuration
     logger = RecordLogger.log_generator_info()  # Initialize logger instance
-    PATH = ".\\TestData\\vnitpay data.xlsx"  # Excel file path
 
     # Method to log the start of a test
     def log_test_start(self, test_name):
@@ -59,158 +58,158 @@ class Test_Login:
         self.log_test_end("Open Website")
 
     def test_creation_of_new_other_beneficiary_filling_phone_number_fields(self, setup):
-            """Test the creation of a new beneficiary without filling the required fields."""
-            try:
-                self.log_test_start("***** TESTING THE CREATION OF NEW BENEFICIARY WITH MISSING FILED. ******")
-                self.open_website_and_log_in_user(setup, self.URL)
+        """Test the creation of a new beneficiary without filling the required fields."""
+        try:
+            self.log_test_start("***** TESTING THE CREATION OF NEW BENEFICIARY WITH MISSING FILED. ******")
+            self.open_website_and_log_in_user(setup, self.URL)
 
-                # Initialize Beneficiary page objects
-                self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
+            # Initialize Beneficiary page objects
+            self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
 
-                # Navigate to beneficiary creation page
+            # Navigate to beneficiary creation page
 
-                self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
-                time.sleep(3)
-                self.Beneficiary_page_objects.click_on_the_new_beneficiary_button()
-                time.sleep(3)
-                self.Beneficiary_page_objects.click_on_the_other_beneficiary_option()
+            self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
+            time.sleep(3)
+            self.Beneficiary_page_objects.click_on_the_new_beneficiary_button()
+            time.sleep(3)
+            self.Beneficiary_page_objects.click_on_the_other_beneficiary_option()
 
-                self.logger.info("***** USER SHOULD BE IN THE OTHER BENEFICIARY FORM *****")
+            self.logger.info("***** USER SHOULD BE IN THE OTHER BENEFICIARY FORM *****")
 
-                self.Beneficiary_page_objects.input_phone_number("08065748322")
+            self.Beneficiary_page_objects.input_phone_number("08065748322")
 
-                self.Beneficiary_page_objects.click_on_the_proceed_button()
-                self.logger.info("***** USER HAS CLICKED ON THE PROCEED BUTTON *****")
-                # Test various scenarios of field completion
-                expected_message = "All fields are required"
-                assert expected_message in self.driver.find_element(By.TAG_NAME, "body").text, self.logger.info(
-                    "**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***")
-                self.logger.info("***** TEST PASSED: ERROR MESSAGE IS THROWN *****")
+            self.Beneficiary_page_objects.click_on_the_proceed_button()
+            self.logger.info("***** USER HAS CLICKED ON THE PROCEED BUTTON *****")
+            # Test various scenarios of field completion
+            expected_message = "All fields are required"
+            assert expected_message in self.driver.find_element(By.TAG_NAME, "body").text, self.logger.info(
+                "**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***")
+            self.logger.info("***** TEST PASSED: ERROR MESSAGE IS THROWN *****")
 
-            except AssertionError:
-                self.logger.error("Assertion Error: User's account was created.")
-                raise
+        except AssertionError:
+            self.logger.error("Assertion Error: User's account was created.")
+            raise
 
-            except Exception as e:
-                self.logger.error(f"An unexpected error occurred: {e}")
-                raise
+        except Exception as e:
+            self.logger.error(f"An unexpected error occurred: {e}")
+            raise
 
-            finally:
-                self.driver.quit()
+        finally:
+            self.driver.quit()
 
     def test_creation_of_new_other_beneficiary_filling_First_Name_fields(self, setup):
-            """Test the creation of a new beneficiary without filling the required fields."""
-            try:
-                self.log_test_start("***** TESTING THE CREATION OF NEW BENEFICIARY WITH MISSING FILED. ******")
-                self.open_website_and_log_in_user(setup, self.URL)
+        """Test the creation of a new beneficiary without filling the required fields."""
+        try:
+            self.log_test_start("***** TESTING THE CREATION OF NEW BENEFICIARY WITH MISSING FILED. ******")
+            self.open_website_and_log_in_user(setup, self.URL)
 
-                # Initialize Beneficiary page objects
-                self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
+            # Initialize Beneficiary page objects
+            self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
 
-                # Navigate to beneficiary creation page
-                self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
-                time.sleep(3)
-                self.Beneficiary_page_objects.click_on_the_new_beneficiary_button()
-                time.sleep(3)
-                self.Beneficiary_page_objects.click_on_the_other_beneficiary_option()
+            # Navigate to beneficiary creation page
+            self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
+            time.sleep(3)
+            self.Beneficiary_page_objects.click_on_the_new_beneficiary_button()
+            time.sleep(3)
+            self.Beneficiary_page_objects.click_on_the_other_beneficiary_option()
 
-                self.logger.info("***** USER SHOULD BE IN THE OTHER BENEFICIARY FORM *****")
-                First_name, _ = SignupObjects(self.driver).generate_names()
-                self.Beneficiary_page_objects.input_first_name(First_name)
+            self.logger.info("***** USER SHOULD BE IN THE OTHER BENEFICIARY FORM *****")
+            First_name, _ = SignupObjects(self.driver).generate_names()
+            self.Beneficiary_page_objects.input_first_name(First_name)
 
-                self.Beneficiary_page_objects.click_on_the_proceed_button()
-                self.logger.info("***** USER SHOULD HAVE CLICKED ON THE PROCEED BUTTON*****")
-                # Test various scenarios of field completion
-                expected_message = "All fields are required"
-                assert expected_message in self.driver.find_element(By.TAG_NAME, "body").text, self.logger.info(
-                    "**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***")
-                self.logger.info("***** TEST PASSED: ERROR MESSAGE IS THROWN *****")
+            self.Beneficiary_page_objects.click_on_the_proceed_button()
+            self.logger.info("***** USER SHOULD HAVE CLICKED ON THE PROCEED BUTTON*****")
+            # Test various scenarios of field completion
+            expected_message = "All fields are required"
+            assert expected_message in self.driver.find_element(By.TAG_NAME, "body").text, self.logger.info(
+                "**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***")
+            self.logger.info("***** TEST PASSED: ERROR MESSAGE IS THROWN *****")
 
-            except AssertionError:
-                self.logger.error("Assertion Error: User's account was created.")
-                raise
+        except AssertionError:
+            self.logger.error("Assertion Error: User's account was created.")
+            raise
 
-            except Exception as e:
-                self.logger.error(f"An unexpected error occurred: {e}")
-                raise
+        except Exception as e:
+            self.logger.error(f"An unexpected error occurred: {e}")
+            raise
 
-            finally:
-                self.driver.quit()
+        finally:
+            self.driver.quit()
 
     def test_creation_of_new_other_beneficiary_filling_Last_Name_fields(self, setup):
-            """Test the creation of a new beneficiary without filling the required fields."""
-            try:
-                self.log_test_start("***** TESTING THE CREATION OF NEW BENEFICIARY WITH MISSING FILED. ******")
-                self.open_website_and_log_in_user(setup, self.URL)
+        """Test the creation of a new beneficiary without filling the required fields."""
+        try:
+            self.log_test_start("***** TESTING THE CREATION OF NEW BENEFICIARY WITH MISSING FILED. ******")
+            self.open_website_and_log_in_user(setup, self.URL)
 
-                # Initialize Beneficiary page objects
-                self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
+            # Initialize Beneficiary page objects
+            self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
 
-                # Navigate to beneficiary creation page
-                self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
-                time.sleep(3)
-                self.Beneficiary_page_objects.click_on_the_new_beneficiary_button()
-                time.sleep(3)
-                self.Beneficiary_page_objects.click_on_the_other_beneficiary_option()
-                _, Last_name = SignupObjects(self.driver).generate_names()
-                self.Beneficiary_page_objects.input_first_name(Last_name)
-                self.logger.info("***** THE LAST NAME FIELD SHOULD HAVE BEEN FILLED *****")
+            # Navigate to beneficiary creation page
+            self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
+            time.sleep(3)
+            self.Beneficiary_page_objects.click_on_the_new_beneficiary_button()
+            time.sleep(3)
+            self.Beneficiary_page_objects.click_on_the_other_beneficiary_option()
+            _, Last_name = SignupObjects(self.driver).generate_names()
+            self.Beneficiary_page_objects.input_first_name(Last_name)
+            self.logger.info("***** THE LAST NAME FIELD SHOULD HAVE BEEN FILLED *****")
 
-                self.Beneficiary_page_objects.click_on_the_proceed_button()
-                self.logger.info("***** THE PROCEED BUTTON SHOULD HAVE BEEN CLICKED  *****")
-                # Test various scenarios of field completion
-                expected_message = "All fields are required"
-                assert expected_message in self.driver.find_element(By.TAG_NAME, "body").text, self.logger.info(
-                    "**** TEST FAILED: USER'S ACCOUNT WAS CREATED ***")
-                self.logger.info("***** TEST PASSED: ERROR MESSAGE IS THROWN *****")
+            self.Beneficiary_page_objects.click_on_the_proceed_button()
+            self.logger.info("***** THE PROCEED BUTTON SHOULD HAVE BEEN CLICKED  *****")
+            # Test various scenarios of field completion
+            expected_message = "All fields are required"
+            assert expected_message in self.driver.find_element(By.TAG_NAME, "body").text, self.logger.info(
+                "**** TEST FAILED: USER'S ACCOUNT WAS CREATED ***")
+            self.logger.info("***** TEST PASSED: ERROR MESSAGE IS THROWN *****")
 
-            except AssertionError:
-                self.logger.error("Assertion Error: User's account was created.")
-                raise
+        except AssertionError:
+            self.logger.error("Assertion Error: User's account was created.")
+            raise
 
-            except Exception as e:
-                self.logger.error(f"An unexpected error occurred: {e}")
-                raise
+        except Exception as e:
+            self.logger.error(f"An unexpected error occurred: {e}")
+            raise
 
-            finally:
-                self.driver.quit()
+        finally:
+            self.driver.quit()
 
     def test_creation_of_new_other_beneficiary_filling_email_fields(self, setup):
-            """Test the creation of a new beneficiary without filling the required fields."""
-            try:
-                self.log_test_start("***** TESTING THE CREATION OF NEW BENEFICIARY WITH MISSING FILED.******")
-                self.open_website_and_log_in_user(setup, self.URL)
+        """Test the creation of a new beneficiary without filling the required fields."""
+        try:
+            self.log_test_start("***** TESTING THE CREATION OF NEW BENEFICIARY WITH MISSING FILED.******")
+            self.open_website_and_log_in_user(setup, self.URL)
 
-                # Initialize Beneficiary page objects
-                self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
+            # Initialize Beneficiary page objects
+            self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
 
-                # Navigate to beneficiary creation page
-                self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
-                time.sleep(3)
-                self.Beneficiary_page_objects.click_on_the_new_beneficiary_button()
-                self.Beneficiary_page_objects.click_on_the_other_beneficiary_option()
+            # Navigate to beneficiary creation page
+            self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
+            time.sleep(3)
+            self.Beneficiary_page_objects.click_on_the_new_beneficiary_button()
+            self.Beneficiary_page_objects.click_on_the_other_beneficiary_option()
 
-                self.Beneficiary_page_objects.input_email(SignupObjects(self.driver).email_generator())
-                self.logger.info("***** ONLY THE EMAIL HAS BEEN INPUTTED IN TO THE FIELD *****")
-                time.sleep(3)
-                self.Beneficiary_page_objects.click_on_the_proceed_button()
-                self.logger.info("***** USER HAS CLICKED THE PROCEED BUTTON *****")
-                # Test various scenarios of field completion
-                expected_message = "All fields are required"
-                assert expected_message in self.driver.find_element(By.TAG_NAME, "body").text, self.logger.info(
-                    "**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***")
-                self.logger.info("***** TEST PASSED: ERROR MESSAGE IS THROWN TO THE USER *****")
+            self.Beneficiary_page_objects.input_email(SignupObjects(self.driver).email_generator())
+            self.logger.info("***** ONLY THE EMAIL HAS BEEN INPUTTED IN TO THE FIELD *****")
+            time.sleep(3)
+            self.Beneficiary_page_objects.click_on_the_proceed_button()
+            self.logger.info("***** USER HAS CLICKED THE PROCEED BUTTON *****")
+            # Test various scenarios of field completion
+            expected_message = "All fields are required"
+            assert expected_message in self.driver.find_element(By.TAG_NAME, "body").text, self.logger.info(
+                "**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***")
+            self.logger.info("***** TEST PASSED: ERROR MESSAGE IS THROWN TO THE USER *****")
 
-            except AssertionError:
-                self.logger.error("Assertion Error: User's account was created.")
-                raise
+        except AssertionError:
+            self.logger.error("Assertion Error: User's account was created.")
+            raise
 
-            except Exception as e:
-                self.logger.error(f"An unexpected error occurred: {e}")
-                raise
+        except Exception as e:
+            self.logger.error(f"An unexpected error occurred: {e}")
+            raise
 
-            finally:
-                self.driver.quit()
+        finally:
+            self.driver.quit()
 
     def test_the_use_of_wrong_text_format_for_phone_number_field(self, setup):
         try:
@@ -244,11 +243,65 @@ class Test_Login:
                 self.Beneficiary_page_objects.click_on_the_proceed_button()
                 self.log_test_start("***** USER CLICKS ON THE PROCEED BUTTON.******")
 
-
-
-
-
+            """
+                 complete this code
+            """
 
         except AssertionError:
+            self.logger.error("Assertion Error: User's account was created.")
+            raise
 
         except Exception as e:
+            self.logger.error(f"An unexpected error occurred: {e}")
+            raise
+
+        finally:
+            self.driver.quit()
+
+    def test_the_use_of_wrong_text_format_for_email_field(self, setup):
+        try:
+            self.log_test_start(
+                "***** TEST THE RESPONSE OF THE SYSTEM TO AN INVALID FORMAT INPUT IN THE PHONE NUMBER FIELD. *****")
+            self.open_website_and_log_in_user(setup, self.URL)
+            self.open_website_and_log_in_user(setup, self.URL)
+            self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
+
+            self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
+            time.sleep(3)
+            self.Beneficiary_page_objects.click_on_the_new_beneficiary_button()
+            self.Beneficiary_page_objects.click_on_the_other_beneficiary_option()
+
+            phone_number = SignupObjects(self.driver).generate_phone_number()
+            self.Beneficiary_page_objects.input_phone_number(phone_number)
+
+            First_name, Last_name = SignupObjects(self.driver).generate_names()
+            self.Beneficiary_page_objects.input_first_name(First_name)
+            self.log_test_start("***** USER INPUTS THE THE FIRST NAME IN THE CORRECT FIELD.******")
+            time.sleep(3)
+            self.Beneficiary_page_objects.input_last_name(Last_name)
+            self.log_test_start("***** USER INPUTS THE THE LAST NAME IN THE CORRECT FIELD.******")
+
+            # The list consist of words, special character + numbers, URL and an incomplete number
+            List_of_inputs = ["Housing", "???334%%%", "htpps://bscscan.com", "08098"]
+            Number_of_inputs = len(List_of_inputs)
+
+            for n in range(Number_of_inputs):
+                self.Beneficiary_page_objects.input_email(List_of_inputs[n])
+                self.log_test_start("***** USER INPUTS THE THE EMAIL IN THE CORRECT FIELD.******")
+
+                self.Beneficiary_page_objects.click_on_the_proceed_button()
+                self.log_test_start("***** USER CLICKS ON THE PROCEED BUTTON.******")
+
+                """
+                      complete this code
+                """
+        except AssertionError:
+            self.logger.error("Assertion Error: User's account was created.")
+            raise
+
+        except Exception as e:
+            self.logger.error(f"An unexpected error occurred: {e}")
+            raise
+
+        finally:
+            self.driver.quit()
