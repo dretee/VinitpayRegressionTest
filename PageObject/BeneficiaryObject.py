@@ -136,6 +136,15 @@ class BeneficiaryObjects:
         except TimeoutException:
             print(f"Automobile beneficiary button field not found within {timeout} seconds")
 
+    def click_on_the_student_beneficiary_option(self, timeout=10):
+        try:
+            wait = WebDriverWait(self.driver, timeout=10, poll_frequency=1, ignored_exceptions=[NoSuchElementException])
+            element = wait.until(
+                ec.visibility_of_element_located((By.XPATH, self.New_Students_Beneficiary_option_xpath)))
+            element.click()
+        except TimeoutException:
+            print(f"Automobile beneficiary button field not found within {timeout} seconds")
+
     def get_the_text_for_the_alert_to_the_user(self, timeout=10):
         try:
             wait = WebDriverWait(self.driver, timeout=10, poll_frequency=1, ignored_exceptions=[NoSuchElementException])
