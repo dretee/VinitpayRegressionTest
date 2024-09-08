@@ -1,4 +1,5 @@
 # Import necessary modules and classes
+import random
 import time
 import requests
 from Utilities import ReadXyfile
@@ -60,21 +61,72 @@ class Test_Login:
             # Initialize Beneficiary page objects
             self.log_test_start("Test_that_a_student_can_become_beneficiary")
             self.open_website_and_log_in_user(setup, self.URL)
-
+            self.logger.info("***** User is logged into account. *****")
             self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
             self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
 
             self.Beneficiary_page_objects.click_on_the_new_beneficiary_button()
             time.sleep(3)
+            self.logger.info("***** Clicking on the student option. *****")
             self.Beneficiary_page_objects.click_on_the_student_beneficiary_option()
             time.sleep(2)
+            self.logger.info("***** User is navigated to the form for the creation a student beneficiary. *****")
 
+            self.Beneficiary_page_objects.input_student_number(1)
+            self.Beneficiary_page_objects.input_student_First_Name(SignupObjects.generate_names(self.driver))
+            self.Beneficiary_page_objects.input_student_Last_Name(SignupObjects.generate_names(self.driver))
+            self.Beneficiary_page_objects.input_student_phone_number(SignupObjects.generate_phone_number(self.driver))
+            self.Beneficiary_page_objects.input_student_email(SignupObjects.email_generator(self.driver))
+            Courses = ["Chemical Engineering", "Chemistry", "Fine Art"
+                       "Biological Sciences", "Physics", "Mechanical Engineering"
+                       "Adult Education", "Computer science", "Greek Language"]
+            self.Beneficiary_page_objects.input_student_course(random.choice(Courses))
+            self.Beneficiary_page_objects.Select_school()
+            """
+            The selection of the school is still pending. Get schools in the dropdown and proceed with the automation 
+            """
 
+            self.Beneficiary_page_objects.click_on_the_proceed_button()
         except AssertionError:
             self.logger.error("Assertion Error: this is not the page the user intends to go to.")
             raise
         except Exception as e:
             self.logger.error(f"An unexpected error occurred: {e}")
             raise
+        finally:
+            self.driver.quit()
+
+    def test_that_the_user_can_no_create_a_beneficiary_with_empty_fields(self, setup):
+        try:
+            # Initialize Beneficiary page objects
+            self.log_test_start("***** Test that the user can no create a beneficiary with empty fields. *****")
+            self.open_website_and_log_in_user(setup, self.URL)
+            self.logger.info("***** User is logged into account. *****")
+            self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
+            self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
+
+            self.Beneficiary_page_objects.click_on_the_new_beneficiary_button()
+            time.sleep(3)
+            self.logger.info("***** Clicking on the student option. *****")
+            self.Beneficiary_page_objects.click_on_the_student_beneficiary_option()
+            time.sleep(2)
+            self.logger.info("***** User is navigated to the form and fills nothing. *****")
+
+            self.logger.info("***** User clicks on the proceed button *****")
+            self.Beneficiary_page_objects.click_on_the_proceed_button()
+
+            expected_message = "All fields are required"
+            assert expected_message in self.driver.find_element(By.TAG_NAME, "body").text, self.logger.info(
+                "**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***")
+            self.logger.info("***** TEST PASSED: ERROR MESSAGE IS THROWN *****")
+
+        except AssertionError:
+            self.logger.error("Assertion Error: User's account was created.")
+            raise
+
+        except Exception as e:
+            self.logger.error(f"An unexpected error occurred: {e}")
+            raise
+
         finally:
             self.driver.quit()
