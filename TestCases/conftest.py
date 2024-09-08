@@ -12,7 +12,7 @@ def setup(browser):
     elif browser == "edge":
         driver = webdriver.Edge()
     else:
-        driver = webdriver.Ie()
+        driver = webdriver.Chrome()
 
     return driver
 
