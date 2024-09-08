@@ -56,7 +56,7 @@ class Test_Login:
 
         self.log_test_end("Open Website")
 
-    def test_that_a_student_can_become_beneficiary(self,setup):
+    def est_that_a_student_can_become_beneficiary(self,setup):
         try:
             # Initialize Beneficiary page objects
             self.log_test_start("Test_that_a_student_can_become_beneficiary")
@@ -64,7 +64,7 @@ class Test_Login:
             self.logger.info("***** User is logged into account. *****")
             self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
             self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
-
+            time.sleep(3)
             self.Beneficiary_page_objects.click_on_the_new_beneficiary_button()
             time.sleep(3)
             self.logger.info("***** Clicking on the student option. *****")
