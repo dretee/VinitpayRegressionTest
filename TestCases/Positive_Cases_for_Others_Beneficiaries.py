@@ -9,8 +9,8 @@ from PageObject.LoginObjects import LoginObjects
 from PageObject.SignUpObjects import SignupObjects
 from PageObject.BeneficiaryObject import BeneficiaryObjects
 
-# to run the test use:   pytest -v -s TestCases/invalidLoginTestCase.py--browser chrome to run and also generate
-# the html report use: pytest -v -s --html=Reports\reports.html TestCases/validLoginTestCase.py --browser chrome
+# to run the test use:   pytest -v -s TestCases/Negative_Cases_for_Login.py--browser chrome to run and also generate
+# the html report use: pytest -v -s --html=Reports\reports.html TestCases/Positive_Cases_for_Login.py --browser chrome
 """
 Test cases for the beneficiary page
 

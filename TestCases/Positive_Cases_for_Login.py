@@ -9,8 +9,8 @@ from Utilities.ReadProperties import ReadProperties
 
 
 
-# to run the test use:   pytest -v -s TestCases/validLoginTestCase.py --browser chrome to run and also generate
-# the html report use: pytest -v -s --html=Reports\reports.html TestCases/validLoginTestCase.py --browser chrome
+# to run the test use:   pytest -v -s TestCases/Positive_Cases_for_Login.py --browser chrome to run and also generate
+# the html report use: pytest -v -s --html=Reports\reports.html TestCases/Positive_Cases_for_Login.py --browser chrome
 
 class Test_Login:
     # Initialize class variables with URLs, logger instance, and Excel file path

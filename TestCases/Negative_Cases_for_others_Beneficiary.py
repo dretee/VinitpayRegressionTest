@@ -10,8 +10,8 @@ from Utilities.RecordLogger import RecordLogger
 from Utilities.ReadProperties import ReadProperties
 from PageObject.LoginObjects import LoginObjects
 
-# to run the test use:   pytest -v -s TestCases/invalidLoginTestCase.py--browser chrome to run and also generate
-# the html report use: pytest -v -s --html=Reports\reports.html TestCases/validLoginTestCase.py --browser chrome
+# to run the test use:   pytest -v -s TestCases/Negative_Cases_for_Login.py--browser chrome to run and also generate
+# the html report use: pytest -v -s --html=Reports\reports.html TestCases/Positive_Cases_for_Login.py --browser chrome
 """
 Negative test cases for the Other beneficiary creation
 
