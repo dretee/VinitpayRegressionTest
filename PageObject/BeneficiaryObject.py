@@ -41,6 +41,7 @@ class BeneficiaryObjects:
     student_email_xpath = "//input[@type='email']"
     student_phone_number_xpath = "(//input[@type='text'])[4]"
     student_course_xpath = "(//input[@type='text'])[5]"
+    student_school_xpath = "//div[@class='dropdown-selected']//span"
 
     # alert locators on the beneficiary page
     alert_xpath = "//div[@class='Vue-Toastification__container top-right']//div[@role='alert']"
@@ -202,3 +203,77 @@ class BeneficiaryObjects:
             element.click()
         except TimeoutException:
             print(f"Change button for the beneficiary input field not found within {timeout} seconds")
+
+        """
+        Student form element for input 
+        """
+
+    def input_student_phone_number(self, number, timeout=10):
+        try:
+            wait = WebDriverWait(self.driver, timeout=10, poll_frequency=1,
+                                     ignored_exceptions=[NoSuchElementException])
+            element = wait.until(
+                ec.presence_of_element_located((By.XPATH, self.student_phone_number_xpath)))
+            element.clear()
+            element.send_keys(number)
+        except TimeoutException:
+            print(f"Student's phone number input field not found within {timeout} seconds")
+
+    def input_student_number(self, number, timeout=10):
+        try:
+            wait = WebDriverWait(self.driver, timeout=10, poll_frequency=1, ignored_exceptions=[NoSuchElementException])
+            element = wait.until(
+                ec.presence_of_element_located((By.XPATH, self.student_number_xpath)))
+            element.clear()
+            element.send_keys(number)
+        except TimeoutException:
+            print(f"Student's phone number input field not found within {timeout} seconds")
+
+    def input_student_First_Name(self, name, timeout=10):
+        try:
+            wait = WebDriverWait(self.driver, timeout=10, poll_frequency=1, ignored_exceptions=[NoSuchElementException])
+            element = wait.until(
+                ec.presence_of_element_located((By.XPATH, self.student_firstname_xpath)))
+            element.clear()
+            element.send_keys(name)
+        except TimeoutException:
+            print(f"Student's phone number input field not found within {timeout} seconds")
+
+    def input_student_Last_Name(self, name, timeout=10):
+        try:
+            wait = WebDriverWait(self.driver, timeout=10, poll_frequency=1, ignored_exceptions=[NoSuchElementException])
+            element = wait.until(
+                ec.presence_of_element_located((By.XPATH, self.student_lastname_xpath)))
+            element.clear()
+            element.send_keys(name)
+        except TimeoutException:
+            print(f"Student's phone number input field not found within {timeout} seconds")
+
+    def input_student_email(self, email, timeout=10):
+        try:
+            wait = WebDriverWait(self.driver, timeout=10, poll_frequency=1, ignored_exceptions=[NoSuchElementException])
+            element = wait.until(
+                ec.presence_of_element_located((By.XPATH, self.student_email_xpath)))
+            element.clear()
+            element.send_keys(email)
+        except TimeoutException:
+            print(f"Student's phone number input field not found within {timeout} seconds")
+
+    def input_student_course(self, course, timeout=10):
+        try:
+            wait = WebDriverWait(self.driver, timeout=10, poll_frequency=1, ignored_exceptions=[NoSuchElementException])
+            element = wait.until(
+                ec.presence_of_element_located((By.XPATH, self.student_course_xpath)))
+            element.clear()
+            element.send_keys(course)
+        except TimeoutException:
+            print(f"Student's phone number input field not found within {timeout} seconds")
+
+    def Select_school(self, timeout=10):
+        try:
+            wait = WebDriverWait(self.driver, timeout=10, poll_frequency=1, ignored_exceptions=[NoSuchElementException])
+            element = wait.until(ec.presence_of_element_located((By.XPATH, self.student_school_xpath)))
+
+            element.click()
+        except TimeoutException:
+            print(f"Student school was not selected or seen in the dropdown within {timeout} seconds")
