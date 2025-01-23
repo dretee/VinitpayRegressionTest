@@ -46,7 +46,7 @@ class Test_Login:
         self.LO = LoginObjects(self.driver)
 
         # Click on signin link
-        self.LO.click_on_the_register_link()
+        self.LO.locate_and_click_signin_button()
         assert self.driver.title == "vnitpay", self.logger.info("*** TEST FAILED: THE PAGE PRESENTED ISN'T THE "
                                                                 "LOGIN PAGE ****")
         self.logger.info("**** TEST PASSED: THE LOGIN PAGE WAS SHOWN *****")
@@ -92,6 +92,53 @@ class Test_Login:
             self.log_test_end("******* test_valid_login_011*******")
             self.driver.quit()
 
+    def test_verify_that_user_can_navigate_to_the_signup_page(self,setup):
+        try:
+            self.log_test_start("***** test_valid_login_011 *****")
+            self.open_website(setup, self.URL)
+            self.LO = LoginObjects(self.driver)
+            self.LO.click_on_the_register_link()
+
+            text_of_body = self.driver.find_element(By.TAG_NAME, "body").text
+
+            assert "Create an account and start using vnitPay" in text_of_body, self.logger.info("*** TEST FAILED: LOGIN PROCESS FAILED ***")
+            self.logger.info("*** TEST SUCCESSFUL: USER IS REDIRECTED TO THE REGISTRATION PAGE SUCCESSFULLY ***")
+
+        except AssertionError:
+            self.logger.error("Assertion Error: Test condition failed.")
+            raise  # Re-raise the exception to indicate test failure
+
+        except Exception as e:
+            self.logger.error(f"An unexpected error occurred: {e}")
+            raise  # Re-raise the exception to indicate test failure
+
+        finally:
+            self.log_test_end("******* test_valid_login_011*******")
+            self.driver.quit()
+
+    def test_verify_that_user_can_navigate_to_the_forgot_password_page(self,setup):
+        try:
+            self.log_test_start("***** test_valid_login_011 *****")
+            self.open_website(setup, self.URL)
+            self.LO = LoginObjects(self.driver)
+            self.LO.click_on_the_forgot_password()
+
+            text_of_body = self.driver.find_element(By.TAG_NAME, "body").text
+
+            assert "Please enter your email to get a password reset link" in text_of_body, self.logger.info("*** TEST FAILED: LOGIN PROCESS FAILED ***")
+            self.logger.info("*** TEST SUCCESSFUL: USER IS REDIRECTED TO THE REGISTRATION PAGE SUCCESSFULLY ***")
+
+        except AssertionError:
+            self.logger.error("Assertion Error: Test condition failed.")
+            raise  # Re-raise the exception to indicate test failure
+
+        except Exception as e:
+            self.logger.error(f"An unexpected error occurred: {e}")
+            raise  # Re-raise the exception to indicate test failure
+
+        finally:
+            self.log_test_end("******* test_valid_login_011*******")
+            self.driver.quit()
 
     def test_All_Links_on_the_Homepage_Page_(self, setup):
         # Start the test and log the information

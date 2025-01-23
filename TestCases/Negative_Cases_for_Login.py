@@ -32,6 +32,8 @@ class Test_Login:
     # from configuration
     logger = RecordLogger.log_generator_info()  # Initialize logger instance
     PATH = ".\\TestData\\vnitpay data.xlsx"  # Excel file path
+    error_message = "//div[@class='error-div']"
+
 
     # Method to log the start of a test
     def log_test_start(self, test_name):
@@ -111,7 +113,7 @@ class Test_Login:
             self.driver.quit()
 
     # Verify that a user cannot log in with an empty password field and missing email field.
-    def test_the_login_of_users_with_missing_password_and_missing_email(self, setup):
+    def test_the_login_of_users_with_interchanging_missing_password_and_missing_email(self, setup):
         try:
             self.log_test_start("***** Verify that a user cannot log in with an empty password field and missing "
                                 "email field.*****")
@@ -147,7 +149,35 @@ class Test_Login:
             self.log_test_end("******* Verify that a user cannot log in with an empty password field. *******")
             self.driver.quit()
 
-    def test_the_login_of_users_with_email_with__special_charater(self, setup):
+
+    def test_the_login_of_users_with_missing_password_and_missing_email(self, setup):
+        try:
+            self.log_test_start("***** Verify that a user cannot log in with an empty password field and missing "
+                                "email field.*****")
+            self.open_website(setup, self.URL)
+            self.LO = LoginObjects(self.driver)
+            self.LO.input_email(" ")
+            self.LO.input_password(" ")
+            self.LO.click_on_the_signin_button()
+            time.sleep(3)
+
+            error_message = "Please enter a username and password"
+            assert error_message in self.driver.find_element(By.XPATH, self.error_message).text, self.logger.info(
+                "*** TEST FAILED: THE USER WAS LOGGED INTO THE ACCOUNT ****")
+
+        except AssertionError:
+            self.logger.error("Assertion Error: Test condition failed.")
+            raise  # Re-raise the exception to indicate test failure
+
+        except Exception as e:
+            self.logger.error(f"An unexpected error occurred: {e}")
+            raise  # Re-raise the exception to indicate test failure
+
+        finally:
+            self.log_test_end("******* Verify that a user cannot log in with an empty password field. *******")
+            self.driver.quit()
+
+    def test_the_login_of_users_with_email_with_special_character(self, setup):
         try:
             self.log_test_start(
                 "***** Verify that a user can log in with an email containing special characters.. *****")
@@ -262,3 +292,4 @@ class Test_Login:
             # Log any exceptions that occur during the test
             self.logger.error(f"Exception occurred: {str(e)}")
             assert False, f"Test failed due to exception: {str(e)}"
+

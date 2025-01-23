@@ -1,5 +1,6 @@
 import time
 
+import pytest
 from selenium.webdriver.common.by import By
 from Utilities.RecordLogger import RecordLogger
 from Utilities.ReadProperties import ReadProperties
@@ -8,8 +9,8 @@ from PageObject.SignUpObjects import SignupObjects
 from PageObject.LoginObjects import LoginObjects
 
 """
-pytest -v -s TestCases/RegisterTestCases.py --browser chrome
-pytest -v -s --html=Reports\reports1.html TestCases/RegisterTestCases.py --browser chrome
+pytest -v -s TestCases/Positive_Register_Test_Cases.py --browser chrome
+pytest -v -s --html=Reports\reports1.html TestCases/Positive_Register_Test_Cases.py --browser chrome
 """
 
 
@@ -37,128 +38,6 @@ class Test_fo_Registration_of_new_user:
         self.LO = LoginObjects(self.driver)
         return self.signUp
 
-    def test_Registration_of_Account_with_valid_Details_001(self, setup):
-        try:
-            # Navigate to the signup page
-            Page_object = self.Signup_Page_Navigator(setup)
-            self.LO.click_on_the_register_link()
-
-            # Fill in the form with valid details
-            Page_object.input_name("John Doe")
-            password = Page_object.generatePaassword()
-            email = Page_object.email_generator()
-            Page_object.input_email(email)
-            Page_object.input_password(password)
-            Page_object.input_confirm_password(password)
-
-            # Submit the form
-            Page_object.click_on_the_signup_button()
-            time.sleep(10)
-
-            # Check for the success messages
-            message1, message2 = ("Hi 👋, Welcome to vnitpay",
-                                  "Please check you email for a verification link to activate your account")
-
-            assert message1 and message2 in self.driver.find_element(By.TAG_NAME, "body").text, self.logger.info(
-                "**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***")
-            self.logger.info("***** TEST PASSED: USER'S ACCOUNT WAS CREATED *****")
-
-        except AssertionError:
-            self.logger.error("Assertion Error: User's account was not created as expected.")
-            raise  # Re-raise the exception to indicate test failure
-
-        except Exception as e:
-            self.logger.error(f"An unexpected error occurred: {e}")
-            raise  # Re-raise the exception to indicate test failure
-
-        finally:
-            self.driver.quit()
-
-    def test_Registration_of_Account_with_already_registered_email_002(self, setup):
-        try:
-            Page_object = self.Signup_Page_Navigator(setup)
-            self.LO.click_on_the_register_link()
-            Page_object.input_name("John Doe")
-            password = Page_object.generatePaassword()
-            Page_object.input_email("basseyjay11@gmail.com")
-            Page_object.input_password(password)
-            Page_object.input_confirm_password(password)
-
-            Page_object.click_on_the_signup_button()
-            time.sleep(2)
-            error_message = "User already exists"
-            assert error_message in self.driver.find_element(By.TAG_NAME, "body").text, self.logger.info(
-                "**** TEST FAILED: USER'S ACCOUNT WAS CREATED ***")
-            self.logger.info("***** TEST PASSED: USER'S ACCOUNT WAS NOT CREATED *****")
-
-        except AssertionError:
-            self.logger.error("Assertion Error: User's account was created when it should not have been.")
-            raise  # Re-raise the exception to indicate test failure
-
-        except Exception as e:
-            self.logger.error(f"An unexpected error occurred: {e}")
-            raise  # Re-raise the exception to indicate test failure
-
-        finally:
-            self.driver.quit()
-
-    def test_Registration_of_Account_with_Different_Passwords_002(self, setup):
-        try:
-            Page_object = self.Signup_Page_Navigator(setup)
-            self.LO.click_on_the_register_link()
-            Page_object.input_name("John Doe")
-            password1, password2 = Page_object.generatePaassword(), Page_object.generatePaassword()
-            email = Page_object.email_generator()
-            Page_object.input_email(email)
-            Page_object.input_password(password1)
-            Page_object.input_confirm_password(password2)
-
-            Page_object.click_on_the_signup_button()
-            time.sleep(2)
-            error_message = "Password and confirm password must match"
-            assert error_message in self.driver.find_element(By.TAG_NAME, "body").text, self.logger.info(
-                "**** TEST FAILED: USER'S ACCOUNT WAS CREATED ***")
-            self.logger.info("***** TEST PASSED: USER'S ACCOUNT WAS NOT CREATED *****")
-
-        except AssertionError:
-            self.logger.error("Assertion Error: User's account was created when it should not have been.")
-            raise  # Re-raise the exception to indicate test failure
-
-        except Exception as e:
-            self.logger.error(f"An unexpected error occurred: {e}")
-            raise  # Re-raise the exception to indicate test failure
-
-        finally:
-            self.driver.quit()
-
-    def test_Registration_of_Account_with_Password_Length_Lower_Than_6_Characters_003(self, setup):
-        try:
-            Page_object = self.Signup_Page_Navigator(setup)
-            self.LO.click_on_the_register_link()
-            Page_object.input_name("John Doe")
-            password = "Vnit?"
-            email = Page_object.email_generator()
-            Page_object.input_email(email)
-            Page_object.input_password(password)
-            Page_object.input_confirm_password(password)
-
-            Page_object.click_on_the_signup_button()
-            time.sleep(3)
-            error_message = "Password must be at least 8 characters"
-            assert error_message in self.driver.find_element(By.TAG_NAME, "body").text, self.logger.info(
-                "**** TEST FAILED: USER'S ACCOUNT WAS CREATED ***")
-            self.logger.info("***** TEST PASSED: USER'S ACCOUNT WAS NOT CREATED *****")
-
-        except AssertionError:
-            self.logger.error("Assertion Error: User's account was created when it should not have been.")
-            raise  # Re-raise the exception to indicate test failure
-
-        except Exception as e:
-            self.logger.error(f"An unexpected error occurred: {e}")
-            raise  # Re-raise the exception to indicate test failure
-
-        finally:
-            self.driver.quit()
 
     def test_Registration_of_Account_with_missing_name_001(self, setup):
         try:
@@ -244,7 +123,7 @@ class Test_fo_Registration_of_new_user:
         finally:
             self.driver.quit()
 
-    def est_Registration_of_Account_with_missing_confirm_password_001(self, setup):
+    def test_Registration_of_Account_with_missing_confirm_password_001(self, setup):
         try:
             # Navigate to the signup page
             Page_object = self.Signup_Page_Navigator(setup)
@@ -275,4 +154,42 @@ class Test_fo_Registration_of_new_user:
 
         finally:
             self.driver.quit()
+
+    test_data = [
+            ("anthony123?", "Password must contain at least one uppercase letter."),
+            ("Anthiny123", "Password must contain at least one non-alphanumeric character."),
+            ("Anthony?", "Password must contain at least one digit."),
+            ("1232345A?", "Password must contain at least one lowercase letter."),
+            ("qVRT1?", "Password must be at least 8 characters long.")
+]
+    @pytest.mark.parametrize("Password, error_message", test_data)
+    def test_verify_that_the_password_contains_all_necessary_character(self, setup, Password, error_message):
+        try:
+            Page_object = self.Signup_Page_Navigator(setup)
+            self.LO.click_on_the_register_link()
+            Page_object.input_name("John Doe")
+            Page_object.input_email(Page_object.email_generator())
+            Page_object.input_password(Password)
+            Page_object.input_confirm_password(Password)
+
+            body_text = self.driver.find_element(By.TAG_NAME, "body").text
+            assert error_message in body_text, self.logger.info("***** TEST FAILED ******")
+            self.logger.info("***** TEST PASSED ******")
+
+        except AssertionError:
+            self.logger.error("Assertion Error: User's account was created when it should not have been.")
+            raise  # Re-raise the exception to indicate test failure
+
+        except Exception as e:
+            self.logger.error(f"An unexpected error occurred: {e}")
+            raise  # Re-raise the exception to indicate test failure
+
+        finally:
+            self.driver.quit()
+
+
+
+
+
+
 
