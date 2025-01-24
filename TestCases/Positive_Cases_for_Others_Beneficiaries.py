@@ -18,16 +18,10 @@ Verify the response of the system when any of the fields are left empty
 Verify the deactivation of a other beneficiary 
 Verify the activation of a other beneficiary
 
-Verify the response of the system to a wrong reg number 
-Verify the response to an empty field of the reg number 
-Verify the response to an empty field of the vin number 
-Verify the response of the system to a wrong vin number 
-
-
 """
 
 
-class Test_Login:
+class Test_Other_Beneficiary:
     # Initialize class variables with URLs, logger instance, and Excel file path
     URL = ReadProperties.getTestPageURL()  # Get main page URL from configuration
     # loginPageUrl = ReadProperties.LoginURL()  # Get login page URL from configuration
@@ -36,6 +30,10 @@ class Test_Login:
     EXISTING_PASSWORD = UserPassword  # Get existing password
     # from configuration
     logger = RecordLogger.log_generator_info()  # Initialize logger instance
+
+    #Declear at modular level
+    Names = None
+
 
     # Method to log the start of a test
     def log_test_start(self, test_name):
@@ -57,8 +55,10 @@ class Test_Login:
         self.Login_page_objects.input_email(self.EXISTING_EMAIL)
         self.Login_page_objects.input_password(self.EXISTING_PASSWORD)
         self.Login_page_objects.click_on_the_signin_button()
-
+        First_name, Last_name = SignupObjects(self.driver).generate_names()
+        Test_Other_Beneficiary.Names = [First_name, Last_name]
         self.log_test_end("Open Website")
+
 
     def test_the_functionality_of_the_beneficiary_navigation(self, setup):
         try:
@@ -70,10 +70,17 @@ class Test_Login:
             self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
             time.sleep(5)
             self.logger.info("*****THE BENEFICIARY'S DATA LOGGING TABLE I SEEN WITH ALL THE BENEFICIARY *****")
-            Common_text_on_page = "New Beneficiary"
-            assert Common_text_on_page in self.driver.find_element(By.TAG_NAME, "body").text, self.logger.info(
+            button_text = "New Beneficiary"
+
+            assert button_text in self.driver.find_element(By.XPATH, "//button[normalize-space()='New Beneficiary']").text, self.logger.info(
                 "**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***")
             self.logger.info("***** TEST PASSED: NAVIGATION TO THE BENEFICIARY PAGE IS FUNCTIONAL *****")
+
+            self.Beneficiary_page_objects.click_on_the_new_beneficiary_button()
+            modal_name = "Select Beneficiary Type"
+            assert modal_name in self.driver.find_element(By.TAG_NAME, "body").text, self.logger.info(
+                "****TEST FAILED: THE MODAL WAS NOT FOUND FOR THE BENEFICIARY OPTIONS. ******")
+            self.logger.info("*****TEST PASSED: THE MODAL WAS FOUND AND THE NAME WAS CORRECT.*****")
 
         except AssertionError:
             self.logger.error("Assertion Error: this is not the page the user intends to go to.")
@@ -84,17 +91,17 @@ class Test_Login:
         finally:
             self.driver.quit()
 
-    def test_the_Header_on_the_other_beneficiary_form(self, setup):
+    def test_verifying_the_form_navigation_from_the_modal(self, setup):
         try:
             # Initialize Beneficiary page objects
-            self.log_test_start("Test_the_functionality_of_the_beneficiary_navigation")
+            self.log_test_start("Test_the_functionality_of_the_others_beneficiary_navigation")
             self.open_website_and_log_in_user(setup, self.URL)
 
             self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
             self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
             self.Beneficiary_page_objects.click_on_the_new_beneficiary_button()
             self.Beneficiary_page_objects.click_on_the_other_beneficiary_option()
-            time.sleep(5)
+            time.sleep(2)
 
             # CHECKING THE HEADER OF THE FORM FOR THE CREATION OF AN OTHER BENEFICIARY
             assert self.driver.find_element(By.XPATH, "//div[@id='__layout']//div//main//h2").text == "Beneficiary Details", self.logger.info(
@@ -125,7 +132,8 @@ class Test_Login:
             time.sleep(3)
             self.logger.info("***** USER INPUTS THE THE PHONE NUMBER IN THE CORRECT FIELD.******")
             # Generate the names for the creation for the names of the new users
-            First_name, Last_name = SignupObjects(self.driver).generate_names()
+
+            First_name, Last_name = Test_Other_Beneficiary.Names
             self.Beneficiary_page_objects.input_first_name(First_name)
             self.log_test_start("***** USER INPUTS THE THE FIRST NAME IN THE CORRECT FIELD.******")
             time.sleep(3)
@@ -143,6 +151,35 @@ class Test_Login:
             assert self.driver.find_element(By.XPATH, "//tbody/tr[1]/td[3]").text == name_of_beneficiary_on_table, self.logger.info(
                 "**** TEST FAILED: BENEFICIARY'S ACCOUNT WAS NOT CREATED ***")
             self.logger.info("***** TEST PASSED: BENEFICIARY'S ACCOUNT WAS CREATED *****")
+
+        except AssertionError:
+            self.logger.error("Assertion Error: User's account was not created as expected.")
+            raise
+
+        except Exception as e:
+            self.logger.error(f"An unexpected error occurred: {e}")
+            raise
+
+        finally:
+            time.sleep(3)
+            self.driver.quit()
+
+    def test_search_other_beneficiary_created(self, setup):
+        try:
+            self.log_test_start("***** TESTING THE SEARCH FUNCTIONALITY ON OTHERS BENEFICIARY.******")
+            self.open_website_and_log_in_user(setup, self.URL)
+            self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
+            self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
+
+            # Getting the name of the user that was created in the previous test case
+            First_name, Last_name = Test_Other_Beneficiary.Names
+            name_of_beneficiary_on_table = f"{First_name} {Last_name}"
+            self.Beneficiary_page_objects.click_and_input_name_of_the_Beneficiary(name_of_beneficiary_on_table)
+
+            name_on_the_search_result = self.driver.find_element(By.XPATH, "//tbody/tr[1]/td[3]").text
+
+            assert name_of_beneficiary_on_table in name_on_the_search_result, self.logger.info("TEST FAILED: THE RESULT IS NOT CORRECT FOR THE SEARCHED PARAM")
+            self.logger.info("****TEST PASSED: RESULT OF THE SEARCH WAS CORRECT****")
 
         except AssertionError:
             self.logger.error("Assertion Error: User's account was not created as expected.")
@@ -229,6 +266,15 @@ class Test_Login:
         finally:
             # Cleanup: Ensure the browser session is properly closed, even if errors occur
             self.driver.quit()
+
+    def test_verify_the_dashboard_for_Other_beneficiary(self, setup):
+        try:
+            self.log_test_start("***** TESTING THE SEARCH FUNCTIONALITY ON OTHERS BENEFICIARY.******")
+            self.open_website_and_log_in_user(setup, self.URL)
+            self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
+            self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
+
+
 
 
 

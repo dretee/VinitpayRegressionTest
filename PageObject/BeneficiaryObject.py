@@ -1,6 +1,7 @@
 from selenium import webdriver
 import time
 
+from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
@@ -10,6 +11,7 @@ from selenium.common.exceptions import TimeoutException,NoSuchElementException
 class BeneficiaryObjects:
     Beneficiary_navigation_xpath = "//a[normalize-space()='Beneficiaries']"
     New_Beneficiary_xpath = "//button[normalize-space()='New Beneficiary']"
+    Search_xpath= "//input[@placeholder='search beneficairies']"
 
     # Deactivation locators
     Deactivate_ana_activate_beneficiary_button_xpath = "//tbody/tr[1]/td[5]/button"
@@ -66,6 +68,16 @@ class BeneficiaryObjects:
             element.click()
         except TimeoutException:
             print(f"New beneficiary button field not found within {timeout} seconds")
+
+    def click_and_input_name_of_the_Beneficiary(self, Beneficiary_name, timeout=10):
+        try:
+            wait = WebDriverWait(self.driver, timeout=10, poll_frequency= 1, ignored_exceptions= [NoSuchElementException])
+            element = wait.until(ec.presence_of_element_located((By.XPATH, self.Search_xpath)))
+            element.click()
+            element.send_keys(Beneficiary_name)
+            element.send_keys(Keys.ENTER)
+        except TimeoutException:
+            print(f"Beneficiary button field not found within {timeout} seconds")
 
     def click_on_the_proceed_button(self, timeout=10):
         try:
