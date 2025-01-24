@@ -273,6 +273,26 @@ class Test_Other_Beneficiary:
             self.open_website_and_log_in_user(setup, self.URL)
             self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
             self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
+            beneficiary = self.driver.find_element(By.XPATH, "//tbody/tr[1]/td[3]")
+            beneficiary.click()
+            assert beneficiary.text in self.driver.find_element(By.XPATH, "//a[1]/h3[1]"), self.logger.infor("**** TEST FAILED: THE BOARD TITLE IS WRONG ****")
+            self.logger.info("**** TEST PASSED: BOARD TITLE IS CORRECT.****")
+
+        except AssertionError:
+            self.logger.error("Assertion Error: User's account was not created as expected.")
+            raise
+
+        except Exception as e:
+            self.logger.error(f"An unexpected error occurred: {e}")
+            raise
+
+        finally:
+            time.sleep(3)
+            self.driver.quit()
+
+
+
+
 
 
 
