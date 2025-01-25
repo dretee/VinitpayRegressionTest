@@ -19,7 +19,7 @@ Verify that the user can accept vouchers after becoming a business
 
 """
 
-class Test_Login:
+class Test_Business_positive_test_cases:
     # Initialize class variables with URLs, logger instance, and Excel file path
     URL = ReadProperties.getTestPageURL()  # Get main page URL from configuration
     # loginPageUrl = ReadProperties.LoginURL()  # Get login page URL from configuration
