@@ -9,7 +9,7 @@ from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from selenium.webdriver.support.ui import Select
 
 
-class LoginObjects:
+class BusinessObjects:
     # Locators for various elements on the business creation part
     business_xpath = "//div[@id='selected-merchant']"
     add_business_option_xpath = "//span[normalize-space()='Add business']"
