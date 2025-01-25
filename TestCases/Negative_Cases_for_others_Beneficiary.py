@@ -30,7 +30,7 @@ other vaild data.
 """
 
 
-class Test_Login:
+class Test_Others_Beneficiary_Negative:
     # Initialize class variables with URLs, logger instance, and Excel file path
     URL = ReadProperties.getTestPageURL()  # Get main page URL from configuration
     ProductionURL = ReadProperties.getProductionPageURL()

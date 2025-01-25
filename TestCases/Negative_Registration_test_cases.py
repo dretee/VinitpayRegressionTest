@@ -14,7 +14,7 @@ pytest -v -s --html=Reports\reports1.html TestCases/Positive_Register_Test_Cases
 """
 
 
-class Test_fo_Registration_of_new_user:
+class Test_for_Registration_of_New_User:
     URL = ReadProperties.getTestPageURL()  # Get main page URL from configuration
     ProductionURL = ReadProperties.getProductionPageURL()
     logger = RecordLogger.log_generator_info()
