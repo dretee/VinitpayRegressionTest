@@ -1,0 +1,223 @@
+[33mcommit 8f264c41a734033fc2ec60e14305d3fffd0fd1c0[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Tony <uyahanthony008@gmail.com>
+Date:   Sun Jan 26 00:04:49 2025 +0100
+
+    new tests on business creation
+
+[33mcommit ed3ee8fa316506e54f7d815b94f395ed52dd0fb8[m
+Author: Tony <uyahanthony008@gmail.com>
+Date:   Sat Jan 25 21:57:00 2025 +0100
+
+    Addding code for element navigation for testing the creation of businesses
+
+[33mcommit 08549d604f2b332b64c5bc37fb51399dd28a345b[m
+Author: Tony <uyahanthony008@gmail.com>
+Date:   Sat Jan 25 19:50:03 2025 +0100
+
+    Objects structure for business creation
+
+[33mcommit 8da0cfdb384b6424861b9b08345d0d750fb7adce[m
+Author: Anthony <uyahanthony2@gmail.com>
+Date:   Sat Jan 25 15:41:31 2025 +0100
+
+    Negative test cases for the creation of the students
+
+[33mcommit 724e2f4033dbf89c69f0d17a0a98655b3b47be7f[m
+Author: Anthony <uyahanthony2@gmail.com>
+Date:   Sat Jan 25 14:20:07 2025 +0100
+
+    Revamped student beneficiary test cases
+
+[33mcommit 0fd8e801e31e3d1633846803114417828e451867[m
+Author: Anthony <uyahanthony2@gmail.com>
+Date:   Fri Jan 24 20:50:12 2025 +0100
+
+    Revamping of the negative tests
+
+[33mcommit 968a7749023b485ce06758057fef36496d29a875[m
+Author: Anthony <uyahanthony2@gmail.com>
+Date:   Fri Jan 24 19:56:23 2025 +0100
+
+    New modifications on the positive tests for beneficiary
+
+[33mcommit cb481be02422fc51acbdf3891ea2aba16296d0ec[m
+Author: Tony <uyahanthony008@gmail.com>
+Date:   Thu Jan 23 20:32:49 2025 +0100
+
+    Structured test cases for the registration screen
+
+[33mcommit 7dafbec6e2810181695afb50436f4e71c9205b5d[m[33m ([m[1;32mTest_cases/Terminal_Test_cases1[m[33m)[m
+Merge: 7ff3823 2b0800a
+Author: Tony <uyahanthony008@gmail.com>
+Date:   Thu Jan 23 20:26:14 2025 +0100
+
+    Merge branch 'main' into Test_cases/Terminal_Test_cases1
+
+[33mcommit 2b0800ac52d4dbd084c2daa7f45228f7c4fc2069[m
+Merge: 0687d1e 287f69b
+Author: Tony <uyahanthony008@gmail.com>
+Date:   Thu Jan 23 19:47:36 2025 +0100
+
+    Resolving confilts
+
+[33mcommit 7ff3823b21ff2a6c1b76eda3dda50f9941c1ab93[m[33m ([m[1;32mTest_cases/Terminal_Test_cases[m[33m)[m
+Author: Tony <uyahanthony008@gmail.com>
+Date:   Thu Jan 23 19:41:37 2025 +0100
+
+    Save chnages on the test cases
+
+[33mcommit ffa95cb8aba831ea6356d118036a62abd94ecd9f[m
+Author: Tony <uyahanthony008@gmail.com>
+Date:   Wed Jan 15 22:54:56 2025 +0100
+
+    New tests
+
+[33mcommit 287f69b3f19a9d16c18a3d05fd9dde0d91bd1b61[m[33m ([m[1;31morigin/Test_cases/Students_Beneficiary_cases[m[33m, [m[1;32mTest_cases/Students_Beneficiary_cases[m[33m)[m
+Author: Tony <uyahanthony008@gmail.com>
+Date:   Sun Sep 8 23:34:12 2024 +0100
+
+     Additional negative test cases to the student creation test cases
+
+[33mcommit 8fa6968fc587b50c8584e82e3d4898278fa5d4e3[m
+Author: Tony <uyahanthony008@gmail.com>
+Date:   Sun Sep 8 22:48:34 2024 +0100
+
+    Additions
+
+[33mcommit 0687d1ef249f11c0431925647c75d600eaa4c4a3[m
+Author: Tony <uyahanthony008@gmail.com>
+Date:   Sun Sep 8 21:44:36 2024 +0100
+
+    Postive cases
+
+[33mcommit eb0309c00d40671b95de791b2f54717d4d30f961[m
+Author: Tony <uyahanthony008@gmail.com>
+Date:   Sun Sep 8 21:44:36 2024 +0100
+
+    Postive cases
+
+[33mcommit 61ab9693640e7c4ac9076e12f3061d359ab92d06[m
+Author: Tony <uyahanthony008@gmail.com>
+Date:   Sun Sep 8 20:51:29 2024 +0100
+
+    Naming conventions
+
+[33mcommit 8b5e85b711a96c3bdad74b52292dbe7b684c90a3[m
+Author: Tony <uyahanthony008@gmail.com>
+Date:   Sun Sep 8 20:48:40 2024 +0100
+
+    Applying new naming convention
+
+[33mcommit 2105ab4b8278537958a0da59c5a5d728d8d5ec99[m
+Author: Tony <uyahanthony008@gmail.com>
+Date:   Sun Sep 8 20:40:33 2024 +0100
+
+    updates
+
+[33mcommit 22a86a33cdeb40eeba47b43a00add872f9414320[m
+Author: Tony <uyahanthony008@gmail.com>
+Date:   Wed Sep 4 00:39:31 2024 +0100
+
+    New test case for a negative input in the name field
+
+[33mcommit 2cb38af9892606504cc125516e3ee52215b0cf38[m
+Author: Tony <uyahanthony008@gmail.com>
+Date:   Wed Sep 4 00:11:30 2024 +0100
+
+    Correction of all the logging information of the testcases
+
+[33mcommit 9eb1d4f5fc262f53d1d8e70eb1dcbd66a3bfe3e2[m
+Author: Tony <uyahanthony008@gmail.com>
+Date:   Tue Sep 3 23:51:33 2024 +0100
+
+     Newer testcase added
+
+[33mcommit 311766e90cdf2d7eb4a28d9323bd3c3246d68117[m
+Author: Tony <uyahanthony008@gmail.com>
+Date:   Tue Sep 3 22:54:06 2024 +0100
+
+     New commit for the negative test cases
+
+[33mcommit 1e0426ee8dd9971a8c27d40f94da19eda434dbd3[m
+Author: Tony <uyahanthony008@gmail.com>
+Date:   Tue Sep 3 22:33:17 2024 +0100
+
+    Additional test case for the creation of other benefifciary. This is both having negative and positive testcases
+
+[33mcommit 3c964d52de736c24208bdf98317eb1226dbf191d[m
+Author: Tony <uyahanthony008@gmail.com>
+Date:   Tue Sep 3 00:01:48 2024 +0100
+
+    Modification for both the beneficiary test cases and the test object file
+
+[33mcommit cfe751c8fa91827af0cb5905e6ec7cc05ca9b374[m
+Author: Tony <uyahanthony008@gmail.com>
+Date:   Wed Aug 7 12:13:13 2024 +0100
+
+    updates
+
+[33mcommit cc8273752dcb86d0cb4b2a35f057acd711c0df58[m
+Author: Tony <uyahanthony008@gmail.com>
+Date:   Wed Aug 7 10:32:53 2024 +0100
+
+    updates
+
+[33mcommit 783c9c842c38621b9becb6e3373c798053e5efee[m
+Author: Tony <uyahanthony008@gmail.com>
+Date:   Tue Aug 6 12:51:29 2024 +0100
+
+    updates
+
+[33mcommit 240cc74bab290e2210b431e0ec578c001276d48e[m
+Author: Tony <uyahanthony008@gmail.com>
+Date:   Tue Aug 6 11:32:53 2024 +0100
+
+    updates
+
+[33mcommit 61de2ead9c957b294a1759e90156fc795300f003[m
+Author: Tony <uyahanthony008@gmail.com>
+Date:   Tue Aug 6 11:05:24 2024 +0100
+
+    updates
+
+[33mcommit 86ea9a9d8b4b42d3b37acb6cb653b52c6cef3490[m
+Author: Tony <uyahanthony008@gmail.com>
+Date:   Tue Aug 6 10:41:07 2024 +0100
+
+    updates
+
+[33mcommit ac51dae466a9adaa36f5f3714c95af411acb7100[m
+Author: Tony <uyahanthony008@gmail.com>
+Date:   Tue Aug 6 09:47:43 2024 +0100
+
+    updates
+
+[33mcommit 779be07b2a2946b73fa83f6daad73ad281598d40[m
+Author: Tony <uyahanthony008@gmail.com>
+Date:   Mon Aug 5 20:14:30 2024 +0100
+
+    updates
+
+[33mcommit b30e11966f30c1dee01f3e35c78d3cdec55bdf6e[m
+Author: Tony <uyahanthony008@gmail.com>
+Date:   Mon Aug 5 19:48:36 2024 +0100
+
+    updates
+
+[33mcommit acfc131b86f9e2da5822006b68401ded97e73355[m
+Author: Tony <uyahanthony008@gmail.com>
+Date:   Mon Aug 5 19:27:27 2024 +0100
+
+    updates
+
+[33mcommit 7e8c59ce54486fa93abb2f6c2c16bd2d2da4587d[m
+Author: Tony <uyahanthony008@gmail.com>
+Date:   Mon Aug 5 18:38:50 2024 +0100
+
+    updates
+
+[33mcommit e3afe71e2b5894f0cc371578bf4f455aacee7da7[m
+Author: Tony <uyahanthony008@gmail.com>
+Date:   Mon Jul 22 15:41:14 2024 +0100
+
+    New Project

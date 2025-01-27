@@ -31,6 +31,9 @@ class Test_Business_positive_test_cases:
     # from configuration
     logger = RecordLogger.log_generator_info()  # Initialize logger instance
 
+    # initialize the  name of the business
+    name_Of_created_business = None
+
     # Method to log the start of a test
     def log_test_start(self, test_name):
         self.logger.info(f"****** STARTING TEST: {test_name} ******")
@@ -53,23 +56,25 @@ class Test_Business_positive_test_cases:
         self.Login_page_objects.click_on_the_signin_button()
 
         self.log_test_end("Open Website")
-
+    """
+    Test the creation of all kind of business in the system. There are 12 kinds and they can be opened in all states  in nigeria
+    """
     test_data = [
-        ("School","Nigeria","Abia"),
-        ("Gas Station", "Nigeria","Akwa Ibom"),
-        ("Super Market", "Nigeria","Gombe" ),
-        ("Air Line", "Nigeria","Lagos"),
-        ("Mechanic Workshop", "Nigeria","Imo"),
-        ("Towing Vehicle", "Nigeria","Delta"),
-        ("University", "Nigeria","Kogi"),
-        ("Restaurant","Nigeria","Jos"),
-        ("Agro Vendor", "Nigeria","Oyo"),
-        ("Car Park", "Nigeria","Ogun"),
-        ("Others", "Nigeria","Cross River")
+        (1, "Gas Station", 1),
+        (2, "Super Market", 2),
+        (3, "Air Line", 3),
+        (4, "Mechanic Workshop", 4),
+        (5, "Towing Vehicle", 5),
+        (6, "University", 6),
+        (7, "School", 7),
+        (8, "Restaurant", 8),
+        (9, "Agro Vendor", 9),
+        (10, "Car Park", 10),
+        (11, "Others", 11)
     ]
 
-    @pytest.mark.parametrize("Category, country, state", test_data)
-    def test_that_a_student_can_become_beneficiary(self, setup, Category, country, state):
+    @pytest.mark.parametrize("number_associated_with_business, Type_of_business, State_located", test_data)
+    def test_verify_that_a_new_business_can_be_created(self, setup, number_associated_with_business, Type_of_business, State_located):
         try:
             # Initialize Beneficiary page objects
             self.log_test_start("")
@@ -79,33 +84,43 @@ class Test_Business_positive_test_cases:
 
             # Assert that the navigation to a modal is correct
             modal_header = "Hi, Let's setup your business"
-            assert modal_header == self.Business_Objects.business_creation_modal_message_xpath, self.logger.info("**** TEST FAILED: THE NAVIGATION WAS WRONG")
+            assert modal_header == self.driver.find_element(By.XPATH, self.Business_Objects.business_creation_modal_message_xpath).text, self.logger.info("**** TEST FAILED: THE NAVIGATION WAS WRONG")
             self.logger.info("*****TEST PASSED: THE MODAL TITLE IS CORRECT*****")
 
-            self.Business_Objects.locate_and_input_business_name()
-            self.Business_Objects.select_a_business_and_check(Category)
-            self.Business_Objects.input_the_description_text(f"This is a {Category} business. And will be using Vnitpay business feature for its day to day tracking")
+            Test_Business_positive_test_cases.name_Of_created_business = self.Business_Objects.locate_and_input_business_name()
+
+
+            self.Business_Objects.input_the_description_text(
+                f"This is a {Type_of_business} business. And will be using Vnitpay business feature for its day to day tracking")
+
+            self.Business_Objects.select_a_category_from_all_the_options(number_associated_with_business)
+
             self.Business_Objects.click_on_the_next_button()
 
             # next modal to complete the creation
 
-            self.Business_Objects.select_a_country_from_all_the_options(country)
-            self.Business_Objects.select_a_province_from_all_the_options(state)
-            self.Business_Objects.input_the_address_of_the_user(f"NO 6 Adewunmi close Agbara estate {state} state")
+            self.Business_Objects.select_a_country_from_all_the_options()
+            self.Business_Objects.select_a_province_from_all_the_options(State_located)
+            self.Business_Objects.input_the_address_of_the_user("NO 6 Adewunmi close Agbara estate")
             self.Business_Objects.click_on_the_create_business_button()
+            time.sleep(5)
+            body_text = self.driver.find_element(By.TAG_NAME, "body").text
 
-            assert "success" in self.driver.find_element(By.TAG_NAME, "body"),  self.logger.info("**** TEST FAILED: THE BUSINESS WAS NOT CREATED.*****")
-                self.logger.info("*****TEST PASSED: THE BUSINESS WAS CREATED AND THE USER GOT THE SUCCESS MESSAGE POP UP*****")
+            assert Test_Business_positive_test_cases.name_Of_created_business  in body_text,  self.logger.info("**** TEST FAILED: THE BUSINESS WAS NOT CREATED.*****")
+            self.logger.info("*****TEST PASSED: THE BUSINESS WAS CREATED AND THE USER GOT THE SUCCESS MESSAGE POP UP*****")
 
-            # Checking that the business was created and can be searched for on the business list on the application
+        except AssertionError:
+            self.logger.error("Assertion Error: this is not the page the user intends to go to.")
+            raise
+        except Exception as e:
+            self.logger.error(f"An unexpected error occurred: {e}")
+            raise
+        finally:
+            self.driver.quit()
 
 
+    # Checking that the business was created and can be searched for on the business list on the application
 
-    def test_verify_that_the_board_for_the_new_business_can_be_navigated_to(self, setup):
-        try:
-            # Initialize Beneficiary page objects
-            self.log_test_start("Tes")
-            self.open_website_and_log_in_user(setup, self.URL)
-            self.Business_Objects = BusinessObjects(self.driver)
+
 
 
