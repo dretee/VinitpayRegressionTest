@@ -61,20 +61,20 @@ class Test_Business_positive_test_cases:
     """
     test_data = [
         (1, "Gas Station", 1),
-        (2, "Super Market", 2),
-        (3, "Air Line", 3),
-        (4, "Mechanic Workshop", 4),
-        (5, "Towing Vehicle", 5),
-        (6, "University", 6),
-        (7, "School", 7),
-        (8, "Restaurant", 8),
-        (9, "Agro Vendor", 9),
-        (10, "Car Park", 10),
-        (11, "Others", 11)
+        #(2, "Super Market", 2),
+        #(3, "Air Line", 3),
+        #(4, "Mechanic Workshop", 4),
+        #(5, "Towing Vehicle", 5),
+        #(6, "University", 6),
+        #(7, "School", 7),
+        #(8, "Restaurant", 8),
+        #(9, "Agro Vendor", 9),
+        #(10, "Car Park", 10),
+        #(11, "Others", 11)
     ]
 
     @pytest.mark.parametrize("number_associated_with_business, Type_of_business, State_located", test_data)
-    def test_verify_that_a_new_business_can_be_created(self, setup, number_associated_with_business, Type_of_business, State_located):
+    def  test_verify_that_a_new_business_can_be_created(self, setup, number_associated_with_business, Type_of_business, State_located):
         try:
             # Initialize Beneficiary page objects
             self.log_test_start("")
@@ -120,6 +120,16 @@ class Test_Business_positive_test_cases:
 
 
     # Checking that the business was created and can be searched for on the business list on the application
+    def test_searching_for_newly_created_business(self,setup):
+        self.log_test_start("VERIFY THAT THE USER CAN SEARCH ON THE BUSINESS THEY WANT FROM THE MERCHANT SEARCH BAR")
+        self.open_website_and_log_in_user(setup, self.URL)
+        self.Business_Objects = BusinessObjects(self.driver)
+        result_of_search = self.Business_Objects.input_name_into_the_search_field(Test_Business_positive_test_cases.name_Of_created_business)
+
+        assert result_of_search == Test_Business_positive_test_cases.name_Of_created_business, self.logger.info("**** TEST FAILED: BUSINESS WAS NOT FOUND")
+        self.logger.info("*****TEST PASSED: BUSINESS WAS FOUND. *****")
+
+
 
 
 

@@ -1,5 +1,6 @@
 import random
 
+from pycparser.ply.yacc import resultlimit
 from selenium import webdriver
 import time
 from selenium.webdriver.common.by import By
@@ -21,8 +22,9 @@ class BusinessObjects:
     category_list_xpath = "//div[@id='modals']//li[1]"
     description_input_xpath = "//textarea[@placeholder='tell us about your business']"
     next_button_xpath = "//button[normalize-space()='Next']"
-    search_field_xpath = "//div[@class='input-group']"
+    search_field_xpath = "//input[@type='text']"
     list_of_businesses = "//div[@class='dropdown-menu']//ul"
+    first_result_on_list_xpath = "//div[@class='dropdown-menu']//ul[1]/li[1]"
 
     #page after the first
     back_button_xpath = "//button[normalize-space()='Back']"
@@ -167,6 +169,10 @@ class BusinessObjects:
             username.click()
             locate_search_field = wait.until(ec.presence_of_element_located((By.XPATH, self.search_field_xpath)))
             locate_search_field.send_keys(search_param)
+
+            # Get the name of the result and return it
+            result_of_search = wait.until(ec.presence_of_element_located((By.XPATH, self.first_result_on_list_xpath))).text
+            return result_of_search
 
         except TimeoutException:
             print(f"The search field was not found within {timeout} seconds")
