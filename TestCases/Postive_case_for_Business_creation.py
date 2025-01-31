@@ -2,13 +2,11 @@
 import time
 
 import pytest
-import requests
-from Utilities import ReadXyfile
 from selenium.webdriver.common.by import By
 from Utilities.RecordLogger import RecordLogger
 from Utilities.ReadProperties import ReadProperties
 from PageObject.LoginObjects import LoginObjects
-from PageObject.SignUpObjects import SignupObjects
+
 from PageObject.BusinessObjects import BusinessObjects
 
 # to run the test use:   pytest -v -s TestCases/Negative_Login_Test_Case.py--browser chrome to run and also generate
@@ -61,16 +59,16 @@ class Test_Business_positive_test_cases:
     """
     test_data = [
         (1, "Gas Station", 1),
-        #(2, "Super Market", 2),
-        #(3, "Air Line", 3),
-        #(4, "Mechanic Workshop", 4),
-        #(5, "Towing Vehicle", 5),
-        #(6, "University", 6),
-        #(7, "School", 7),
-        #(8, "Restaurant", 8),
-        #(9, "Agro Vendor", 9),
-        #(10, "Car Park", 10),
-        #(11, "Others", 11)
+        (2, "Super Market", 2),
+        (3, "Air Line", 3),
+        (4, "Mechanic Workshop", 4),
+        (5, "Towing Vehicle", 5),
+        (6, "University", 6),
+        (7, "School", 7),
+        (8, "Restaurant", 8),
+        (9, "Agro Vendor", 9),
+        (10, "Car Park", 10),
+        (11, "Others", 11)
     ]
 
     @pytest.mark.parametrize("number_associated_with_business, Type_of_business, State_located", test_data)
