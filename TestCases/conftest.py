@@ -32,7 +32,7 @@ def log_test_start(self, test_name):
 
 
 
-pytest.fixture()
+@pytest.fixture()
     # Method to log the end of a test
 def log_test_end(self, test_name):
         self.logger.info(f"****** ENDING TEST: {test_name} ******")
