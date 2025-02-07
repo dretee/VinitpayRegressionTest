@@ -23,26 +23,11 @@ class Test_Login:
     # from configuration
     logger = RecordLogger.log_generator_info()  # Initialize logger instance
 
-    # Method to log the start of a test
-    def log_test_start(self, test_name):
-        self.logger.info(f"****** STARTING TEST: {test_name} ******")
-
-    # Method to log the end of a test
-    def log_test_end(self, test_name):
-        self.logger.info(f"****** ENDING TEST: {test_name} ******")
-
-    # Method to open the website
-    def open_website(self, setup, url):
-        self.log_test_start("Open Website")
-        self.driver = setup
-        self.driver.get(url)
-        self.driver.maximize_window()
-        self.log_test_end("Open Website")
 
     # Test functionality of the signin link
-    def test_functionality_of_the_signin_link_01_A(self, setup):
-        self.log_test_start("**** For checking the title of the login page *****")
-        self.open_website(setup, self.URL)
+    def test_functionality_of_the_signin_link_01_A(self, setup, open_website,log_test_end):
+        open_website(self.ProductionURL)
+        self.driver = setup
         self.LO = LoginObjects(self.driver)
 
         # Click on signin link
@@ -50,15 +35,16 @@ class Test_Login:
         assert self.driver.title == "vnitpay", self.logger.info("*** TEST FAILED: THE PAGE PRESENTED ISN'T THE "
                                                                 "LOGIN PAGE ****")
         self.logger.info("**** TEST PASSED: THE LOGIN PAGE WAS SHOWN *****")
-        self.log_test_end("**** test_functionality_of_the_signin_link_010 *****")
+        log_test_end("**** test_functionality_of_the_signin_link_010 *****")
         self.driver.quit()
 
     # Test valid login. Verify that a user can successfully log in with valid credentials and log out.
 
-    def test_valid_login_001_B(self, setup):
+    def test_valid_login_001_B(self, setup, open_website, log_test_end):
         try:
-            self.log_test_start("***** test_valid_login_011 *****")
-            self.open_website(setup, self.URL)
+            # website automatically open because it is a fixture
+            open_website(self.URL)
+            self.driver = setup
             self.LO = LoginObjects(self.driver)
             self.logger.info("***** input the email and the password into the necessary fields *****")
             self.LO.input_email(self.EXISTING_EMAIL)
@@ -70,9 +56,9 @@ class Test_Login:
                              " check for the presence of the welcome message "
                              "*****")
 
-            text_of_body = self.driver.find_element(By.TAG_NAME, "body").text
+            Salutory_message = self.driver.find_element(By.XPATH, "//div[1]/section[1]/div[1]/h2[1]").text
 
-            assert "Hi, Bassey Jay 👋" in text_of_body, self.logger.info("*** TEST FAILED: LOGIN PROCESS FAILED ***")
+            assert "Hi, Homo lover 👋" in Salutory_message, self.logger.info("*** TEST FAILED: LOGIN PROCESS FAILED ***")
             self.logger.info("*** TEST SUCCESSFUL: LOGIN PROCESS SUCCESSFUL ***")
 
             self.LO.click_on_the_logout_button()
@@ -89,19 +75,20 @@ class Test_Login:
             raise  # Re-raise the exception to indicate test failure
 
         finally:
-            self.log_test_end("******* test_valid_login_011*******")
+            log_end = log_test_end
+            log_end("**** TEST ENDED: VALID LOG IN TEST CASES *****")
             self.driver.quit()
 
-    def test_verify_that_user_can_navigate_to_the_signup_page(self,setup):
+    def test_verify_that_user_can_navigate_to_the_signup_page(self,setup, open_website, log_test_end):
         try:
-            self.log_test_start("***** test_valid_login_011 *****")
-            self.open_website(setup, self.URL)
+            open_website(self.URL)
+            self.driver = setup
             self.LO = LoginObjects(self.driver)
             self.LO.click_on_the_register_link()
+            time.sleep(2)
+            text_of_body = self.driver.find_element(By.XPATH, "//main[1]/div[1]/div[2]/div[1]/p[1]").text
 
-            text_of_body = self.driver.find_element(By.TAG_NAME, "body").text
-
-            assert "Create an account and start using vnitPay" in text_of_body, self.logger.info("*** TEST FAILED: LOGIN PROCESS FAILED ***")
+            assert "Create an account and start using vnitPay" == text_of_body, self.logger.info("*** TEST FAILED: LOGIN PROCESS FAILED ***")
             self.logger.info("*** TEST SUCCESSFUL: USER IS REDIRECTED TO THE REGISTRATION PAGE SUCCESSFULLY ***")
 
         except AssertionError:
@@ -113,19 +100,19 @@ class Test_Login:
             raise  # Re-raise the exception to indicate test failure
 
         finally:
-            self.log_test_end("******* test_valid_login_011*******")
+            log_test_end("******* test_valid_login_011*******")
             self.driver.quit()
 
-    def test_verify_that_user_can_navigate_to_the_forgot_password_page(self,setup):
+    def test_verify_that_user_can_navigate_to_the_forgot_password_page(self,setup, open_website, log_test_end):
         try:
-            self.log_test_start("***** test_valid_login_011 *****")
-            self.open_website(setup, self.URL)
+            open_website(self.URL)
+            self.driver = setup
             self.LO = LoginObjects(self.driver)
             self.LO.click_on_the_forgot_password()
 
-            text_of_body = self.driver.find_element(By.TAG_NAME, "body").text
+            text_of_body = self.driver.find_element(By.XPATH, "//main[1]/div[1]/div[2]/div[1]/p[1]").text
 
-            assert "Please enter your email to get a password reset link" in text_of_body, self.logger.info("*** TEST FAILED: LOGIN PROCESS FAILED ***")
+            assert "Please enter your email to get a password reset link" == text_of_body, self.logger.info("*** TEST FAILED: LOGIN PROCESS FAILED ***")
             self.logger.info("*** TEST SUCCESSFUL: USER IS REDIRECTED TO THE REGISTRATION PAGE SUCCESSFULLY ***")
 
         except AssertionError:
@@ -137,19 +124,18 @@ class Test_Login:
             raise  # Re-raise the exception to indicate test failure
 
         finally:
-            self.log_test_end("******* test_valid_login_011*******")
+            log_test_end("******* test_valid_login_011*******")
             self.driver.quit()
 
-    def test_All_Links_on_the_Homepage_Page_(self, setup):
+    def test_All_Links_on_the_Homepage_Page_(self, setup, open_website):
         # Start the test and log the information
         try:
             self.logger.info("************** TEST START **************")
             self.logger.info("*************** Login Page Links Functionality Verification *********** ")
 
             # Initialize the WebDriver
-            self.open_website(setup, self.ProductionURL)
-            time.sleep(3)
-
+            open_website(self.ProductionURL)
+            self.driver = setup
             # Get all links on the page
             all_links = self.driver.find_elements(By.TAG_NAME, "a")
             self.logger.info(f"The total number of links on this page is {len(all_links)}")

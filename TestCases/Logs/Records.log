@@ -1,0 +1,281 @@
+06/02/2025 10:08:28 PM: INFO: ****** STARTING TEST: Open Test ******
+06/02/2025 10:08:35 PM: ERROR: An unexpected error occurred: 'NoneType' object is not callable
+06/02/2025 10:08:35 PM: INFO: ****** ENDING TEST: **** TEST ENDED: VALID LOG IN TEST CASES ***** ******
+06/02/2025 10:14:19 PM: INFO: ****** STARTING TEST: Open Test ******
+06/02/2025 10:14:27 PM: ERROR: An unexpected error occurred: 'Test_Login' object has no attribute 'driver'
+06/02/2025 10:14:27 PM: INFO: ****** ENDING TEST: **** TEST ENDED: VALID LOG IN TEST CASES ***** ******
+06/02/2025 10:16:53 PM: INFO: ****** STARTING TEST: **** For checking the title of the login page ***** ******
+06/02/2025 10:16:53 PM: INFO: ****** STARTING TEST: Open Website ******
+06/02/2025 10:17:00 PM: INFO: ****** ENDING TEST: Open Website ******
+06/02/2025 10:17:10 PM: INFO: **** TEST PASSED: THE LOGIN PAGE WAS SHOWN *****
+06/02/2025 10:17:10 PM: INFO: ****** ENDING TEST: **** test_functionality_of_the_signin_link_010 ***** ******
+06/02/2025 10:18:44 PM: INFO: ****** STARTING TEST: **** For checking the title of the login page ***** ******
+06/02/2025 10:18:44 PM: INFO: ****** STARTING TEST: Open Website ******
+06/02/2025 10:19:17 PM: INFO: ****** ENDING TEST: Open Website ******
+06/02/2025 10:19:22 PM: INFO: **** TEST PASSED: THE LOGIN PAGE WAS SHOWN *****
+06/02/2025 10:19:22 PM: INFO: ****** ENDING TEST: **** test_functionality_of_the_signin_link_010 ***** ******
+06/02/2025 10:21:03 PM: INFO: ****** STARTING TEST: Open Test ******
+06/02/2025 10:21:11 PM: ERROR: An unexpected error occurred: 'Test_Login' object has no attribute 'driver'
+06/02/2025 10:21:11 PM: INFO: ****** ENDING TEST: **** TEST ENDED: VALID LOG IN TEST CASES ***** ******
+06/02/2025 10:23:50 PM: INFO: ****** STARTING TEST: Open Test ******
+06/02/2025 10:24:04 PM: INFO: ***** input the email and the password into the necessary fields *****
+06/02/2025 10:24:06 PM: INFO: ***** Click on the login button *****
+06/02/2025 10:24:11 PM: INFO: ***** Collect the entire text of the page body and check for the presence of the welcome message *****
+06/02/2025 10:24:11 PM: INFO: *** TEST FAILED: LOGIN PROCESS FAILED ***
+06/02/2025 10:24:11 PM: ERROR: Assertion Error: Test condition failed.
+06/02/2025 10:24:11 PM: INFO: ****** ENDING TEST: **** TEST ENDED: VALID LOG IN TEST CASES ***** ******
+06/02/2025 10:25:44 PM: INFO: ****** STARTING TEST: Open Test ******
+06/02/2025 10:26:04 PM: INFO: ***** input the email and the password into the necessary fields *****
+06/02/2025 10:26:04 PM: INFO: ***** Click on the login button *****
+06/02/2025 10:26:08 PM: INFO: ***** Collect the entire text of the page body and check for the presence of the welcome message *****
+06/02/2025 10:26:08 PM: INFO: *** TEST FAILED: LOGIN PROCESS FAILED ***
+06/02/2025 10:26:08 PM: ERROR: Assertion Error: Test condition failed.
+06/02/2025 10:26:08 PM: INFO: ****** ENDING TEST: **** TEST ENDED: VALID LOG IN TEST CASES ***** ******
+06/02/2025 10:31:39 PM: INFO: ****** STARTING TEST: Open Test ******
+06/02/2025 10:31:46 PM: INFO: ***** input the email and the password into the necessary fields *****
+06/02/2025 10:31:47 PM: INFO: ***** Click on the login button *****
+06/02/2025 10:31:51 PM: INFO: ***** Collect the entire text of the page body and check for the presence of the welcome message *****
+06/02/2025 10:31:55 PM: INFO: *** TEST FAILED: LOGIN PROCESS FAILED ***
+06/02/2025 10:31:55 PM: ERROR: Assertion Error: Test condition failed.
+06/02/2025 10:31:55 PM: INFO: ****** ENDING TEST: **** TEST ENDED: VALID LOG IN TEST CASES ***** ******
+06/02/2025 10:32:51 PM: INFO: ****** STARTING TEST: Open Test ******
+06/02/2025 10:32:54 PM: INFO: ***** input the email and the password into the necessary fields *****
+06/02/2025 10:32:55 PM: INFO: ***** Click on the login button *****
+06/02/2025 10:32:59 PM: INFO: ***** Collect the entire text of the page body and check for the presence of the welcome message *****
+06/02/2025 10:32:59 PM: INFO: *** TEST SUCCESSFUL: LOGIN PROCESS SUCCESSFUL ***
+06/02/2025 10:33:10 PM: INFO: **** TEST PASSED: LOGOUT PROCESS SUCCESSFUL *****
+06/02/2025 10:33:10 PM: INFO: ****** ENDING TEST: **** TEST ENDED: VALID LOG IN TEST CASES ***** ******
+07/02/2025 08:17:45 AM: INFO: ****** STARTING TEST: Open Test ******
+07/02/2025 08:17:54 AM: INFO: ***** input the email and the password into the necessary fields *****
+07/02/2025 08:17:54 AM: INFO: ***** Click on the login button *****
+07/02/2025 08:17:59 AM: INFO: ***** Collect the entire text of the page body and check for the presence of the welcome message *****
+07/02/2025 08:17:59 AM: ERROR: An unexpected error occurred: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//div[1]/section[1]/div[1]/h2[1]"}
+  (Session info: chrome=132.0.6834.160); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF76DAA02F5+28725]
+	(No symbol) [0x00007FF76DA02AE0]
+	(No symbol) [0x00007FF76D89510A]
+	(No symbol) [0x00007FF76D8E93D2]
+	(No symbol) [0x00007FF76D8E95FC]
+	(No symbol) [0x00007FF76D933407]
+	(No symbol) [0x00007FF76D90FFEF]
+	(No symbol) [0x00007FF76D930181]
+	(No symbol) [0x00007FF76D90FD53]
+	(No symbol) [0x00007FF76D8DA0E3]
+	(No symbol) [0x00007FF76D8DB471]
+	GetHandleVerifier [0x00007FF76DDCF30D+3366989]
+	GetHandleVerifier [0x00007FF76DDE12F0+3440688]
+	GetHandleVerifier [0x00007FF76DDD78FD+3401277]
+	GetHandleVerifier [0x00007FF76DB6AAAB+858091]
+	(No symbol) [0x00007FF76DA0E74F]
+	(No symbol) [0x00007FF76DA0A304]
+	(No symbol) [0x00007FF76DA0A49D]
+	(No symbol) [0x00007FF76D9F8B69]
+	BaseThreadInitThunk [0x00007FFB0E2E7374+20]
+	RtlUserThreadStart [0x00007FFB0E4FCC91+33]
+
+07/02/2025 08:17:59 AM: INFO: ****** ENDING TEST: **** TEST ENDED: VALID LOG IN TEST CASES ***** ******
+07/02/2025 08:18:38 AM: INFO: ****** STARTING TEST: Open Test ******
+07/02/2025 08:18:54 AM: INFO: ***** input the email and the password into the necessary fields *****
+07/02/2025 08:18:55 AM: INFO: ***** Click on the login button *****
+07/02/2025 08:18:59 AM: INFO: ***** Collect the entire text of the page body and check for the presence of the welcome message *****
+07/02/2025 08:18:59 AM: INFO: *** TEST SUCCESSFUL: LOGIN PROCESS SUCCESSFUL ***
+07/02/2025 08:19:10 AM: INFO: **** TEST PASSED: LOGOUT PROCESS SUCCESSFUL *****
+07/02/2025 08:19:10 AM: INFO: ****** ENDING TEST: **** TEST ENDED: VALID LOG IN TEST CASES ***** ******
+07/02/2025 08:26:33 AM: INFO: ****** STARTING TEST: Open Test ******
+07/02/2025 08:26:56 AM: INFO: **** TEST PASSED: THE LOGIN PAGE WAS SHOWN *****
+07/02/2025 08:26:56 AM: INFO: ****** ENDING TEST: **** test_functionality_of_the_signin_link_010 ***** ******
+07/02/2025 08:27:01 AM: INFO: ****** STARTING TEST: Open Test ******
+07/02/2025 08:27:06 AM: INFO: ***** input the email and the password into the necessary fields *****
+07/02/2025 08:27:07 AM: INFO: ***** Click on the login button *****
+07/02/2025 08:27:11 AM: INFO: ***** Collect the entire text of the page body and check for the presence of the welcome message *****
+07/02/2025 08:27:11 AM: INFO: *** TEST SUCCESSFUL: LOGIN PROCESS SUCCESSFUL ***
+07/02/2025 08:27:22 AM: INFO: **** TEST PASSED: LOGOUT PROCESS SUCCESSFUL *****
+07/02/2025 08:27:22 AM: INFO: ****** ENDING TEST: **** TEST ENDED: VALID LOG IN TEST CASES ***** ******
+07/02/2025 08:27:28 AM: INFO: ****** STARTING TEST: Open Test ******
+07/02/2025 08:27:31 AM: ERROR: An unexpected error occurred: 'Test_Login' object has no attribute 'driver'
+07/02/2025 08:27:31 AM: INFO: ****** ENDING TEST: ******* test_valid_login_011******* ******
+07/02/2025 08:27:34 AM: INFO: ****** STARTING TEST: Open Test ******
+07/02/2025 08:27:43 AM: INFO: *** TEST FAILED: LOGIN PROCESS FAILED ***
+07/02/2025 08:27:43 AM: ERROR: Assertion Error: Test condition failed.
+07/02/2025 08:27:43 AM: INFO: ****** ENDING TEST: ******* test_valid_login_011******* ******
+07/02/2025 08:27:47 AM: INFO: ************** TEST START **************
+07/02/2025 08:27:47 AM: INFO: *************** Login Page Links Functionality Verification *********** 
+07/02/2025 08:27:47 AM: INFO: ****** STARTING TEST: Open Test ******
+07/02/2025 08:28:53 AM: INFO: The total number of links on this page is 24
+07/02/2025 08:28:56 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="febcd20e8df2b5c66958ad52c3b83261", element="f.DED5BA3B9011C9834E34F7CD591011F2.d.922B7BA25E3560B548581FEB272E2DBA.e.18")> IS FUNCTIONAL
+07/02/2025 08:28:59 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="febcd20e8df2b5c66958ad52c3b83261", element="f.DED5BA3B9011C9834E34F7CD591011F2.d.922B7BA25E3560B548581FEB272E2DBA.e.22")> IS FUNCTIONAL
+07/02/2025 08:29:02 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="febcd20e8df2b5c66958ad52c3b83261", element="f.DED5BA3B9011C9834E34F7CD591011F2.d.922B7BA25E3560B548581FEB272E2DBA.e.34")> IS FUNCTIONAL
+07/02/2025 08:29:05 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="febcd20e8df2b5c66958ad52c3b83261", element="f.DED5BA3B9011C9834E34F7CD591011F2.d.922B7BA25E3560B548581FEB272E2DBA.e.35")> IS FUNCTIONAL
+07/02/2025 08:29:06 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="febcd20e8df2b5c66958ad52c3b83261", element="f.DED5BA3B9011C9834E34F7CD591011F2.d.922B7BA25E3560B548581FEB272E2DBA.e.12")> IS FUNCTIONAL
+07/02/2025 08:29:09 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="febcd20e8df2b5c66958ad52c3b83261", element="f.DED5BA3B9011C9834E34F7CD591011F2.d.922B7BA25E3560B548581FEB272E2DBA.e.14")> IS FUNCTIONAL
+07/02/2025 08:29:12 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="febcd20e8df2b5c66958ad52c3b83261", element="f.DED5BA3B9011C9834E34F7CD591011F2.d.922B7BA25E3560B548581FEB272E2DBA.e.28")> IS FUNCTIONAL
+07/02/2025 08:29:14 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="febcd20e8df2b5c66958ad52c3b83261", element="f.DED5BA3B9011C9834E34F7CD591011F2.d.922B7BA25E3560B548581FEB272E2DBA.e.32")> IS FUNCTIONAL
+07/02/2025 08:29:16 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="febcd20e8df2b5c66958ad52c3b83261", element="f.DED5BA3B9011C9834E34F7CD591011F2.d.922B7BA25E3560B548581FEB272E2DBA.e.36")> IS FUNCTIONAL
+07/02/2025 08:29:19 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="febcd20e8df2b5c66958ad52c3b83261", element="f.DED5BA3B9011C9834E34F7CD591011F2.d.922B7BA25E3560B548581FEB272E2DBA.e.37")> IS FUNCTIONAL
+07/02/2025 08:29:21 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="febcd20e8df2b5c66958ad52c3b83261", element="f.DED5BA3B9011C9834E34F7CD591011F2.d.922B7BA25E3560B548581FEB272E2DBA.e.38")> IS FUNCTIONAL
+07/02/2025 08:29:21 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="febcd20e8df2b5c66958ad52c3b83261", element="f.DED5BA3B9011C9834E34F7CD591011F2.d.922B7BA25E3560B548581FEB272E2DBA.e.39")> IS FUNCTIONAL
+07/02/2025 08:29:23 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="febcd20e8df2b5c66958ad52c3b83261", element="f.DED5BA3B9011C9834E34F7CD591011F2.d.922B7BA25E3560B548581FEB272E2DBA.e.40")> IS FUNCTIONAL
+07/02/2025 08:29:25 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="febcd20e8df2b5c66958ad52c3b83261", element="f.DED5BA3B9011C9834E34F7CD591011F2.d.922B7BA25E3560B548581FEB272E2DBA.e.41")> IS FUNCTIONAL
+07/02/2025 08:29:27 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="febcd20e8df2b5c66958ad52c3b83261", element="f.DED5BA3B9011C9834E34F7CD591011F2.d.922B7BA25E3560B548581FEB272E2DBA.e.42")> IS FUNCTIONAL
+07/02/2025 08:29:29 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="febcd20e8df2b5c66958ad52c3b83261", element="f.DED5BA3B9011C9834E34F7CD591011F2.d.922B7BA25E3560B548581FEB272E2DBA.e.43")> IS FUNCTIONAL
+07/02/2025 08:29:31 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="febcd20e8df2b5c66958ad52c3b83261", element="f.DED5BA3B9011C9834E34F7CD591011F2.d.922B7BA25E3560B548581FEB272E2DBA.e.44")> IS FUNCTIONAL
+07/02/2025 08:29:33 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="febcd20e8df2b5c66958ad52c3b83261", element="f.DED5BA3B9011C9834E34F7CD591011F2.d.922B7BA25E3560B548581FEB272E2DBA.e.45")> IS FUNCTIONAL
+07/02/2025 08:29:36 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="febcd20e8df2b5c66958ad52c3b83261", element="f.DED5BA3B9011C9834E34F7CD591011F2.d.922B7BA25E3560B548581FEB272E2DBA.e.46")> IS FUNCTIONAL
+07/02/2025 08:29:38 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="febcd20e8df2b5c66958ad52c3b83261", element="f.DED5BA3B9011C9834E34F7CD591011F2.d.922B7BA25E3560B548581FEB272E2DBA.e.47")> IS FUNCTIONAL
+07/02/2025 08:29:40 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="febcd20e8df2b5c66958ad52c3b83261", element="f.DED5BA3B9011C9834E34F7CD591011F2.d.922B7BA25E3560B548581FEB272E2DBA.e.48")> IS FUNCTIONAL
+07/02/2025 08:29:43 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="febcd20e8df2b5c66958ad52c3b83261", element="f.DED5BA3B9011C9834E34F7CD591011F2.d.922B7BA25E3560B548581FEB272E2DBA.e.49")> IS FUNCTIONAL
+07/02/2025 08:29:45 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="febcd20e8df2b5c66958ad52c3b83261", element="f.DED5BA3B9011C9834E34F7CD591011F2.d.922B7BA25E3560B548581FEB272E2DBA.e.50")> IS FUNCTIONAL
+07/02/2025 08:29:49 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="febcd20e8df2b5c66958ad52c3b83261", element="f.DED5BA3B9011C9834E34F7CD591011F2.d.922B7BA25E3560B548581FEB272E2DBA.e.51")> IS FUNCTIONAL
+07/02/2025 08:29:49 AM: INFO: TOTAL BROKEN LINKS: 0
+07/02/2025 08:29:49 AM: INFO: TOTAL FUNCTIONAL LINKS: 24
+07/02/2025 08:29:49 AM: INFO: TEST PASSED: ALL LINKS ARE FUNCTIONAL
+07/02/2025 08:30:30 AM: INFO: ****** STARTING TEST: Open Test ******
+07/02/2025 08:30:36 AM: ERROR: An unexpected error occurred: 'Test_Login' object has no attribute 'driver'
+07/02/2025 08:30:36 AM: INFO: ****** ENDING TEST: ******* test_valid_login_011******* ******
+07/02/2025 08:30:39 AM: INFO: ****** STARTING TEST: Open Test ******
+07/02/2025 08:30:45 AM: INFO: *** TEST FAILED: LOGIN PROCESS FAILED ***
+07/02/2025 08:30:45 AM: ERROR: Assertion Error: Test condition failed.
+07/02/2025 08:30:45 AM: INFO: ****** ENDING TEST: ******* test_valid_login_011******* ******
+07/02/2025 08:30:52 AM: INFO: ************** TEST START **************
+07/02/2025 08:30:52 AM: INFO: *************** Login Page Links Functionality Verification *********** 
+07/02/2025 08:30:52 AM: INFO: ****** STARTING TEST: Open Test ******
+07/02/2025 08:30:53 AM: ERROR: Exception occurred: Message: target frame detached: received Inspector.detached event
+  (failed to check if window was closed: disconnected: Unable to receive message from renderer)
+  (Session info: chrome=132.0.6834.160)
+Stacktrace:
+	GetHandleVerifier [0x00007FF76DAA02F5+28725]
+	(No symbol) [0x00007FF76DA02AE0]
+	(No symbol) [0x00007FF76D89510A]
+	(No symbol) [0x00007FF76D884A51]
+	(No symbol) [0x00007FF76D883866]
+	(No symbol) [0x00007FF76D8832ED]
+	(No symbol) [0x00007FF76D882FBA]
+	(No symbol) [0x00007FF76D881E35]
+	(No symbol) [0x00007FF76D8A3FBF]
+	(No symbol) [0x00007FF76D9304DD]
+	(No symbol) [0x00007FF76D90FD53]
+	(No symbol) [0x00007FF76D8DA0E3]
+	(No symbol) [0x00007FF76D8DB471]
+	GetHandleVerifier [0x00007FF76DDCF30D+3366989]
+	GetHandleVerifier [0x00007FF76DDE12F0+3440688]
+	GetHandleVerifier [0x00007FF76DDD78FD+3401277]
+	GetHandleVerifier [0x00007FF76DB6AAAB+858091]
+	(No symbol) [0x00007FF76DA0E74F]
+	(No symbol) [0x00007FF76DA0A304]
+	(No symbol) [0x00007FF76DA0A49D]
+	(No symbol) [0x00007FF76D9F8B69]
+	BaseThreadInitThunk [0x00007FFB0E2E7374+20]
+	RtlUserThreadStart [0x00007FFB0E4FCC91+33]
+
+07/02/2025 08:35:09 AM: INFO: ****** STARTING TEST: Open Test ******
+07/02/2025 08:35:14 AM: ERROR: An unexpected error occurred: 'Test_Login' object has no attribute 'driver'
+07/02/2025 08:35:14 AM: INFO: ****** ENDING TEST: ******* test_valid_login_011******* ******
+07/02/2025 08:35:17 AM: INFO: ****** STARTING TEST: Open Test ******
+07/02/2025 08:35:23 AM: INFO: *** TEST FAILED: LOGIN PROCESS FAILED ***
+07/02/2025 08:35:23 AM: ERROR: Assertion Error: Test condition failed.
+07/02/2025 08:35:23 AM: INFO: ****** ENDING TEST: ******* test_valid_login_011******* ******
+07/02/2025 08:35:30 AM: INFO: ************** TEST START **************
+07/02/2025 08:35:30 AM: INFO: *************** Login Page Links Functionality Verification *********** 
+07/02/2025 08:35:30 AM: INFO: ****** STARTING TEST: Open Test ******
+07/02/2025 08:35:58 AM: INFO: The total number of links on this page is 24
+07/02/2025 08:36:00 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="9b318e0557b7a2ca4f89ddf6ec3243a0", element="f.5D9B378F5346856777AFF952FF7A937B.d.136D1CF3C98AD763D96DA250AC95F3B0.e.18")> IS FUNCTIONAL
+07/02/2025 08:36:03 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="9b318e0557b7a2ca4f89ddf6ec3243a0", element="f.5D9B378F5346856777AFF952FF7A937B.d.136D1CF3C98AD763D96DA250AC95F3B0.e.22")> IS FUNCTIONAL
+07/02/2025 08:36:11 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="9b318e0557b7a2ca4f89ddf6ec3243a0", element="f.5D9B378F5346856777AFF952FF7A937B.d.136D1CF3C98AD763D96DA250AC95F3B0.e.34")> IS FUNCTIONAL
+07/02/2025 08:36:14 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="9b318e0557b7a2ca4f89ddf6ec3243a0", element="f.5D9B378F5346856777AFF952FF7A937B.d.136D1CF3C98AD763D96DA250AC95F3B0.e.35")> IS FUNCTIONAL
+07/02/2025 08:36:16 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="9b318e0557b7a2ca4f89ddf6ec3243a0", element="f.5D9B378F5346856777AFF952FF7A937B.d.136D1CF3C98AD763D96DA250AC95F3B0.e.12")> IS FUNCTIONAL
+07/02/2025 08:36:19 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="9b318e0557b7a2ca4f89ddf6ec3243a0", element="f.5D9B378F5346856777AFF952FF7A937B.d.136D1CF3C98AD763D96DA250AC95F3B0.e.14")> IS FUNCTIONAL
+07/02/2025 08:36:21 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="9b318e0557b7a2ca4f89ddf6ec3243a0", element="f.5D9B378F5346856777AFF952FF7A937B.d.136D1CF3C98AD763D96DA250AC95F3B0.e.28")> IS FUNCTIONAL
+07/02/2025 08:36:24 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="9b318e0557b7a2ca4f89ddf6ec3243a0", element="f.5D9B378F5346856777AFF952FF7A937B.d.136D1CF3C98AD763D96DA250AC95F3B0.e.32")> IS FUNCTIONAL
+07/02/2025 08:36:26 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="9b318e0557b7a2ca4f89ddf6ec3243a0", element="f.5D9B378F5346856777AFF952FF7A937B.d.136D1CF3C98AD763D96DA250AC95F3B0.e.36")> IS FUNCTIONAL
+07/02/2025 08:36:28 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="9b318e0557b7a2ca4f89ddf6ec3243a0", element="f.5D9B378F5346856777AFF952FF7A937B.d.136D1CF3C98AD763D96DA250AC95F3B0.e.37")> IS FUNCTIONAL
+07/02/2025 08:36:31 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="9b318e0557b7a2ca4f89ddf6ec3243a0", element="f.5D9B378F5346856777AFF952FF7A937B.d.136D1CF3C98AD763D96DA250AC95F3B0.e.38")> IS FUNCTIONAL
+07/02/2025 08:36:31 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="9b318e0557b7a2ca4f89ddf6ec3243a0", element="f.5D9B378F5346856777AFF952FF7A937B.d.136D1CF3C98AD763D96DA250AC95F3B0.e.39")> IS FUNCTIONAL
+07/02/2025 08:36:33 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="9b318e0557b7a2ca4f89ddf6ec3243a0", element="f.5D9B378F5346856777AFF952FF7A937B.d.136D1CF3C98AD763D96DA250AC95F3B0.e.40")> IS FUNCTIONAL
+07/02/2025 08:36:36 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="9b318e0557b7a2ca4f89ddf6ec3243a0", element="f.5D9B378F5346856777AFF952FF7A937B.d.136D1CF3C98AD763D96DA250AC95F3B0.e.41")> IS FUNCTIONAL
+07/02/2025 08:36:39 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="9b318e0557b7a2ca4f89ddf6ec3243a0", element="f.5D9B378F5346856777AFF952FF7A937B.d.136D1CF3C98AD763D96DA250AC95F3B0.e.42")> IS FUNCTIONAL
+07/02/2025 08:36:42 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="9b318e0557b7a2ca4f89ddf6ec3243a0", element="f.5D9B378F5346856777AFF952FF7A937B.d.136D1CF3C98AD763D96DA250AC95F3B0.e.43")> IS FUNCTIONAL
+07/02/2025 08:36:44 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="9b318e0557b7a2ca4f89ddf6ec3243a0", element="f.5D9B378F5346856777AFF952FF7A937B.d.136D1CF3C98AD763D96DA250AC95F3B0.e.44")> IS FUNCTIONAL
+07/02/2025 08:36:45 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="9b318e0557b7a2ca4f89ddf6ec3243a0", element="f.5D9B378F5346856777AFF952FF7A937B.d.136D1CF3C98AD763D96DA250AC95F3B0.e.45")> IS FUNCTIONAL
+07/02/2025 08:36:47 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="9b318e0557b7a2ca4f89ddf6ec3243a0", element="f.5D9B378F5346856777AFF952FF7A937B.d.136D1CF3C98AD763D96DA250AC95F3B0.e.46")> IS FUNCTIONAL
+07/02/2025 08:36:49 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="9b318e0557b7a2ca4f89ddf6ec3243a0", element="f.5D9B378F5346856777AFF952FF7A937B.d.136D1CF3C98AD763D96DA250AC95F3B0.e.47")> IS FUNCTIONAL
+07/02/2025 08:36:52 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="9b318e0557b7a2ca4f89ddf6ec3243a0", element="f.5D9B378F5346856777AFF952FF7A937B.d.136D1CF3C98AD763D96DA250AC95F3B0.e.48")> IS FUNCTIONAL
+07/02/2025 08:36:56 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="9b318e0557b7a2ca4f89ddf6ec3243a0", element="f.5D9B378F5346856777AFF952FF7A937B.d.136D1CF3C98AD763D96DA250AC95F3B0.e.49")> IS FUNCTIONAL
+07/02/2025 08:36:58 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="9b318e0557b7a2ca4f89ddf6ec3243a0", element="f.5D9B378F5346856777AFF952FF7A937B.d.136D1CF3C98AD763D96DA250AC95F3B0.e.50")> IS FUNCTIONAL
+07/02/2025 08:37:01 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="9b318e0557b7a2ca4f89ddf6ec3243a0", element="f.5D9B378F5346856777AFF952FF7A937B.d.136D1CF3C98AD763D96DA250AC95F3B0.e.51")> IS FUNCTIONAL
+07/02/2025 08:37:01 AM: INFO: TOTAL BROKEN LINKS: 0
+07/02/2025 08:37:01 AM: INFO: TOTAL FUNCTIONAL LINKS: 24
+07/02/2025 08:37:01 AM: INFO: TEST PASSED: ALL LINKS ARE FUNCTIONAL
+07/02/2025 08:39:21 AM: INFO: ****** STARTING TEST: Open Test ******
+07/02/2025 08:39:27 AM: INFO: *** TEST FAILED: LOGIN PROCESS FAILED ***
+07/02/2025 08:39:27 AM: ERROR: Assertion Error: Test condition failed.
+07/02/2025 08:39:27 AM: INFO: ****** ENDING TEST: ******* test_valid_login_011******* ******
+07/02/2025 08:40:30 AM: INFO: ****** STARTING TEST: Open Test ******
+07/02/2025 08:40:38 AM: INFO: *** TEST FAILED: LOGIN PROCESS FAILED ***
+07/02/2025 08:40:38 AM: ERROR: Assertion Error: Test condition failed.
+07/02/2025 08:40:38 AM: INFO: ****** ENDING TEST: ******* test_valid_login_011******* ******
+07/02/2025 08:43:23 AM: INFO: ****** STARTING TEST: Open Test ******
+07/02/2025 08:43:30 AM: INFO: *** TEST FAILED: LOGIN PROCESS FAILED ***
+07/02/2025 08:43:30 AM: ERROR: Assertion Error: Test condition failed.
+07/02/2025 08:43:30 AM: INFO: ****** ENDING TEST: ******* test_valid_login_011******* ******
+07/02/2025 08:44:18 AM: INFO: ****** STARTING TEST: Open Test ******
+07/02/2025 08:44:23 AM: INFO: *** TEST FAILED: LOGIN PROCESS FAILED ***
+07/02/2025 08:44:23 AM: ERROR: Assertion Error: Test condition failed.
+07/02/2025 08:44:23 AM: INFO: ****** ENDING TEST: ******* test_valid_login_011******* ******
+07/02/2025 08:45:14 AM: INFO: ****** STARTING TEST: Open Test ******
+07/02/2025 08:45:20 AM: INFO: *** TEST FAILED: LOGIN PROCESS FAILED ***
+07/02/2025 08:45:20 AM: ERROR: Assertion Error: Test condition failed.
+07/02/2025 08:45:20 AM: INFO: ****** ENDING TEST: ******* test_valid_login_011******* ******
+07/02/2025 08:46:25 AM: INFO: ****** STARTING TEST: Open Test ******
+07/02/2025 08:46:33 AM: INFO: *** TEST SUCCESSFUL: USER IS REDIRECTED TO THE REGISTRATION PAGE SUCCESSFULLY ***
+07/02/2025 08:46:33 AM: INFO: ****** ENDING TEST: ******* test_valid_login_011******* ******
+07/02/2025 08:48:59 AM: INFO: ****** STARTING TEST: Open Test ******
+07/02/2025 08:49:08 AM: INFO: *** TEST SUCCESSFUL: USER IS REDIRECTED TO THE REGISTRATION PAGE SUCCESSFULLY ***
+07/02/2025 08:49:08 AM: INFO: ****** ENDING TEST: ******* test_valid_login_011******* ******
+07/02/2025 08:49:38 AM: INFO: ****** STARTING TEST: Open Test ******
+07/02/2025 08:50:13 AM: INFO: **** TEST PASSED: THE LOGIN PAGE WAS SHOWN *****
+07/02/2025 08:50:13 AM: INFO: ****** ENDING TEST: **** test_functionality_of_the_signin_link_010 ***** ******
+07/02/2025 08:50:18 AM: INFO: ****** STARTING TEST: Open Test ******
+07/02/2025 08:50:22 AM: INFO: ***** input the email and the password into the necessary fields *****
+07/02/2025 08:50:23 AM: INFO: ***** Click on the login button *****
+07/02/2025 08:50:27 AM: INFO: ***** Collect the entire text of the page body and check for the presence of the welcome message *****
+07/02/2025 08:50:27 AM: INFO: *** TEST SUCCESSFUL: LOGIN PROCESS SUCCESSFUL ***
+07/02/2025 08:50:37 AM: INFO: **** TEST PASSED: LOGOUT PROCESS SUCCESSFUL *****
+07/02/2025 08:50:37 AM: INFO: ****** ENDING TEST: **** TEST ENDED: VALID LOG IN TEST CASES ***** ******
+07/02/2025 08:50:45 AM: INFO: ****** STARTING TEST: Open Test ******
+07/02/2025 08:50:53 AM: INFO: *** TEST SUCCESSFUL: USER IS REDIRECTED TO THE REGISTRATION PAGE SUCCESSFULLY ***
+07/02/2025 08:50:53 AM: INFO: ****** ENDING TEST: ******* test_valid_login_011******* ******
+07/02/2025 08:50:58 AM: INFO: ****** STARTING TEST: Open Test ******
+07/02/2025 08:51:06 AM: INFO: *** TEST SUCCESSFUL: USER IS REDIRECTED TO THE REGISTRATION PAGE SUCCESSFULLY ***
+07/02/2025 08:51:06 AM: INFO: ****** ENDING TEST: ******* test_valid_login_011******* ******
+07/02/2025 08:51:12 AM: INFO: ************** TEST START **************
+07/02/2025 08:51:12 AM: INFO: *************** Login Page Links Functionality Verification *********** 
+07/02/2025 08:51:12 AM: INFO: ****** STARTING TEST: Open Test ******
+07/02/2025 08:52:08 AM: INFO: The total number of links on this page is 24
+07/02/2025 08:52:11 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="63b24d8bde4c81e3ca72500b4521ce2b", element="f.6C2327E4D669F470DDAD8E4612488429.d.C188442358AEB1AE0346954A795A7C06.e.18")> IS FUNCTIONAL
+07/02/2025 08:52:14 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="63b24d8bde4c81e3ca72500b4521ce2b", element="f.6C2327E4D669F470DDAD8E4612488429.d.C188442358AEB1AE0346954A795A7C06.e.22")> IS FUNCTIONAL
+07/02/2025 08:52:18 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="63b24d8bde4c81e3ca72500b4521ce2b", element="f.6C2327E4D669F470DDAD8E4612488429.d.C188442358AEB1AE0346954A795A7C06.e.34")> IS FUNCTIONAL
+07/02/2025 08:52:20 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="63b24d8bde4c81e3ca72500b4521ce2b", element="f.6C2327E4D669F470DDAD8E4612488429.d.C188442358AEB1AE0346954A795A7C06.e.35")> IS FUNCTIONAL
+07/02/2025 08:52:24 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="63b24d8bde4c81e3ca72500b4521ce2b", element="f.6C2327E4D669F470DDAD8E4612488429.d.C188442358AEB1AE0346954A795A7C06.e.13")> IS FUNCTIONAL
+07/02/2025 08:52:27 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="63b24d8bde4c81e3ca72500b4521ce2b", element="f.6C2327E4D669F470DDAD8E4612488429.d.C188442358AEB1AE0346954A795A7C06.e.15")> IS FUNCTIONAL
+07/02/2025 08:52:29 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="63b24d8bde4c81e3ca72500b4521ce2b", element="f.6C2327E4D669F470DDAD8E4612488429.d.C188442358AEB1AE0346954A795A7C06.e.28")> IS FUNCTIONAL
+07/02/2025 08:52:32 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="63b24d8bde4c81e3ca72500b4521ce2b", element="f.6C2327E4D669F470DDAD8E4612488429.d.C188442358AEB1AE0346954A795A7C06.e.32")> IS FUNCTIONAL
+07/02/2025 08:52:35 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="63b24d8bde4c81e3ca72500b4521ce2b", element="f.6C2327E4D669F470DDAD8E4612488429.d.C188442358AEB1AE0346954A795A7C06.e.36")> IS FUNCTIONAL
+07/02/2025 08:52:37 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="63b24d8bde4c81e3ca72500b4521ce2b", element="f.6C2327E4D669F470DDAD8E4612488429.d.C188442358AEB1AE0346954A795A7C06.e.37")> IS FUNCTIONAL
+07/02/2025 08:52:40 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="63b24d8bde4c81e3ca72500b4521ce2b", element="f.6C2327E4D669F470DDAD8E4612488429.d.C188442358AEB1AE0346954A795A7C06.e.38")> IS FUNCTIONAL
+07/02/2025 08:52:40 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="63b24d8bde4c81e3ca72500b4521ce2b", element="f.6C2327E4D669F470DDAD8E4612488429.d.C188442358AEB1AE0346954A795A7C06.e.39")> IS FUNCTIONAL
+07/02/2025 08:52:43 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="63b24d8bde4c81e3ca72500b4521ce2b", element="f.6C2327E4D669F470DDAD8E4612488429.d.C188442358AEB1AE0346954A795A7C06.e.40")> IS FUNCTIONAL
+07/02/2025 08:52:45 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="63b24d8bde4c81e3ca72500b4521ce2b", element="f.6C2327E4D669F470DDAD8E4612488429.d.C188442358AEB1AE0346954A795A7C06.e.41")> IS FUNCTIONAL
+07/02/2025 08:52:48 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="63b24d8bde4c81e3ca72500b4521ce2b", element="f.6C2327E4D669F470DDAD8E4612488429.d.C188442358AEB1AE0346954A795A7C06.e.42")> IS FUNCTIONAL
+07/02/2025 08:52:51 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="63b24d8bde4c81e3ca72500b4521ce2b", element="f.6C2327E4D669F470DDAD8E4612488429.d.C188442358AEB1AE0346954A795A7C06.e.43")> IS FUNCTIONAL
+07/02/2025 08:52:53 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="63b24d8bde4c81e3ca72500b4521ce2b", element="f.6C2327E4D669F470DDAD8E4612488429.d.C188442358AEB1AE0346954A795A7C06.e.44")> IS FUNCTIONAL
+07/02/2025 08:52:56 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="63b24d8bde4c81e3ca72500b4521ce2b", element="f.6C2327E4D669F470DDAD8E4612488429.d.C188442358AEB1AE0346954A795A7C06.e.45")> IS FUNCTIONAL
+07/02/2025 08:52:59 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="63b24d8bde4c81e3ca72500b4521ce2b", element="f.6C2327E4D669F470DDAD8E4612488429.d.C188442358AEB1AE0346954A795A7C06.e.46")> IS FUNCTIONAL
+07/02/2025 08:53:02 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="63b24d8bde4c81e3ca72500b4521ce2b", element="f.6C2327E4D669F470DDAD8E4612488429.d.C188442358AEB1AE0346954A795A7C06.e.47")> IS FUNCTIONAL
+07/02/2025 08:53:05 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="63b24d8bde4c81e3ca72500b4521ce2b", element="f.6C2327E4D669F470DDAD8E4612488429.d.C188442358AEB1AE0346954A795A7C06.e.48")> IS FUNCTIONAL
+07/02/2025 08:53:08 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="63b24d8bde4c81e3ca72500b4521ce2b", element="f.6C2327E4D669F470DDAD8E4612488429.d.C188442358AEB1AE0346954A795A7C06.e.49")> IS FUNCTIONAL
+07/02/2025 08:53:11 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="63b24d8bde4c81e3ca72500b4521ce2b", element="f.6C2327E4D669F470DDAD8E4612488429.d.C188442358AEB1AE0346954A795A7C06.e.50")> IS FUNCTIONAL
+07/02/2025 08:53:15 AM: INFO: THIS LINK <selenium.webdriver.remote.webelement.WebElement (session="63b24d8bde4c81e3ca72500b4521ce2b", element="f.6C2327E4D669F470DDAD8E4612488429.d.C188442358AEB1AE0346954A795A7C06.e.51")> IS FUNCTIONAL
+07/02/2025 08:53:15 AM: INFO: TOTAL BROKEN LINKS: 0
+07/02/2025 08:53:15 AM: INFO: TOTAL FUNCTIONAL LINKS: 24
+07/02/2025 08:53:15 AM: INFO: TEST PASSED: ALL LINKS ARE FUNCTIONAL

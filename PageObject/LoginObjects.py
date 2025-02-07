@@ -12,9 +12,9 @@ class LoginObjects:
     logo_xpath = "//a[@id='logo']//*[name()='svg']"
     email_id = "email"
     password_id = "password"
-    forgot_password_id = "forgotpassword"
+    forgot_password_xpath = "//a[@id='forgotpassword']"
     signin_button_selector = "button[type='submit']"
-    register_link_xpath = "//a[normalize-space()='Register']"
+    register_link_xpath = "//div[1]/div[2]/form[1]/p[1]/a[1]"
     Logout_dropdown_id = "selected-merchant"
     Logout_button_Xpath = "//span[normalize-space()='logout']"
     error_message_xpath = "//div[@class='error-div']"
@@ -99,8 +99,9 @@ class LoginObjects:
         try:
             wait = WebDriverWait(self.driver, timeout=timeout, poll_frequency=1,
                                  ignored_exceptions=[NoSuchElementException])
-            element = wait.until(ec.element_to_be_clickable((By.ID, self.forgot_password_id)))
+            element = wait.until(ec.element_to_be_clickable((By.XPATH, self.forgot_password_xpath)))
             element.click()
+            time.sleep(3)
         except TimeoutException:
             print(f"Forgot password link not found within {timeout} seconds")
 

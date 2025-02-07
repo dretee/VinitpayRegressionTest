@@ -1,5 +1,10 @@
 import pytest
 from selenium import webdriver
+from Utilities.RecordLogger import RecordLogger
+from Utilities.ReadProperties import ReadProperties
+
+logger = RecordLogger.log_generator_info()  # Initialize logger instance
+
 
 @pytest.fixture()
 def setup(browser):
@@ -27,22 +32,28 @@ def browser(request):
 
 
 @pytest.fixture()
-def log_test_start(self, test_name):
-        self.logger.info(f"****** STARTING TEST: {test_name} ******")
-
-
-
-@pytest.fixture()
-    # Method to log the end of a test
-def log_test_end(self, test_name):
-        self.logger.info(f"****** ENDING TEST: {test_name} ******")
+def log_test_start():
+    def _log_test(test_name):
+        logger.info(f"****** STARTING TEST: {test_name} ******")
+    return _log_test
 
 
 @pytest.fixture()
-    # Method to open the website
-def open_website(self, setup, url):
-        self.log_test_start("Open Website")
-        self.driver = setup
-        self.driver.get(url)
-        self.driver.maximize_window()
-        self.log_test_end("Open Website")
+def log_test_end():
+    def _log_test(test_name):
+        logger.info(f"****** ENDING TEST: {test_name} ******")
+    return _log_test
+
+
+@pytest.fixture()
+def open_website(setup, log_test_start):
+    def _open_website(url):
+        log_start = log_test_start  # Get fixture return value
+
+        log_start("Open Test")
+        driver = setup
+        driver.get(url)
+        driver.maximize_window()
+
+    return _open_website
+
