@@ -5,8 +5,6 @@ import pytest
 from selenium.webdriver.common.by import By
 from Utilities.RecordLogger import RecordLogger
 from Utilities.ReadProperties import ReadProperties
-from PageObject.LoginObjects import LoginObjects
-
 from PageObject.BusinessObjects import BusinessObjects
 
 # to run the test use:   pytest -v -s TestCases/Negative_Login_Test_Case.py--browser chrome to run and also generate
@@ -32,28 +30,7 @@ class Test_Business_positive_test_cases:
     # initialize the  name of the business
     name_Of_created_business = None
 
-    # Method to log the start of a test
-    def log_test_start(self, test_name):
-        self.logger.info(f"****** STARTING TEST: {test_name} ******")
 
-    # Method to log the end of a test
-    def log_test_end(self, test_name):
-        self.logger.info(f"****** ENDING TEST: {test_name} ******")
-
-    # Method to open the website
-    def open_website_and_log_in_user(self, setup, url):
-        self.log_test_start("Open Website")
-        self.driver = setup
-        self.driver.get(url)
-        self.driver.maximize_window()
-        self.Login_page_objects = LoginObjects(self.driver)
-
-        # Log in user into their account
-        self.Login_page_objects.input_email(self.EXISTING_EMAIL)
-        self.Login_page_objects.input_password(self.EXISTING_PASSWORD)
-        self.Login_page_objects.click_on_the_signin_button()
-
-        self.log_test_end("Open Website")
     """
     Test the creation of all kind of business in the system. There are 12 kinds and they can be opened in all states  in nigeria
     """
@@ -72,11 +49,10 @@ class Test_Business_positive_test_cases:
     ]
 
     @pytest.mark.parametrize("number_associated_with_business, Type_of_business, State_located", test_data)
-    def  test_verify_that_a_new_business_can_be_created(self, setup, number_associated_with_business, Type_of_business, State_located):
+    def  test_verify_that_a_new_business_can_be_created(self, setup, open_website_and_logging_user_in, log_test_end, number_associated_with_business, Type_of_business, State_located):
         try:
-            # Initialize Beneficiary page objects
-            self.log_test_start("")
-            self.open_website_and_log_in_user(setup, self.URL)
+            open_website_and_logging_user_in(self.URL)
+            self.driver = setup
             self.Business_Objects = BusinessObjects(self.driver)
             self.Business_Objects.locate_and_click_username_and_add_business_button()
 
@@ -118,9 +94,10 @@ class Test_Business_positive_test_cases:
 
 
     # Checking that the business was created and can be searched for on the business list on the application
-    def test_searching_for_newly_created_business(self,setup):
-        self.log_test_start("VERIFY THAT THE USER CAN SEARCH ON THE BUSINESS THEY WANT FROM THE MERCHANT SEARCH BAR")
-        self.open_website_and_log_in_user(setup, self.URL)
+    def test_searching_for_newly_created_business(self,setup, open_website_and_logging_user_in, log_test_start):
+        log_test_start("VERIFY THAT THE USER CAN SEARCH ON THE BUSINESS THEY WANT FROM THE MERCHANT SEARCH BAR")
+        open_website_and_logging_user_in(self.URL)
+        self.driver = setup
         self.Business_Objects = BusinessObjects(self.driver)
         result_of_search = self.Business_Objects.input_name_into_the_search_field(Test_Business_positive_test_cases.name_Of_created_business)
 

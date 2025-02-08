@@ -3,11 +3,9 @@ import time
 
 import pytest
 from selenium.webdriver.common.by import By
-from unicodedata import category
 
 from Utilities.RecordLogger import RecordLogger
 from Utilities.ReadProperties import ReadProperties
-from PageObject.LoginObjects import LoginObjects
 from PageObject.BusinessObjects import BusinessObjects
 
 
@@ -28,33 +26,9 @@ class Test_Login:
     URL = ReadProperties.getTestPageURL()  # Get main page URL from configuration
     # loginPageUrl = ReadProperties.LoginURL()  # Get login page URL from configuration
     User_email, UserPassword = ReadProperties.getUserDetails()
-    EXISTING_EMAIL = User_email  # Get existing email from configuration
-    EXISTING_PASSWORD = UserPassword  # Get existing password
     # from configuration
     logger = RecordLogger.log_generator_info()  # Initialize logger instance
 
-
-    def log_test_start(self, test_name):
-        self.logger.info(f"****** STARTING TEST: {test_name} ******")
-
-    # Method to log the end of a test
-    def log_test_end(self, test_name):
-        self.logger.info(f"****** ENDING TEST: {test_name} ******")
-
-    # Method to open the website
-    def open_website_and_log_in_user(self, setup, url):
-        self.log_test_start("Open Website")
-        self.driver = setup
-        self.driver.get(url)
-        self.driver.maximize_window()
-        self.Login_page_objects = LoginObjects(self.driver)
-
-        # Log in user into their account
-        self.Login_page_objects.input_email(self.EXISTING_EMAIL)
-        self.Login_page_objects.input_password(self.EXISTING_PASSWORD)
-        self.Login_page_objects.click_on_the_signin_button()
-
-        self.log_test_end("Open Website")
 
     # input fields business names, categories and Descriptions for the first modal of  business creation
     test_data = [
@@ -64,21 +38,19 @@ class Test_Login:
 
     ]
     @pytest.mark.parametrize("business_name, category, description, error_message", test_data)
-    def test_verify_that_the_user_get_a_correct_error_message_with_empty_fields(self, setup, business_name, category, description, error_message ):
+    def test_verify_that_the_user_get_a_correct_error_message_with_empty_fields(self, setup, business_name, log_test_start, open_website_and_logging_user_in, category, description, error_message ):
         try:
-            # Initialize Beneficiary page objects
-            self.log_test_start("")
-            self.open_website_and_log_in_user(setup, self.URL)
+            log_test_start("")
+            open_website_and_logging_user_in(self.URL)
+            self.driver = setup
             self.Business_Objects = BusinessObjects(self.driver)
             self.Business_Objects.locate_and_click_username_and_add_business_button()
 
             self.driver.find_element(By.XPATH, "//form/div[1]/div/input").send_keys(business_name)
             self.Business_Objects.input_the_description_text(description)
-            time.sleep(4)
             self.Business_Objects.select_a_category_from_all_the_options(category)
-            time.sleep(4)
             self.Business_Objects.click_on_the_next_button()
-            time.sleep(4)
+
             error_message_text = self.driver.find_element(By.XPATH, "//div[@class='error-div']").text
 
             assert error_message == error_message_text, self.logger.info("**** TEST FAILED: ERROR MESSAGE IS WRONG ******")
@@ -102,19 +74,19 @@ class Test_Login:
     ]
 
     @pytest.mark.parametrize("business_name, description, error_message", test_data)
-    def test_verify_that_the_category_field_when_missing_the_correct_error_message_is_given(self,setup, business_name, description, error_message):
+    def est_verify_that_the_category_field_when_missing_the_correct_error_message_is_given(self,setup, log_test_start, open_website_and_logging_user_in,business_name, description, error_message):
         try:
-            # Initialize Beneficiary page objects
-            self.log_test_start("")
-            self.open_website_and_log_in_user(setup, self.URL)
+            log_test_start("")
+            open_website_and_logging_user_in(self.URL)
+            self.driver = setup
             self.Business_Objects = BusinessObjects(self.driver)
             self.Business_Objects.locate_and_click_username_and_add_business_button()
 
             self.driver.find_element(By.XPATH, "//form/div[1]/div/input").send_keys(business_name)
             self.Business_Objects.input_the_description_text(description)
-            time.sleep(4)
+
             self.Business_Objects.click_on_the_next_button()
-            time.sleep(4)
+
             error_message_text = self.driver.find_element(By.XPATH, "//div[@class='error-div']").text
 
             assert error_message == error_message_text, self.logger.info("**** TEST FAILED: ERROR MESSAGE IS WRONG ******")

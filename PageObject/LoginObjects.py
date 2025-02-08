@@ -1,4 +1,3 @@
-from selenium import webdriver
 import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -101,7 +100,6 @@ class LoginObjects:
                                  ignored_exceptions=[NoSuchElementException])
             element = wait.until(ec.element_to_be_clickable((By.XPATH, self.forgot_password_xpath)))
             element.click()
-            time.sleep(3)
         except TimeoutException:
             print(f"Forgot password link not found within {timeout} seconds")
 

@@ -3,12 +3,13 @@ import random
 import time
 
 import pytest
-import requests
-from Utilities import ReadXyfile
+
 from selenium.webdriver.common.by import By
+
+from TestCases.conftest import setup, open_website_and_logging_user_in, log_test_start
 from Utilities.RecordLogger import RecordLogger
 from Utilities.ReadProperties import ReadProperties
-from PageObject.LoginObjects import LoginObjects
+
 from PageObject.SignUpObjects import SignupObjects
 from PageObject.BeneficiaryObject import BeneficiaryObjects
 
@@ -21,7 +22,7 @@ Verify the response of the system when on of the fields are left empty and the s
 
 """
 
-
+#@pytest.mark.usefixtures(setup, open_website_and_logging_user_in, log_test_start)
 class Test_Student_Beneficiary_Negative_Tests:
     # Initialize class variables with URLs, logger instance, and Excel file path
     URL = ReadProperties.getTestPageURL()  # Get main page URL from configuration
@@ -32,46 +33,22 @@ class Test_Student_Beneficiary_Negative_Tests:
     # from configuration
     logger = RecordLogger.log_generator_info()  # Initialize logger instance
 
-    # Method to log the start of a test
-    def log_test_start(self, test_name):
-        self.logger.info(f"****** STARTING TEST: {test_name} ******")
 
-    # Method to log the end of a test
-    def log_test_end(self, test_name):
-        self.logger.info(f"****** ENDING TEST: {test_name} ******")
-
-    # Method to open the website
-    def open_website_and_log_in_user(self, setup, url):
-        self.log_test_start("Open Website")
-        self.driver = setup
-        self.driver.get(url)
-        self.driver.maximize_window()
-        self.Login_page_objects = LoginObjects(self.driver)
-
-        # Log in user into their account
-        self.Login_page_objects.input_email(self.EXISTING_EMAIL)
-        self.Login_page_objects.input_password(self.EXISTING_PASSWORD)
-        self.Login_page_objects.click_on_the_signin_button()
-
-        self.log_test_end("Open Website")
-
-    def test_creation_of_new_student_beneficiary_without_course(self, setup):
+    def est_creation_of_new_student_beneficiary_without_course(self, setup, open_website_and_logging_user_in, log_test_start):
         """Test the creation of a new beneficiary without filling the required fields."""
         try:
-            self.log_test_start("***** TESTING THE CREATION OF NEW STUDENT BENEFICIARY WITH MISSING COURSE FILED. ******")
-            self.open_website_and_log_in_user(setup, self.URL)
-
+            log_test_start("***** TESTING THE CREATION OF NEW STUDENT BENEFICIARY WITH MISSING COURSE FILED. ******")
+            open_website_and_logging_user_in(self.URL)
+            self.driver = setup
             # Initialize Beneficiary page objects
             self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
 
             # Navigate to beneficiary creation page
-
             self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
             time.sleep(2)
             self.Beneficiary_page_objects.click_on_the_new_beneficiary_button()
-            time.sleep(3)
+
             self.Beneficiary_page_objects.click_on_the_student_beneficiary_option()
-            time.sleep(2)
             self.logger.info("***** User is navigated to the form for the creation a student beneficiary. *****")
 
             self.Beneficiary_page_objects.input_student_number(1)
@@ -80,7 +57,7 @@ class Test_Student_Beneficiary_Negative_Tests:
             self.Beneficiary_page_objects.input_student_Last_Name(SignupObjects.generate_names(self.driver))
             self.Beneficiary_page_objects.input_student_email(SignupObjects.email_generator(self.driver))
 
-            self.log_test_start("***** USER INPUTS THE THE COURSE IN THE CORRECT FIELD.******")
+            self.logger.info("***** USER INPUTS THE THE COURSE IN THE CORRECT FIELD.******")
             Courses = ["Chemical Engineering", "Chemistry", "Fine Art"
                        "Biological Sciences", "Physics", "Mechanical Engineering",
                        "Computer science", "Greek Language"]
@@ -88,6 +65,7 @@ class Test_Student_Beneficiary_Negative_Tests:
 
             self.logger.info("***** User clicks on the proceed button *****")
             self.Beneficiary_page_objects.click_on_the_proceed_button()
+            time.sleep(2)
 
             assert "All fields are required" in self.driver.find_element(By.TAG_NAME, "body").text, self.logger.info(
                 "**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***")
@@ -105,28 +83,31 @@ class Test_Student_Beneficiary_Negative_Tests:
             self.driver.quit()
 
     test_data = [
-        (" "," ", " ", " ", " ", " ", " ", "All fields are required"),  # all fields empty
-        ("", "Mark", "Mark", "0801234543", "markhommie@gmail.com", "Chemical Engineering" "All fields are required"),# Empty student number
-        ("1212","", "Mark", "0801234543", "markhommie@gmail.com", "Chemical Engineering" "All fields are required"),  # Empty first name
-        ("1212","Mark", "", "0801234543", "markhommie@gmail.com", "Physics" "All fields are required"),  # Empty last name
+        (" "," ", " ", " ", " ", " ", "All fields are required"),  # all fields empty
+        ("", "Mark", "Mark", "0801234543", "markhommie@gmail.com", "Chemical Engineering", "All fields are required"),# Empty student number
+        ("1212","", "Mark", "0801234543", "markhommie@gmail.com", "Chemical Engineering", "All fields are required"),  # Empty first name
+        ("1212","Mark", "", "0801234543", "markhommie@gmail.com", "Physics", "All fields are required"),  # Empty last name
         ("1212","Mark", "Mark", "", "markhommie@gmail.com", "English", "All fields are required"),  # Empty phone number
         ("1212","Mark", "Mark", "0801234543", "", "Hydrogen Engineering", "All fields are required"),  # Empty email
         ("1212","Mark", "Mark", "0801234543", "markhommie@gmail.com", "", "All fields are required"),  # Empty course
         ("1212","Mark", "Mark", "0801234543", "markhommie@gmail.com", "123456", "All fields are required"),  # Invalid course (use a number for this)
-        ("1212","Mark", "Mark", "0801234543", "markhommie@gmail.com", "123456", "All fields are required"),  # Invalid student number
+        ("1212","Mark", "Mark", "0801234543", "markhommie@gmail.com", "123456", "All fields are required")  # Invalid student number
     ]
 
-    @pytest.mark.parametarized("Student_name, Firstname, Lastname, Phone_number, Email, course, error_message", test_data)
-    def test_the_creation_of_new_other_beneficiary_with_missing_fields(self, setup, Student_number, Firstname, Lastname, Phone_number,
+    @pytest.mark.parametrize("Student_number, Firstname, Lastname, Phone_number, Email, course, error_message", test_data)
+    def test_the_creation_of_new_other_beneficiary_with_missing_fields(self, setup, open_website_and_logging_user_in, log_test_start, Student_number, Firstname, Lastname, Phone_number,
                                                                        Email, course,  error_message):
         try:
-            self.log_test_start("***** TESTING THE CREATION OF NEW OTHER BENEFICIARY.******")
-            self.open_website_and_log_in_user(setup, self.URL)
+            log_test_start("***** TESTING THE CREATION OF NEW OTHER BENEFICIARY.******")
+            open_website_and_logging_user_in(self.URL)
+            self.driver = setup
             self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
 
             self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
+            time.sleep(2)
             self.Beneficiary_page_objects.click_on_the_new_beneficiary_button()
-            self.Beneficiary_page_objects.click_on_the_other_beneficiary_option()
+            self.Beneficiary_page_objects.click_on_the_student_beneficiary_option()
+
 
             # This is to fill the form
             self.Beneficiary_page_objects.input_student_number(Student_number)
@@ -136,10 +117,10 @@ class Test_Student_Beneficiary_Negative_Tests:
             self.Beneficiary_page_objects.input_email(Email)
             self.Beneficiary_page_objects.input_student_course(course)
 
-            self.log_test_start("***** USER SELECTS THE THE SCHOOL IN THE CORRECT FIELD.******")
+            self.logger.info("***** USER SELECTS THE THE SCHOOL IN THE CORRECT FIELD.******")
             self.Beneficiary_page_objects.Select_school()
 
-            self.log_test_start("***** USER CLICKS ON THE PROCEED BUTTON.******")
+            self.logger.info("***** USER CLICKS ON THE PROCEED BUTTON.******")
             self.Beneficiary_page_objects.click_on_the_proceed_button()
 
             assert error_message == self.driver.find_element(By.XPATH,
@@ -159,6 +140,7 @@ class Test_Student_Beneficiary_Negative_Tests:
             time.sleep(3)
             self.driver.quit()
 
+
     """
         Test to check that invalid first name can not be used for the creation of a student account
         First name invalid data test for the creation of the student ["12345", "@JaneDoe"]    
@@ -170,17 +152,19 @@ class Test_Student_Beneficiary_Negative_Tests:
         ("1212", "@JaneDoe", "Mark", "0801234543", "markhommie@gmail.com", "Hydrogen Engineering", "First name format is invalid"),  # Invalid first name
     ]
 
-    @pytest.mark.parametarized("Student_number, Firstname, Lastname, Phone_number, Email, course, error_message", test_data)
-    def test_creation_of_student_beneficiary_with_invalid_data_in_all_first_name_fields(self, setup, Student_number, Firstname, Lastname, Phone_number,
+    @pytest.mark.parametrize("Student_number, Firstname, Lastname, Phone_number, Email, course, error_message", test_data)
+    def est_creation_of_student_beneficiary_with_invalid_data_in_all_first_name_fields(self, setup, open_website_and_logging_user_in, log_test_start, Student_number, Firstname, Lastname, Phone_number,
                                                                        Email, course,  error_message):
         try:
-            self.log_test_start("***** TESTING THE CREATION OF NEW OTHER BENEFICIARY.******")
-            self.open_website_and_log_in_user(setup, self.URL)
+            log_test_start("***** TESTING THE CREATION OF NEW OTHER BENEFICIARY.******")
+            open_website_and_logging_user_in(setup, self.URL)
+            self.driver = setup
             self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
 
             self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
+            time.sleep(2)
             self.Beneficiary_page_objects.click_on_the_new_beneficiary_button()
-            self.Beneficiary_page_objects.click_on_the_other_beneficiary_option()
+            self.Beneficiary_page_objects.click_on_the_student_beneficiary_option()
 
             # This is to fill the form
             self.Beneficiary_page_objects.input_student_number(Student_number)
@@ -190,10 +174,10 @@ class Test_Student_Beneficiary_Negative_Tests:
             self.Beneficiary_page_objects.input_email(Email)
             self.Beneficiary_page_objects.input_student_course(course)
 
-            self.log_test_start("***** USER SELECTS THE THE SCHOOL IN THE CORRECT FIELD.******")
+            self.logger.info("***** USER SELECTS THE THE SCHOOL IN THE CORRECT FIELD.******")
             self.Beneficiary_page_objects.Select_school()
 
-            self.log_test_start("***** USER CLICKS ON THE PROCEED BUTTON.******")
+            self.logger.info("***** USER CLICKS ON THE PROCEED BUTTON.******")
             self.Beneficiary_page_objects.click_on_the_proceed_button()
 
             assert error_message == self.driver.find_element(By.XPATH,
@@ -223,17 +207,19 @@ class Test_Student_Beneficiary_Negative_Tests:
     ]
 
     @pytest.mark.parametarized("Student_number, Firstname, Lastname, Phone_number, Email, course, error_message", test_data)
-    def test_creation_of_student_beneficiary_with_invalid_data_in_all_last_name_fields(self, setup, Student_number, Firstname,
+    def est_creation_of_student_beneficiary_with_invalid_data_in_all_last_name_fields(self, setup, open_website_and_logging_user_in, log_test_start, Student_number, Firstname,
                                                                                         Lastname, Phone_number,
                                                                                         Email, course, error_message):
         try:
-            self.log_test_start("***** TESTING THE CREATION OF NEW STUDENT BENEFICIARY WITH INVALID DATA.******")
-            self.open_website_and_log_in_user(setup, self.URL)
+            log_test_start("***** TESTING THE CREATION OF NEW STUDENT BENEFICIARY WITH INVALID DATA.******")
+            open_website_and_logging_user_in(setup, self.URL)
+            self.driver = setup
             self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
 
             self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
+            time.sleep(2)
             self.Beneficiary_page_objects.click_on_the_new_beneficiary_button()
-            self.Beneficiary_page_objects.click_on_the_other_beneficiary_option()
+            self.Beneficiary_page_objects.click_on_the_student_beneficiary_option()
 
             # This is to fill the form
             self.Beneficiary_page_objects.input_student_number(Student_number)
@@ -243,10 +229,10 @@ class Test_Student_Beneficiary_Negative_Tests:
             self.Beneficiary_page_objects.input_email(Email)
             self.Beneficiary_page_objects.input_student_course(course)
 
-            self.log_test_start("***** USER SELECTS THE THE SCHOOL IN THE CORRECT FIELD.******")
+            self.logger.info("***** USER SELECTS THE THE SCHOOL IN THE CORRECT FIELD.******")
             self.Beneficiary_page_objects.Select_school()
 
-            self.log_test_start("***** USER CLICKS ON THE PROCEED BUTTON.******")
+            self.logger.info("***** USER CLICKS ON THE PROCEED BUTTON.******")
             self.Beneficiary_page_objects.click_on_the_proceed_button()
 
             assert error_message == self.driver.find_element(By.XPATH,
@@ -278,18 +264,20 @@ class Test_Student_Beneficiary_Negative_Tests:
         # Invalid phone number
     ]
 
-    @pytest.mark.parametarized("Student_number, Firstname, Lastname, Phone_number, Email, course, error_message", test_data)
-    def test_creation_of_student_beneficiary_with_invalid_data_in_all_phone_number_fields(self, setup, Student_number, Firstname,
+    @pytest.mark.parametrize("Student_number, Firstname, Lastname, Phone_number, Email, course, error_message", test_data)
+    def est_creation_of_student_beneficiary_with_invalid_data_in_all_phone_number_fields(self, setup, open_website_and_logging_user_in, log_test_start,  Student_number, Firstname,
                                                                                        Lastname, Phone_number,
                                                                                        Email, course, error_message):
         try:
-            self.log_test_start("***** TESTING THE CREATION OF NEW STUDENT BENEFICIARY WITH INVALID DATA.******")
-            self.open_website_and_log_in_user(setup, self.URL)
+            log_test_start("***** TESTING THE CREATION OF NEW STUDENT BENEFICIARY WITH INVALID DATA.******")
+            open_website_and_logging_user_in(self.URL)
+            self.driver = setup
             self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
 
             self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
+            time.sleep(2)
             self.Beneficiary_page_objects.click_on_the_new_beneficiary_button()
-            self.Beneficiary_page_objects.click_on_the_other_beneficiary_option()
+            self.Beneficiary_page_objects.click_on_the_student_beneficiary_option()
 
             # This is to fill the form
             self.Beneficiary_page_objects.input_student_number(Student_number)
@@ -299,10 +287,10 @@ class Test_Student_Beneficiary_Negative_Tests:
             self.Beneficiary_page_objects.input_email(Email)
             self.Beneficiary_page_objects.input_student_course(course)
 
-            self.log_test_start("***** USER SELECTS THE THE SCHOOL IN THE CORRECT FIELD.******")
+            self.logger.info("***** USER SELECTS THE THE SCHOOL IN THE CORRECT FIELD.******")
             self.Beneficiary_page_objects.Select_school()
 
-            self.log_test_start("***** USER CLICKS ON THE PROCEED BUTTON.******")
+            self.logger.info("***** USER CLICKS ON THE PROCEED BUTTON.******")
             self.Beneficiary_page_objects.click_on_the_proceed_button()
 
             assert error_message == self.driver.find_element(By.XPATH,
@@ -334,18 +322,20 @@ class Test_Student_Beneficiary_Negative_Tests:
         # Invalid phone number
     ]
 
-    @pytest.mark.parametarized("Student_number, Firstname, Lastname, Phone_number, Email, course, error_message", test_data)
-    def test_creation_of_student_beneficiary_with_invalid_data_in_all_email_fields(self, setup, Student_number, Firstname,
+    @pytest.mark.parametrize("Student_number, Firstname, Lastname, Phone_number, Email, course, error_message", test_data)
+    def est_creation_of_student_beneficiary_with_invalid_data_in_all_email_fields(self, setup, open_website_and_logging_user_in, log_test_start, Student_number, Firstname,
                                                                                        Lastname, Phone_number,
                                                                                        Email, course, error_message):
         try:
-            self.log_test_start("***** TESTING THE CREATION OF NEW STUDENT BENEFICIARY WITH INVALID DATA.******")
-            self.open_website_and_log_in_user(setup, self.URL)
+            log_test_start("***** TESTING THE CREATION OF NEW STUDENT BENEFICIARY WITH INVALID DATA.******")
+            open_website_and_logging_user_in(self.URL)
+            self.driver = setup
             self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
 
             self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
+            time.sleep(2)
             self.Beneficiary_page_objects.click_on_the_new_beneficiary_button()
-            self.Beneficiary_page_objects.click_on_the_other_beneficiary_option()
+            self.Beneficiary_page_objects.click_on_the_student_beneficiary_option()
 
             # This is to fill the form
             self.Beneficiary_page_objects.input_student_number(Student_number)
@@ -355,10 +345,10 @@ class Test_Student_Beneficiary_Negative_Tests:
             self.Beneficiary_page_objects.input_email(Email)
             self.Beneficiary_page_objects.input_student_course(course)
 
-            self.log_test_start("***** USER SELECTS THE THE SCHOOL IN THE CORRECT FIELD.******")
+            self.logger.info("***** USER SELECTS THE THE SCHOOL IN THE CORRECT FIELD.******")
             self.Beneficiary_page_objects.Select_school()
 
-            self.log_test_start("***** USER CLICKS ON THE PROCEED BUTTON.******")
+            self.logger.info("***** USER CLICKS ON THE PROCEED BUTTON.******")
             self.Beneficiary_page_objects.click_on_the_proceed_button()
 
             assert error_message == self.driver.find_element(By.XPATH,
@@ -388,20 +378,22 @@ class Test_Student_Beneficiary_Negative_Tests:
         # Invalid phone number
     ]
 
-    @pytest.mark.parametarized("Student_number, Firstname, Lastname, Phone_number, Email, course, error_message",
+    @pytest.mark.parametrize("Student_number, Firstname, Lastname, Phone_number, Email, course, error_message",
                                test_data)
-    def test_creation_of_student_beneficiary_with_invalid_data_in_all_email_fields(self, setup, Student_number,
+    def est_creation_of_student_beneficiary_with_invalid_data_in_all_email_fields(self, setup, open_website_and_logging_user_in, log_test_start, Student_number,
                                                                                    Firstname,
                                                                                    Lastname, Phone_number,
                                                                                    Email, course, error_message):
         try:
-            self.log_test_start("***** TESTING THE CREATION OF NEW STUDENT BENEFICIARY WITH INVALID DATA.******")
-            self.open_website_and_log_in_user(setup, self.URL)
+            log_test_start("***** TESTING THE CREATION OF NEW STUDENT BENEFICIARY WITH INVALID DATA.******")
+            open_website_and_logging_user_in(self.URL)
+            self.driver = setup
             self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
 
             self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
+            time.sleep(2)
             self.Beneficiary_page_objects.click_on_the_new_beneficiary_button()
-            self.Beneficiary_page_objects.click_on_the_other_beneficiary_option()
+            self.Beneficiary_page_objects.click_on_the_student_beneficiary_option()
 
             # This is to fill the form
             self.Beneficiary_page_objects.input_student_number(Student_number)
@@ -411,10 +403,10 @@ class Test_Student_Beneficiary_Negative_Tests:
             self.Beneficiary_page_objects.input_email(Email)
             self.Beneficiary_page_objects.input_student_course(course)
 
-            self.log_test_start("***** USER SELECTS THE THE SCHOOL IN THE CORRECT FIELD.******")
+            self.logger.info("***** USER SELECTS THE THE SCHOOL IN THE CORRECT FIELD.******")
             self.Beneficiary_page_objects.Select_school()
 
-            self.log_test_start("***** USER CLICKS ON THE PROCEED BUTTON.******")
+            self.logger.info("***** USER CLICKS ON THE PROCEED BUTTON.******")
             self.Beneficiary_page_objects.click_on_the_proceed_button()
 
             assert error_message == self.driver.find_element(By.XPATH,
@@ -431,5 +423,4 @@ class Test_Student_Beneficiary_Negative_Tests:
             raise
 
         finally:
-            time.sleep(3)
             self.driver.quit()

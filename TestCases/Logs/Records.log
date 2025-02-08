@@ -279,3 +279,523 @@ Stacktrace:
 07/02/2025 08:53:15 AM: INFO: TOTAL BROKEN LINKS: 0
 07/02/2025 08:53:15 AM: INFO: TOTAL FUNCTIONAL LINKS: 24
 07/02/2025 08:53:15 AM: INFO: TEST PASSED: ALL LINKS ARE FUNCTIONAL
+07/02/2025 09:33:09 AM: INFO: ****** STARTING TEST:  ******
+07/02/2025 09:33:09 AM: ERROR: An unexpected error occurred: open_website_and_logging_user_in.<locals>._open_website_and_log_in_user() missing 1 required positional argument: 'url'
+07/02/2025 09:33:12 AM: INFO: ****** STARTING TEST:  ******
+07/02/2025 09:33:12 AM: ERROR: An unexpected error occurred: open_website_and_logging_user_in.<locals>._open_website_and_log_in_user() missing 1 required positional argument: 'url'
+07/02/2025 09:33:15 AM: INFO: ****** STARTING TEST:  ******
+07/02/2025 09:33:15 AM: ERROR: An unexpected error occurred: open_website_and_logging_user_in.<locals>._open_website_and_log_in_user() missing 1 required positional argument: 'url'
+07/02/2025 09:33:18 AM: INFO: ****** STARTING TEST:  ******
+07/02/2025 09:33:18 AM: ERROR: An unexpected error occurred: open_website_and_logging_user_in.<locals>._open_website_and_log_in_user() missing 1 required positional argument: 'url'
+07/02/2025 09:33:22 AM: INFO: ****** STARTING TEST:  ******
+07/02/2025 09:33:22 AM: ERROR: An unexpected error occurred: open_website_and_logging_user_in.<locals>._open_website_and_log_in_user() missing 1 required positional argument: 'url'
+07/02/2025 09:33:25 AM: INFO: ****** STARTING TEST:  ******
+07/02/2025 09:33:25 AM: ERROR: An unexpected error occurred: open_website_and_logging_user_in.<locals>._open_website_and_log_in_user() missing 1 required positional argument: 'url'
+07/02/2025 09:33:29 AM: INFO: ****** STARTING TEST:  ******
+07/02/2025 09:33:29 AM: ERROR: An unexpected error occurred: open_website_and_logging_user_in.<locals>._open_website_and_log_in_user() missing 1 required positional argument: 'url'
+07/02/2025 09:34:51 AM: INFO: ****** STARTING TEST:  ******
+07/02/2025 09:35:18 AM: INFO: *** TEST PASSED: ERROR MESSAGE IS CORRECT ****
+07/02/2025 09:35:25 AM: INFO: ****** STARTING TEST:  ******
+07/02/2025 09:35:51 AM: INFO: *** TEST PASSED: ERROR MESSAGE IS CORRECT ****
+07/02/2025 09:35:56 AM: INFO: ****** STARTING TEST:  ******
+07/02/2025 09:36:22 AM: INFO: *** TEST PASSED: ERROR MESSAGE IS CORRECT ****
+07/02/2025 09:36:27 AM: INFO: ****** STARTING TEST:  ******
+07/02/2025 09:36:44 AM: INFO: *** TEST PASSED: ERROR MESSAGE IS CORRECT ****
+07/02/2025 09:36:51 AM: INFO: ****** STARTING TEST:  ******
+07/02/2025 09:37:08 AM: INFO: *** TEST PASSED: ERROR MESSAGE IS CORRECT ****
+07/02/2025 09:37:16 AM: INFO: ****** STARTING TEST:  ******
+07/02/2025 09:37:35 AM: INFO: *** TEST PASSED: ERROR MESSAGE IS CORRECT ****
+07/02/2025 09:37:41 AM: INFO: ****** STARTING TEST:  ******
+07/02/2025 09:38:00 AM: INFO: *** TEST PASSED: ERROR MESSAGE IS CORRECT ****
+07/02/2025 09:46:59 AM: INFO: ****** STARTING TEST:  ******
+07/02/2025 09:47:09 AM: INFO: *** TEST PASSED: ERROR MESSAGE IS CORRECT ****
+07/02/2025 09:47:15 AM: INFO: ****** STARTING TEST:  ******
+07/02/2025 09:47:24 AM: INFO: *** TEST PASSED: ERROR MESSAGE IS CORRECT ****
+07/02/2025 09:47:30 AM: INFO: ****** STARTING TEST:  ******
+07/02/2025 09:47:38 AM: INFO: *** TEST PASSED: ERROR MESSAGE IS CORRECT ****
+07/02/2025 09:47:43 AM: INFO: ****** STARTING TEST:  ******
+07/02/2025 09:47:52 AM: INFO: *** TEST PASSED: ERROR MESSAGE IS CORRECT ****
+07/02/2025 09:49:00 AM: INFO: ****** STARTING TEST:  ******
+07/02/2025 09:49:14 AM: INFO: *** TEST PASSED: ERROR MESSAGE IS CORRECT ****
+07/02/2025 09:49:20 AM: INFO: ****** STARTING TEST:  ******
+07/02/2025 09:49:32 AM: INFO: *** TEST PASSED: ERROR MESSAGE IS CORRECT ****
+07/02/2025 09:49:38 AM: INFO: ****** STARTING TEST:  ******
+07/02/2025 09:49:49 AM: INFO: *** TEST PASSED: ERROR MESSAGE IS CORRECT ****
+07/02/2025 10:10:16 AM: INFO: ****** STARTING TEST: ***** TESTING THE CREATION OF NEW STUDENT BENEFICIARY WITH MISSING COURSE FILED. ****** ******
+07/02/2025 10:10:24 AM: ERROR: An unexpected error occurred: Message: element click intercepted: Element <button data-v-0fba3c93="" to="/" class="btn flex align-items-center">...</button> is not clickable at point (1146, 41). Other element would receive the click: <div class="Vue-Toastification__toast Vue-Toastification__toast--success top-right" style="">...</div>
+  (Session info: chrome=132.0.6834.160)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7F36102F5+28725]
+	(No symbol) [0x00007FF7F3572AE0]
+	(No symbol) [0x00007FF7F340510A]
+	(No symbol) [0x00007FF7F34610F8]
+	(No symbol) [0x00007FF7F345EB42]
+	(No symbol) [0x00007FF7F345BC51]
+	(No symbol) [0x00007FF7F345ABB1]
+	(No symbol) [0x00007FF7F344C6B4]
+	(No symbol) [0x00007FF7F347FFAA]
+	(No symbol) [0x00007FF7F344BF86]
+	(No symbol) [0x00007FF7F34801C0]
+	(No symbol) [0x00007FF7F34A0181]
+	(No symbol) [0x00007FF7F347FD53]
+	(No symbol) [0x00007FF7F344A0E3]
+	(No symbol) [0x00007FF7F344B471]
+	GetHandleVerifier [0x00007FF7F393F30D+3366989]
+	GetHandleVerifier [0x00007FF7F39512F0+3440688]
+	GetHandleVerifier [0x00007FF7F39478FD+3401277]
+	GetHandleVerifier [0x00007FF7F36DAAAB+858091]
+	(No symbol) [0x00007FF7F357E74F]
+	(No symbol) [0x00007FF7F357A304]
+	(No symbol) [0x00007FF7F357A49D]
+	(No symbol) [0x00007FF7F3568B69]
+	BaseThreadInitThunk [0x00007FFB0E2E7374+20]
+	RtlUserThreadStart [0x00007FFB0E4FCC91+33]
+
+07/02/2025 10:13:08 AM: INFO: ****** STARTING TEST: ***** TESTING THE CREATION OF NEW STUDENT BENEFICIARY WITH MISSING COURSE FILED. ****** ******
+07/02/2025 10:13:17 AM: ERROR: An unexpected error occurred: Message: element click intercepted: Element <button data-v-0fba3c93="" to="/" class="btn flex align-items-center">...</button> is not clickable at point (1146, 41). Other element would receive the click: <div class="Vue-Toastification__toast Vue-Toastification__toast--success top-right" style="">...</div>
+  (Session info: chrome=132.0.6834.160)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7F36102F5+28725]
+	(No symbol) [0x00007FF7F3572AE0]
+	(No symbol) [0x00007FF7F340510A]
+	(No symbol) [0x00007FF7F34610F8]
+	(No symbol) [0x00007FF7F345EB42]
+	(No symbol) [0x00007FF7F345BC51]
+	(No symbol) [0x00007FF7F345ABB1]
+	(No symbol) [0x00007FF7F344C6B4]
+	(No symbol) [0x00007FF7F347FFAA]
+	(No symbol) [0x00007FF7F344BF86]
+	(No symbol) [0x00007FF7F34801C0]
+	(No symbol) [0x00007FF7F34A0181]
+	(No symbol) [0x00007FF7F347FD53]
+	(No symbol) [0x00007FF7F344A0E3]
+	(No symbol) [0x00007FF7F344B471]
+	GetHandleVerifier [0x00007FF7F393F30D+3366989]
+	GetHandleVerifier [0x00007FF7F39512F0+3440688]
+	GetHandleVerifier [0x00007FF7F39478FD+3401277]
+	GetHandleVerifier [0x00007FF7F36DAAAB+858091]
+	(No symbol) [0x00007FF7F357E74F]
+	(No symbol) [0x00007FF7F357A304]
+	(No symbol) [0x00007FF7F357A49D]
+	(No symbol) [0x00007FF7F3568B69]
+	BaseThreadInitThunk [0x00007FFB0E2E7374+20]
+	RtlUserThreadStart [0x00007FFB0E4FCC91+33]
+
+07/02/2025 10:13:58 AM: INFO: ****** STARTING TEST: ***** TESTING THE CREATION OF NEW STUDENT BENEFICIARY WITH MISSING COURSE FILED. ****** ******
+07/02/2025 10:14:05 AM: ERROR: An unexpected error occurred: Message: element click intercepted: Element <button data-v-0fba3c93="" to="/" class="btn flex align-items-center">...</button> is not clickable at point (1146, 41). Other element would receive the click: <div class="Vue-Toastification__toast Vue-Toastification__toast--success top-right" style="">...</div>
+  (Session info: chrome=132.0.6834.160)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7F36102F5+28725]
+	(No symbol) [0x00007FF7F3572AE0]
+	(No symbol) [0x00007FF7F340510A]
+	(No symbol) [0x00007FF7F34610F8]
+	(No symbol) [0x00007FF7F345EB42]
+	(No symbol) [0x00007FF7F345BC51]
+	(No symbol) [0x00007FF7F345ABB1]
+	(No symbol) [0x00007FF7F344C6B4]
+	(No symbol) [0x00007FF7F347FFAA]
+	(No symbol) [0x00007FF7F344BF86]
+	(No symbol) [0x00007FF7F34801C0]
+	(No symbol) [0x00007FF7F34A0181]
+	(No symbol) [0x00007FF7F347FD53]
+	(No symbol) [0x00007FF7F344A0E3]
+	(No symbol) [0x00007FF7F344B471]
+	GetHandleVerifier [0x00007FF7F393F30D+3366989]
+	GetHandleVerifier [0x00007FF7F39512F0+3440688]
+	GetHandleVerifier [0x00007FF7F39478FD+3401277]
+	GetHandleVerifier [0x00007FF7F36DAAAB+858091]
+	(No symbol) [0x00007FF7F357E74F]
+	(No symbol) [0x00007FF7F357A304]
+	(No symbol) [0x00007FF7F357A49D]
+	(No symbol) [0x00007FF7F3568B69]
+	BaseThreadInitThunk [0x00007FFB0E2E7374+20]
+	RtlUserThreadStart [0x00007FFB0E4FCC91+33]
+
+07/02/2025 10:17:45 AM: INFO: ****** STARTING TEST: ***** TESTING THE CREATION OF NEW STUDENT BENEFICIARY WITH MISSING COURSE FILED. ****** ******
+07/02/2025 10:17:58 AM: ERROR: An unexpected error occurred: Message: element click intercepted: Element <button data-v-0fba3c93="" to="/" class="btn flex align-items-center">...</button> is not clickable at point (1146, 41). Other element would receive the click: <div class="Vue-Toastification__toast Vue-Toastification__toast--success top-right v-leave Vue-Toastification__bounce-leave-active" style="animation-duration: 750ms; animation-fill-mode: both; left: 270px; top: 4px; width: 326px; height: 68px; position: absolute;">...</div>
+  (Session info: chrome=132.0.6834.160)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7F36102F5+28725]
+	(No symbol) [0x00007FF7F3572AE0]
+	(No symbol) [0x00007FF7F340510A]
+	(No symbol) [0x00007FF7F34610F8]
+	(No symbol) [0x00007FF7F345EB42]
+	(No symbol) [0x00007FF7F345BC51]
+	(No symbol) [0x00007FF7F345ABB1]
+	(No symbol) [0x00007FF7F344C6B4]
+	(No symbol) [0x00007FF7F347FFAA]
+	(No symbol) [0x00007FF7F344BF86]
+	(No symbol) [0x00007FF7F34801C0]
+	(No symbol) [0x00007FF7F34A0181]
+	(No symbol) [0x00007FF7F347FD53]
+	(No symbol) [0x00007FF7F344A0E3]
+	(No symbol) [0x00007FF7F344B471]
+	GetHandleVerifier [0x00007FF7F393F30D+3366989]
+	GetHandleVerifier [0x00007FF7F39512F0+3440688]
+	GetHandleVerifier [0x00007FF7F39478FD+3401277]
+	GetHandleVerifier [0x00007FF7F36DAAAB+858091]
+	(No symbol) [0x00007FF7F357E74F]
+	(No symbol) [0x00007FF7F357A304]
+	(No symbol) [0x00007FF7F357A49D]
+	(No symbol) [0x00007FF7F3568B69]
+	BaseThreadInitThunk [0x00007FFB0E2E7374+20]
+	RtlUserThreadStart [0x00007FFB0E4FCC91+33]
+
+07/02/2025 10:18:51 AM: INFO: ****** STARTING TEST: ***** TESTING THE CREATION OF NEW STUDENT BENEFICIARY WITH MISSING COURSE FILED. ****** ******
+07/02/2025 10:18:58 AM: ERROR: An unexpected error occurred: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=132.0.6834.160); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF7F36102F5+28725]
+	(No symbol) [0x00007FF7F3572AE0]
+	(No symbol) [0x00007FF7F340510A]
+	(No symbol) [0x00007FF7F340BD70]
+	(No symbol) [0x00007FF7F340EABC]
+	(No symbol) [0x00007FF7F340EB8F]
+	(No symbol) [0x00007FF7F3460FE3]
+	(No symbol) [0x00007FF7F345EB42]
+	(No symbol) [0x00007FF7F345BC51]
+	(No symbol) [0x00007FF7F345ABB1]
+	(No symbol) [0x00007FF7F344C6B4]
+	(No symbol) [0x00007FF7F347FFAA]
+	(No symbol) [0x00007FF7F344BF86]
+	(No symbol) [0x00007FF7F34801C0]
+	(No symbol) [0x00007FF7F34A0181]
+	(No symbol) [0x00007FF7F347FD53]
+	(No symbol) [0x00007FF7F344A0E3]
+	(No symbol) [0x00007FF7F344B471]
+	GetHandleVerifier [0x00007FF7F393F30D+3366989]
+	GetHandleVerifier [0x00007FF7F39512F0+3440688]
+	GetHandleVerifier [0x00007FF7F39478FD+3401277]
+	GetHandleVerifier [0x00007FF7F36DAAAB+858091]
+	(No symbol) [0x00007FF7F357E74F]
+	(No symbol) [0x00007FF7F357A304]
+	(No symbol) [0x00007FF7F357A49D]
+	(No symbol) [0x00007FF7F3568B69]
+	BaseThreadInitThunk [0x00007FFB0E2E7374+20]
+	RtlUserThreadStart [0x00007FFB0E4FCC91+33]
+
+07/02/2025 10:22:22 AM: INFO: ****** STARTING TEST: ***** TESTING THE CREATION OF NEW STUDENT BENEFICIARY WITH MISSING COURSE FILED. ****** ******
+07/02/2025 10:22:35 AM: INFO: ***** User is navigated to the form for the creation a student beneficiary. *****
+07/02/2025 10:22:36 AM: ERROR: An unexpected error occurred: 'Test_Student_Beneficiary_Negative_Tests' object has no attribute 'log_test_start'
+07/02/2025 10:24:30 AM: INFO: ****** STARTING TEST: ***** TESTING THE CREATION OF NEW STUDENT BENEFICIARY WITH MISSING COURSE FILED. ****** ******
+07/02/2025 10:24:45 AM: INFO: ***** User is navigated to the form for the creation a student beneficiary. *****
+07/02/2025 10:24:46 AM: ERROR: An unexpected error occurred: 'Test_Student_Beneficiary_Negative_Tests' object has no attribute 'log_test_start'
+07/02/2025 10:31:34 AM: INFO: ****** STARTING TEST: ***** TESTING THE CREATION OF NEW STUDENT BENEFICIARY WITH MISSING COURSE FILED. ****** ******
+07/02/2025 10:31:46 AM: INFO: ***** User is navigated to the form for the creation a student beneficiary. *****
+07/02/2025 10:31:46 AM: INFO: ***** USER INPUTS THE THE COURSE IN THE CORRECT FIELD.******
+07/02/2025 10:31:47 AM: INFO: ***** User clicks on the proceed button *****
+07/02/2025 10:31:49 AM: INFO: ***** TEST PASSED: ERROR MESSAGE IS THROWN *****
+07/02/2025 10:39:37 AM: INFO: ****** STARTING TEST: ***** TESTING THE CREATION OF NEW STUDENT BENEFICIARY WITH MISSING COURSE FILED. ****** ******
+07/02/2025 10:39:46 AM: ERROR: An unexpected error occurred: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=132.0.6834.160); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF6430702F5+28725]
+	(No symbol) [0x00007FF642FD2AE0]
+	(No symbol) [0x00007FF642E6510A]
+	(No symbol) [0x00007FF642E6BD70]
+	(No symbol) [0x00007FF642E6EABC]
+	(No symbol) [0x00007FF642E6EB8F]
+	(No symbol) [0x00007FF642EC0FE3]
+	(No symbol) [0x00007FF642EBEB42]
+	(No symbol) [0x00007FF642EBBC51]
+	(No symbol) [0x00007FF642EBABB1]
+	(No symbol) [0x00007FF642EAC6B4]
+	(No symbol) [0x00007FF642EDFFAA]
+	(No symbol) [0x00007FF642EABF86]
+	(No symbol) [0x00007FF642EE01C0]
+	(No symbol) [0x00007FF642F00181]
+	(No symbol) [0x00007FF642EDFD53]
+	(No symbol) [0x00007FF642EAA0E3]
+	(No symbol) [0x00007FF642EAB471]
+	GetHandleVerifier [0x00007FF64339F30D+3366989]
+	GetHandleVerifier [0x00007FF6433B12F0+3440688]
+	GetHandleVerifier [0x00007FF6433A78FD+3401277]
+	GetHandleVerifier [0x00007FF64313AAAB+858091]
+	(No symbol) [0x00007FF642FDE74F]
+	(No symbol) [0x00007FF642FDA304]
+	(No symbol) [0x00007FF642FDA49D]
+	(No symbol) [0x00007FF642FC8B69]
+	BaseThreadInitThunk [0x00007FFB0E2E7374+20]
+	RtlUserThreadStart [0x00007FFB0E4FCC91+33]
+
+07/02/2025 10:43:13 AM: INFO: ****** STARTING TEST: ***** TESTING THE CREATION OF NEW STUDENT BENEFICIARY WITH MISSING COURSE FILED. ****** ******
+07/02/2025 10:44:38 AM: ERROR: An unexpected error occurred: Message: unknown error: net::ERR_NAME_NOT_RESOLVED
+  (Session info: chrome=132.0.6834.160)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6430702F5+28725]
+	(No symbol) [0x00007FF642FD2AE0]
+	(No symbol) [0x00007FF642E6510A]
+	(No symbol) [0x00007FF642E62861]
+	(No symbol) [0x00007FF642E53559]
+	(No symbol) [0x00007FF642E552AF]
+	(No symbol) [0x00007FF642E5381F]
+	(No symbol) [0x00007FF642E532ED]
+	(No symbol) [0x00007FF642E52FBA]
+	(No symbol) [0x00007FF642E50DD1]
+	(No symbol) [0x00007FF642E5145C]
+	(No symbol) [0x00007FF642E6824A]
+	(No symbol) [0x00007FF642F00FAE]
+	(No symbol) [0x00007FF642EDFFAA]
+	(No symbol) [0x00007FF642F00181]
+	(No symbol) [0x00007FF642EDFD53]
+	(No symbol) [0x00007FF642EAA0E3]
+	(No symbol) [0x00007FF642EAB471]
+	GetHandleVerifier [0x00007FF64339F30D+3366989]
+	GetHandleVerifier [0x00007FF6433B12F0+3440688]
+	GetHandleVerifier [0x00007FF6433A78FD+3401277]
+	GetHandleVerifier [0x00007FF64313AAAB+858091]
+	(No symbol) [0x00007FF642FDE74F]
+	(No symbol) [0x00007FF642FDA304]
+	(No symbol) [0x00007FF642FDA49D]
+	(No symbol) [0x00007FF642FC8B69]
+	BaseThreadInitThunk [0x00007FFB0E2E7374+20]
+	RtlUserThreadStart [0x00007FFB0E4FCC91+33]
+
+07/02/2025 10:46:42 AM: INFO: ****** STARTING TEST: ***** TESTING THE CREATION OF NEW STUDENT BENEFICIARY WITH MISSING COURSE FILED. ****** ******
+07/02/2025 10:46:52 AM: ERROR: An unexpected error occurred: Message: element click intercepted: Element <button data-v-0fba3c93="" to="/" class="btn flex align-items-center">...</button> is not clickable at point (1146, 41). Other element would receive the click: <div class="Vue-Toastification__toast Vue-Toastification__toast--success top-right" style="">...</div>
+  (Session info: chrome=132.0.6834.160)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6430702F5+28725]
+	(No symbol) [0x00007FF642FD2AE0]
+	(No symbol) [0x00007FF642E6510A]
+	(No symbol) [0x00007FF642EC10F8]
+	(No symbol) [0x00007FF642EBEB42]
+	(No symbol) [0x00007FF642EBBC51]
+	(No symbol) [0x00007FF642EBABB1]
+	(No symbol) [0x00007FF642EAC6B4]
+	(No symbol) [0x00007FF642EDFFAA]
+	(No symbol) [0x00007FF642EABF86]
+	(No symbol) [0x00007FF642EE01C0]
+	(No symbol) [0x00007FF642F00181]
+	(No symbol) [0x00007FF642EDFD53]
+	(No symbol) [0x00007FF642EAA0E3]
+	(No symbol) [0x00007FF642EAB471]
+	GetHandleVerifier [0x00007FF64339F30D+3366989]
+	GetHandleVerifier [0x00007FF6433B12F0+3440688]
+	GetHandleVerifier [0x00007FF6433A78FD+3401277]
+	GetHandleVerifier [0x00007FF64313AAAB+858091]
+	(No symbol) [0x00007FF642FDE74F]
+	(No symbol) [0x00007FF642FDA304]
+	(No symbol) [0x00007FF642FDA49D]
+	(No symbol) [0x00007FF642FC8B69]
+	BaseThreadInitThunk [0x00007FFB0E2E7374+20]
+	RtlUserThreadStart [0x00007FFB0E4FCC91+33]
+
+07/02/2025 10:47:33 AM: INFO: ****** STARTING TEST: ***** TESTING THE CREATION OF NEW STUDENT BENEFICIARY WITH MISSING COURSE FILED. ****** ******
+07/02/2025 10:47:42 AM: INFO: ***** User is navigated to the form for the creation a student beneficiary. *****
+07/02/2025 10:47:43 AM: INFO: ***** USER INPUTS THE THE COURSE IN THE CORRECT FIELD.******
+07/02/2025 10:47:43 AM: INFO: ***** User clicks on the proceed button *****
+07/02/2025 10:47:45 AM: INFO: ***** TEST PASSED: ERROR MESSAGE IS THROWN *****
+07/02/2025 11:01:56 AM: INFO: ****** STARTING TEST: ***** TESTING THE CREATION OF NEW OTHER BENEFICIARY.****** ******
+07/02/2025 11:02:04 AM: ERROR: An unexpected error occurred: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=132.0.6834.160); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF6B3F402F5+28725]
+	(No symbol) [0x00007FF6B3EA2AE0]
+	(No symbol) [0x00007FF6B3D3510A]
+	(No symbol) [0x00007FF6B3D3BD70]
+	(No symbol) [0x00007FF6B3D3EABC]
+	(No symbol) [0x00007FF6B3D3EB8F]
+	(No symbol) [0x00007FF6B3D90FE3]
+	(No symbol) [0x00007FF6B3D8EB42]
+	(No symbol) [0x00007FF6B3D8BC51]
+	(No symbol) [0x00007FF6B3D8ABB1]
+	(No symbol) [0x00007FF6B3D7C6B4]
+	(No symbol) [0x00007FF6B3DAFFAA]
+	(No symbol) [0x00007FF6B3D7BF86]
+	(No symbol) [0x00007FF6B3DB01C0]
+	(No symbol) [0x00007FF6B3DD0181]
+	(No symbol) [0x00007FF6B3DAFD53]
+	(No symbol) [0x00007FF6B3D7A0E3]
+	(No symbol) [0x00007FF6B3D7B471]
+	GetHandleVerifier [0x00007FF6B426F30D+3366989]
+	GetHandleVerifier [0x00007FF6B42812F0+3440688]
+	GetHandleVerifier [0x00007FF6B42778FD+3401277]
+	GetHandleVerifier [0x00007FF6B400AAAB+858091]
+	(No symbol) [0x00007FF6B3EAE74F]
+	(No symbol) [0x00007FF6B3EAA304]
+	(No symbol) [0x00007FF6B3EAA49D]
+	(No symbol) [0x00007FF6B3E98B69]
+	BaseThreadInitThunk [0x00007FFB0E2E7374+20]
+	RtlUserThreadStart [0x00007FFB0E4FCC91+33]
+
+07/02/2025 11:02:54 AM: INFO: ****** STARTING TEST: ***** TESTING THE CREATION OF NEW OTHER BENEFICIARY.****** ******
+07/02/2025 11:03:03 AM: ERROR: An unexpected error occurred: Message: element not interactable
+  (Session info: chrome=132.0.6834.160)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6B3F402F5+28725]
+	(No symbol) [0x00007FF6B3EA2AE0]
+	(No symbol) [0x00007FF6B3D34F39]
+	(No symbol) [0x00007FF6B3D8A7D4]
+	(No symbol) [0x00007FF6B3D7C6B4]
+	(No symbol) [0x00007FF6B3DAFFAA]
+	(No symbol) [0x00007FF6B3D7BF86]
+	(No symbol) [0x00007FF6B3DB01C0]
+	(No symbol) [0x00007FF6B3DD0181]
+	(No symbol) [0x00007FF6B3DAFD53]
+	(No symbol) [0x00007FF6B3D7A0E3]
+	(No symbol) [0x00007FF6B3D7B471]
+	GetHandleVerifier [0x00007FF6B426F30D+3366989]
+	GetHandleVerifier [0x00007FF6B42812F0+3440688]
+	GetHandleVerifier [0x00007FF6B42778FD+3401277]
+	GetHandleVerifier [0x00007FF6B400AAAB+858091]
+	(No symbol) [0x00007FF6B3EAE74F]
+	(No symbol) [0x00007FF6B3EAA304]
+	(No symbol) [0x00007FF6B3EAA49D]
+	(No symbol) [0x00007FF6B3E98B69]
+	BaseThreadInitThunk [0x00007FFB0E2E7374+20]
+	RtlUserThreadStart [0x00007FFB0E4FCC91+33]
+
+07/02/2025 11:03:12 AM: INFO: ****** STARTING TEST: ***** TESTING THE CREATION OF NEW OTHER BENEFICIARY.****** ******
+07/02/2025 11:03:21 AM: ERROR: An unexpected error occurred: Message: element not interactable
+  (Session info: chrome=132.0.6834.160)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6B3F402F5+28725]
+	(No symbol) [0x00007FF6B3EA2AE0]
+	(No symbol) [0x00007FF6B3D34F39]
+	(No symbol) [0x00007FF6B3D8A7D4]
+	(No symbol) [0x00007FF6B3D7C6B4]
+	(No symbol) [0x00007FF6B3DAFFAA]
+	(No symbol) [0x00007FF6B3D7BF86]
+	(No symbol) [0x00007FF6B3DB01C0]
+	(No symbol) [0x00007FF6B3DD0181]
+	(No symbol) [0x00007FF6B3DAFD53]
+	(No symbol) [0x00007FF6B3D7A0E3]
+	(No symbol) [0x00007FF6B3D7B471]
+	GetHandleVerifier [0x00007FF6B426F30D+3366989]
+	GetHandleVerifier [0x00007FF6B42812F0+3440688]
+	GetHandleVerifier [0x00007FF6B42778FD+3401277]
+	GetHandleVerifier [0x00007FF6B400AAAB+858091]
+	(No symbol) [0x00007FF6B3EAE74F]
+	(No symbol) [0x00007FF6B3EAA304]
+	(No symbol) [0x00007FF6B3EAA49D]
+	(No symbol) [0x00007FF6B3E98B69]
+	BaseThreadInitThunk [0x00007FFB0E2E7374+20]
+	RtlUserThreadStart [0x00007FFB0E4FCC91+33]
+
+07/02/2025 11:07:36 AM: INFO: ****** STARTING TEST: ***** TESTING THE CREATION OF NEW OTHER BENEFICIARY.****** ******
+07/02/2025 11:07:51 AM: INFO: ***** USER SELECTS THE THE SCHOOL IN THE CORRECT FIELD.******
+07/02/2025 11:07:51 AM: INFO: ***** USER CLICKS ON THE PROCEED BUTTON.******
+07/02/2025 11:07:51 AM: INFO: ***** TEST PASSED: BENEFICIARY'S ACCOUNT WAS CREATED *****
+07/02/2025 11:08:00 AM: INFO: ****** STARTING TEST: ***** TESTING THE CREATION OF NEW OTHER BENEFICIARY.****** ******
+07/02/2025 11:08:12 AM: INFO: ***** USER SELECTS THE THE SCHOOL IN THE CORRECT FIELD.******
+07/02/2025 11:08:12 AM: INFO: ***** USER CLICKS ON THE PROCEED BUTTON.******
+07/02/2025 11:08:12 AM: INFO: ***** TEST PASSED: BENEFICIARY'S ACCOUNT WAS CREATED *****
+07/02/2025 11:08:21 AM: INFO: ****** STARTING TEST: ***** TESTING THE CREATION OF NEW OTHER BENEFICIARY.****** ******
+07/02/2025 11:08:33 AM: INFO: ***** USER SELECTS THE THE SCHOOL IN THE CORRECT FIELD.******
+07/02/2025 11:08:33 AM: INFO: ***** USER CLICKS ON THE PROCEED BUTTON.******
+07/02/2025 11:08:33 AM: INFO: ***** TEST PASSED: BENEFICIARY'S ACCOUNT WAS CREATED *****
+07/02/2025 11:08:41 AM: INFO: ****** STARTING TEST: ***** TESTING THE CREATION OF NEW OTHER BENEFICIARY.****** ******
+07/02/2025 11:08:53 AM: INFO: ***** USER SELECTS THE THE SCHOOL IN THE CORRECT FIELD.******
+07/02/2025 11:08:53 AM: INFO: ***** USER CLICKS ON THE PROCEED BUTTON.******
+07/02/2025 11:08:53 AM: INFO: ***** TEST PASSED: BENEFICIARY'S ACCOUNT WAS CREATED *****
+07/02/2025 11:09:02 AM: INFO: ****** STARTING TEST: ***** TESTING THE CREATION OF NEW OTHER BENEFICIARY.****** ******
+07/02/2025 11:09:15 AM: ERROR: An unexpected error occurred: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=132.0.6834.160); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF6555D02F5+28725]
+	(No symbol) [0x00007FF655532AE0]
+	(No symbol) [0x00007FF6553C510A]
+	(No symbol) [0x00007FF6553CBD70]
+	(No symbol) [0x00007FF6553CEABC]
+	(No symbol) [0x00007FF6553CEB8F]
+	(No symbol) [0x00007FF65541085E]
+	(No symbol) [0x00007FF65543FFAA]
+	(No symbol) [0x00007FF65540BF86]
+	(No symbol) [0x00007FF6554401C0]
+	(No symbol) [0x00007FF655460181]
+	(No symbol) [0x00007FF65543FD53]
+	(No symbol) [0x00007FF65540A0E3]
+	(No symbol) [0x00007FF65540B471]
+	GetHandleVerifier [0x00007FF6558FF30D+3366989]
+	GetHandleVerifier [0x00007FF6559112F0+3440688]
+	GetHandleVerifier [0x00007FF6559078FD+3401277]
+	GetHandleVerifier [0x00007FF65569AAAB+858091]
+	(No symbol) [0x00007FF65553E74F]
+	(No symbol) [0x00007FF65553A304]
+	(No symbol) [0x00007FF65553A49D]
+	(No symbol) [0x00007FF655528B69]
+	BaseThreadInitThunk [0x00007FFB0E2E7374+20]
+	RtlUserThreadStart [0x00007FFB0E4FCC91+33]
+
+07/02/2025 11:09:26 AM: INFO: ****** STARTING TEST: ***** TESTING THE CREATION OF NEW OTHER BENEFICIARY.****** ******
+07/02/2025 11:09:38 AM: INFO: ***** USER SELECTS THE THE SCHOOL IN THE CORRECT FIELD.******
+07/02/2025 11:09:38 AM: INFO: ***** USER CLICKS ON THE PROCEED BUTTON.******
+07/02/2025 11:09:38 AM: INFO: ***** TEST PASSED: BENEFICIARY'S ACCOUNT WAS CREATED *****
+07/02/2025 11:09:48 AM: INFO: ****** STARTING TEST: ***** TESTING THE CREATION OF NEW OTHER BENEFICIARY.****** ******
+07/02/2025 11:10:02 AM: INFO: ***** USER SELECTS THE THE SCHOOL IN THE CORRECT FIELD.******
+07/02/2025 11:10:02 AM: INFO: ***** USER CLICKS ON THE PROCEED BUTTON.******
+07/02/2025 11:10:02 AM: INFO: ***** TEST PASSED: BENEFICIARY'S ACCOUNT WAS CREATED *****
+07/02/2025 11:10:11 AM: INFO: ****** STARTING TEST: ***** TESTING THE CREATION OF NEW OTHER BENEFICIARY.****** ******
+07/02/2025 11:10:23 AM: INFO: ***** USER SELECTS THE THE SCHOOL IN THE CORRECT FIELD.******
+07/02/2025 11:10:23 AM: INFO: ***** USER CLICKS ON THE PROCEED BUTTON.******
+07/02/2025 11:10:23 AM: INFO: ***** TEST PASSED: BENEFICIARY'S ACCOUNT WAS CREATED *****
+07/02/2025 11:10:33 AM: INFO: ****** STARTING TEST: ***** TESTING THE CREATION OF NEW OTHER BENEFICIARY.****** ******
+07/02/2025 11:10:45 AM: INFO: ***** USER SELECTS THE THE SCHOOL IN THE CORRECT FIELD.******
+07/02/2025 11:10:45 AM: INFO: ***** USER CLICKS ON THE PROCEED BUTTON.******
+07/02/2025 11:10:45 AM: INFO: ***** TEST PASSED: BENEFICIARY'S ACCOUNT WAS CREATED *****
+07/02/2025 12:07:44 PM: INFO: ****** STARTING TEST: Test_that_a_student_can_become_beneficiary ******
+07/02/2025 12:07:48 PM: INFO: ***** User is logged into account. *****
+07/02/2025 12:07:52 PM: ERROR: An unexpected error occurred: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=132.0.6834.160); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF7735702F5+28725]
+	(No symbol) [0x00007FF7734D2AE0]
+	(No symbol) [0x00007FF77336510A]
+	(No symbol) [0x00007FF77336BD70]
+	(No symbol) [0x00007FF77336EABC]
+	(No symbol) [0x00007FF77336EB8F]
+	(No symbol) [0x00007FF7733C0FE3]
+	(No symbol) [0x00007FF7733BEB42]
+	(No symbol) [0x00007FF7733BBC51]
+	(No symbol) [0x00007FF7733BABB1]
+	(No symbol) [0x00007FF7733AC6B4]
+	(No symbol) [0x00007FF7733DFFAA]
+	(No symbol) [0x00007FF7733ABF86]
+	(No symbol) [0x00007FF7733E01C0]
+	(No symbol) [0x00007FF773400181]
+	(No symbol) [0x00007FF7733DFD53]
+	(No symbol) [0x00007FF7733AA0E3]
+	(No symbol) [0x00007FF7733AB471]
+	GetHandleVerifier [0x00007FF77389F30D+3366989]
+	GetHandleVerifier [0x00007FF7738B12F0+3440688]
+	GetHandleVerifier [0x00007FF7738A78FD+3401277]
+	GetHandleVerifier [0x00007FF77363AAAB+858091]
+	(No symbol) [0x00007FF7734DE74F]
+	(No symbol) [0x00007FF7734DA304]
+	(No symbol) [0x00007FF7734DA49D]
+	(No symbol) [0x00007FF7734C8B69]
+	BaseThreadInitThunk [0x00007FFB0E2E7374+20]
+	RtlUserThreadStart [0x00007FFB0E4FCC91+33]
+
+07/02/2025 12:07:58 PM: INFO: ****** STARTING TEST: ***** TESTING THE SEARCH FUNCTIONALITY ON OTHERS BENEFICIARY.****** ******
+07/02/2025 12:08:05 PM: ERROR: An unexpected error occurred: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//tbody/tr[1]/td[3]"}
+  (Session info: chrome=132.0.6834.160); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF7735702F5+28725]
+	(No symbol) [0x00007FF7734D2AE0]
+	(No symbol) [0x00007FF77336510A]
+	(No symbol) [0x00007FF7733B93D2]
+	(No symbol) [0x00007FF7733B95FC]
+	(No symbol) [0x00007FF773403407]
+	(No symbol) [0x00007FF7733DFFEF]
+	(No symbol) [0x00007FF773400181]
+	(No symbol) [0x00007FF7733DFD53]
+	(No symbol) [0x00007FF7733AA0E3]
+	(No symbol) [0x00007FF7733AB471]
+	GetHandleVerifier [0x00007FF77389F30D+3366989]
+	GetHandleVerifier [0x00007FF7738B12F0+3440688]
+	GetHandleVerifier [0x00007FF7738A78FD+3401277]
+	GetHandleVerifier [0x00007FF77363AAAB+858091]
+	(No symbol) [0x00007FF7734DE74F]
+	(No symbol) [0x00007FF7734DA304]
+	(No symbol) [0x00007FF7734DA49D]
+	(No symbol) [0x00007FF7734C8B69]
+	BaseThreadInitThunk [0x00007FFB0E2E7374+20]
+	RtlUserThreadStart [0x00007FFB0E4FCC91+33]
+
+07/02/2025 12:08:13 PM: INFO: ****** STARTING TEST: ***** TESTING THE SEARCH FUNCTIONALITY ON STUDENT BENEFICIARY.****** ******
+07/02/2025 12:08:22 PM: ERROR: An unexpected error occurred: cannot unpack non-iterable NoneType object
+07/02/2025 12:08:31 PM: INFO: ****** STARTING TEST: ***** TESTING THE SEARCH FUNCTIONALITY ON STUDENT BENEFICIARY.****** ******
+07/02/2025 12:08:38 PM: ERROR: An unexpected error occurred: cannot unpack non-iterable NoneType object
+07/02/2025 12:08:44 PM: ERROR: An unexpected error occurred: 'Test_Student_Beneficiary_Positive_Tests' object has no attribute 'log_test_start'

@@ -1,8 +1,7 @@
 # Import necessary modules and classes
 import random
 import time
-import requests
-from Utilities import ReadXyfile
+
 from selenium.webdriver.common.by import By
 from Utilities.RecordLogger import RecordLogger
 from Utilities.ReadProperties import ReadProperties
@@ -28,42 +27,18 @@ class Test_Student_Beneficiary_Positive_Tests:
     URL = ReadProperties.getTestPageURL()  # Get main page URL from configuration
     # loginPageUrl = ReadProperties.LoginURL()  # Get login page URL from configuration
     User_email, UserPassword = ReadProperties.getUserDetails()
-    EXISTING_EMAIL = User_email  # Get existing email from configuration
-    EXISTING_PASSWORD = UserPassword  # Get existing password
     # from configuration
     logger = RecordLogger.log_generator_info()  # Initialize logger instance
 
     Names = None
 
-    # Method to log the start of a test
-    def log_test_start(self, test_name):
-        self.logger.info(f"****** STARTING TEST: {test_name} ******")
 
-    # Method to log the end of a test
-    def log_test_end(self, test_name):
-        self.logger.info(f"****** ENDING TEST: {test_name} ******")
-
-
-    # Method to open the website
-    def open_website_and_log_in_user(self, setup, url):
-        self.log_test_start("Open Website")
-        self.driver = setup
-        self.driver.get(url)
-        self.driver.maximize_window()
-        self.Login_page_objects = LoginObjects(self.driver)
-
-        # Log in user into their account
-        self.Login_page_objects.input_email(self.EXISTING_EMAIL)
-        self.Login_page_objects.input_password(self.EXISTING_PASSWORD)
-        self.Login_page_objects.click_on_the_signin_button()
-
-        self.log_test_end("Open Website")
-
-    def test_that_a_student_can_become_beneficiary(self,setup):
+    def test_that_a_student_can_become_beneficiary(self,setup,open_website_and_logging_user_in, log_test_start):
         try:
             # Initialize Beneficiary page objects
-            self.log_test_start("Test_that_a_student_can_become_beneficiary")
-            self.open_website_and_log_in_user(setup, self.URL)
+            log_test_start("Test_that_a_student_can_become_beneficiary")
+            open_website_and_logging_user_in(self.URL)
+            self.driver = setup
             self.logger.info("***** User is logged into account. *****")
             self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
             self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
@@ -113,10 +88,11 @@ class Test_Student_Beneficiary_Positive_Tests:
         finally:
             self.driver.quit()
 
-    def test_verify_the_dashboard_for_Student_beneficiary(self, setup):
+    def test_verify_the_dashboard_for_Student_beneficiary(self, setup, log_test_start,open_website_and_logging_user_in):
             try:
-                self.log_test_start("***** TESTING THE SEARCH FUNCTIONALITY ON OTHERS BENEFICIARY.******")
-                self.open_website_and_log_in_user(setup, self.URL)
+                log_test_start("***** TESTING THE SEARCH FUNCTIONALITY ON OTHERS BENEFICIARY.******")
+                open_website_and_logging_user_in(self.URL)
+                self.driver = setup
                 self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
                 self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
                 beneficiary = self.driver.find_element(By.XPATH, "//tbody/tr[1]/td[3]")
@@ -138,10 +114,11 @@ class Test_Student_Beneficiary_Positive_Tests:
                 time.sleep(3)
                 self.driver.quit()
 
-    def test_search_student_beneficiary_created(self, setup):
+    def test_search_student_beneficiary_created(self, setup, log_test_start, open_website_and_logging_user_in):
         try:
-            self.log_test_start("***** TESTING THE SEARCH FUNCTIONALITY ON STUDENT BENEFICIARY.******")
-            self.open_website_and_log_in_user(setup, self.URL)
+            log_test_start("***** TESTING THE SEARCH FUNCTIONALITY ON STUDENT BENEFICIARY.******")
+            open_website_and_logging_user_in(self.URL)
+            self.driver = setup
             self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
             self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
 
@@ -169,14 +146,15 @@ class Test_Student_Beneficiary_Positive_Tests:
             time.sleep(3)
             self.driver.quit()
 
-    def test_the_deactivation_of_beneficiary(self, setup):
+    def test_the_deactivation_of_beneficiary(self, setup, open_website_and_logging_user_in, log_test_start):
         """
         Test the deactivation and reactivation process of a beneficiary within the application.
         This includes verifying the status changes and appropriate alert messages upon state changes.
         """
         try:
-            self.log_test_start("***** TESTING THE SEARCH FUNCTIONALITY ON STUDENT BENEFICIARY.******")
-            self.open_website_and_log_in_user(setup, self.URL)
+            log_test_start("***** TESTING THE SEARCH FUNCTIONALITY ON STUDENT BENEFICIARY.******")
+            open_website_and_logging_user_in(self.URL)
+            self.driver = setup
             self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
             self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
 
@@ -209,14 +187,15 @@ class Test_Student_Beneficiary_Positive_Tests:
             # Cleanup: Ensure the browser session is properly closed, even if errors occur
             self.driver.quit()
 
-    def test_the_activation_of_beneficiary(self, setup):
+    def test_the_activation_of_beneficiary(self, setup, open_website_and_logging_user_in, log_test_start):
         """
         Test the deactivation and reactivation process of a beneficiary within the application.
         This includes verifying the status changes and appropriate alert messages upon state changes.
         """
         try:
             self.log_test_start("***** TESTING THE SEARCH FUNCTIONALITY ON STUDENT BENEFICIARY.******")
-            self.open_website_and_log_in_user(setup, self.URL)
+            open_website_and_logging_user_in(self.URL)
+            self.driver = setup
             self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
             self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
 

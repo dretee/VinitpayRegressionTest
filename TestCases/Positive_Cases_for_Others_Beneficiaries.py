@@ -100,7 +100,7 @@ class Test_Other_Beneficiary:
             self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
             self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
             self.Beneficiary_page_objects.click_on_the_new_beneficiary_button()
-            self.Beneficiary_page_objects.click_on_the_other_beneficiary_option()
+            self.Beneficiary_page_objects.click_on_the_student_beneficiary_option()
             time.sleep(2)
 
             # CHECKING THE HEADER OF THE FORM FOR THE CREATION OF AN OTHER BENEFICIARY
@@ -126,7 +126,7 @@ class Test_Other_Beneficiary:
             self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
             time.sleep(3)
             self.Beneficiary_page_objects.click_on_the_new_beneficiary_button()
-            self.Beneficiary_page_objects.click_on_the_other_beneficiary_option()
+            self.Beneficiary_page_objects.click_on_the_student_beneficiary_option()
             phone_number = SignupObjects(self.driver).generate_phone_number()
             self.Beneficiary_page_objects.input_phone_number(phone_number)
             time.sleep(3)

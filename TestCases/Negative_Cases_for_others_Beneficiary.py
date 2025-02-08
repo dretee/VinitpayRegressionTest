@@ -81,7 +81,7 @@ class Test_Others_Beneficiary_Negative:
 
             self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
             self.Beneficiary_page_objects.click_on_the_new_beneficiary_button()
-            self.Beneficiary_page_objects.click_on_the_other_beneficiary_option()
+            self.Beneficiary_page_objects.click_on_the_student_beneficiary_option()
             self.Beneficiary_page_objects.input_phone_number(Phone_number)
             time.sleep(3)
             self.logger.info("***** USER INPUTS THE THE PHONE NUMBER IN THE CORRECT FIELD.******")
@@ -124,7 +124,7 @@ class Test_Others_Beneficiary_Negative:
             time.sleep(3)
             self.logger.info("***** Navigating to the beneficiary option *****")
             self.Beneficiary_page_objects.click_on_the_new_beneficiary_button()
-            self.Beneficiary_page_objects.click_on_the_other_beneficiary_option()
+            self.Beneficiary_page_objects.click_on_the_student_beneficiary_option()
 
             First_name, Last_name = SignupObjects(self.driver).generate_names()
             self.Beneficiary_page_objects.input_first_name(First_name)
@@ -176,7 +176,7 @@ class Test_Others_Beneficiary_Negative:
             self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
             time.sleep(3)
             self.Beneficiary_page_objects.click_on_the_new_beneficiary_button()
-            self.Beneficiary_page_objects.click_on_the_other_beneficiary_option()
+            self.Beneficiary_page_objects.click_on_the_student_beneficiary_option()
 
             phone_number = SignupObjects(self.driver).generate_phone_number()
             self.Beneficiary_page_objects.input_phone_number(phone_number)
@@ -234,7 +234,7 @@ class Test_Others_Beneficiary_Negative:
             self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
             time.sleep(3)
             self.Beneficiary_page_objects.click_on_the_new_beneficiary_button()
-            self.Beneficiary_page_objects.click_on_the_other_beneficiary_option()
+            self.Beneficiary_page_objects.click_on_the_student_beneficiary_option()
 
             phone_number = SignupObjects(self.driver).generate_phone_number()
             self.Beneficiary_page_objects.input_phone_number(phone_number)

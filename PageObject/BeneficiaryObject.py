@@ -10,7 +10,7 @@ from selenium.common.exceptions import TimeoutException,NoSuchElementException
 
 class BeneficiaryObjects:
     Beneficiary_navigation_xpath = "//a[normalize-space()='Beneficiaries']"
-    New_Beneficiary_xpath = "//button[normalize-space()='New Beneficiary']"
+    New_Beneficiary_xpath = "//main/div[1]/section[1]/button"
     Search_xpath= "//input[@placeholder='search beneficairies']"
 
     # Deactivation locators
@@ -92,7 +92,7 @@ class BeneficiaryObjects:
     It contains all the actions from navigations to the input of details on the UI and the proceeding function
     """
 
-    def click_on_the_other_beneficiary_option(self, timeout=10):
+    def click_on_the_student_beneficiary_option(self, timeout=10):
         try:
             wait = WebDriverWait(self.driver, timeout=10, poll_frequency=1, ignored_exceptions=[NoSuchElementException])
             element = wait.until(ec.presence_of_element_located((By.XPATH, self.New_other_Beneficiary_option_xpath)))
