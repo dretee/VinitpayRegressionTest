@@ -5,7 +5,7 @@ import time
 from selenium.webdriver.common.by import By
 from Utilities.RecordLogger import RecordLogger
 from Utilities.ReadProperties import ReadProperties
-from PageObject.LoginObjects import LoginObjects
+
 from PageObject.SignUpObjects import SignupObjects
 from PageObject.BeneficiaryObject import BeneficiaryObjects
 

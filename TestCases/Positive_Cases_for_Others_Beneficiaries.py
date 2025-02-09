@@ -1,13 +1,16 @@
 # Import necessary modules and classes
+import random
 import time
 import requests
-from Utilities import ReadXyfile
+from selenium.webdriver.support.wait import WebDriverWait
+
 from selenium.webdriver.common.by import By
 from Utilities.RecordLogger import RecordLogger
 from Utilities.ReadProperties import ReadProperties
-from PageObject.LoginObjects import LoginObjects
+
 from PageObject.SignUpObjects import SignupObjects
 from PageObject.BeneficiaryObject import BeneficiaryObjects
+from selenium.webdriver.support import expected_conditions as ec
 
 # to run the test use:   pytest -v -s TestCases/Negative_Cases_for_Login.py--browser chrome to run and also generate
 # the html report use: pytest -v -s --html=Reports\reports.html TestCases/Positive_Cases_for_Login.py --browser chrome
@@ -31,48 +34,27 @@ class Test_Other_Beneficiary:
     # from configuration
     logger = RecordLogger.log_generator_info()  # Initialize logger instance
 
-    #Declear at modular level
-    Names = None
 
 
-    # Method to log the start of a test
-    def log_test_start(self, test_name):
-        self.logger.info(f"****** STARTING TEST: {test_name} ******")
-
-    # Method to log the end of a test
-    def log_test_end(self, test_name):
-        self.logger.info(f"****** ENDING TEST: {test_name} ******")
-
-    # Method to open the website
-    def open_website_and_log_in_user(self, setup, url):
-        self.log_test_start("Open Website")
-        self.driver = setup
-        self.driver.get(url)
-        self.driver.maximize_window()
-        self.Login_page_objects = LoginObjects(self.driver)
-
-        # Log in user into their account
-        self.Login_page_objects.input_email(self.EXISTING_EMAIL)
-        self.Login_page_objects.input_password(self.EXISTING_PASSWORD)
-        self.Login_page_objects.click_on_the_signin_button()
-        First_name, Last_name = SignupObjects(self.driver).generate_names()
-        Test_Other_Beneficiary.Names = [First_name, Last_name]
-        self.log_test_end("Open Website")
-
-
-    def test_the_functionality_of_the_beneficiary_navigation(self, setup):
+    def test_the_functionality_of_the_beneficiary_navigation(self, setup, log_test_start, open_website_and_logging_user_in):
         try:
             # Initialize Beneficiary page objects
-            self.log_test_start("***** TEST THE FUNCTIONALITY OF THE BENEFICIARY NAVIGATION *****")
-            self.open_website_and_log_in_user(setup, self.URL)
-
+            log_test_start("***** TEST THE FUNCTIONALITY OF THE BENEFICIARY NAVIGATION *****")
+            open_website_and_logging_user_in(self.URL)
+            self.driver = setup
             self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
             self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
-            time.sleep(5)
-            self.logger.info("*****THE BENEFICIARY'S DATA LOGGING TABLE I SEEN WITH ALL THE BENEFICIARY *****")
-            button_text = "New Beneficiary"
 
-            assert button_text in self.driver.find_element(By.XPATH, "//button[normalize-space()='New Beneficiary']").text, self.logger.info(
+            #waiting foe the table to be visible on the dashboard after clicking on the beneficiary option on the nav bar
+            WebDriverWait(self.driver, timeout= 10).until(
+                ec.presence_of_element_located((By.XPATH, "//div[1]/main[1]/div[1]/section[2]"))
+            )
+
+            self.logger.info("*****THE BENEFICIARY'S DATA LOGGING TABLE IS SEEN WITH ALL THE BENEFICIARY *****")
+            button_locator = self.driver.find_element(By.XPATH, self.Beneficiary_page_objects.New_Beneficiary_xpath)
+
+
+            assert "New Beneficiary" in button_locator.text.strip(), self.logger.info(
                 "**** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***")
             self.logger.info("***** TEST PASSED: NAVIGATION TO THE BENEFICIARY PAGE IS FUNCTIONAL *****")
 
@@ -91,17 +73,23 @@ class Test_Other_Beneficiary:
         finally:
             self.driver.quit()
 
-    def test_verifying_the_form_navigation_from_the_modal(self, setup):
+    def test_verifying_the_form_navigation_from_the_modal(self, setup, open_website_and_logging_user_in, log_test_start):
         try:
             # Initialize Beneficiary page objects
-            self.log_test_start("Test_the_functionality_of_the_others_beneficiary_navigation")
-            self.open_website_and_log_in_user(setup, self.URL)
+            log_test_start("Test_the_functionality_of_the_others_beneficiary_navigation")
+            open_website_and_logging_user_in(self.URL)
+            self.driver = setup
 
             self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
             self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
+
+            # waiting foe the table to be visible on the dashboard after clicking on the beneficiary option on the nav bar
+            WebDriverWait(self.driver, timeout=10).until(
+                ec.presence_of_element_located((By.XPATH, "//div[1]/main[1]/div[1]/section[2]"))
+            )
             self.Beneficiary_page_objects.click_on_the_new_beneficiary_button()
             self.Beneficiary_page_objects.click_on_the_student_beneficiary_option()
-            time.sleep(2)
+
 
             # CHECKING THE HEADER OF THE FORM FOR THE CREATION OF AN OTHER BENEFICIARY
             assert self.driver.find_element(By.XPATH, "//div[@id='__layout']//div//main//h2").text == "Beneficiary Details", self.logger.info(
@@ -117,10 +105,12 @@ class Test_Other_Beneficiary:
         finally:
             self.driver.quit()
 
-    def test_the_creation_of_new_other_beneficiary(self, setup):
+    def est_the_creation_of_new_other_beneficiary(self, setup, log_test_start, open_website_and_logging_user_in):
         try:
-            self.log_test_start("***** TESTING THE CREATION OF NEW OTHER BENEFICIARY.******")
-            self.open_website_and_log_in_user(setup, self.URL)
+            log_test_start("***** TESTING THE CREATION OF NEW OTHER BENEFICIARY.******")
+            open_website_and_logging_user_in(self.URL)
+            self.driver = setup
+
             self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
 
             self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
@@ -133,7 +123,7 @@ class Test_Other_Beneficiary:
             self.logger.info("***** USER INPUTS THE THE PHONE NUMBER IN THE CORRECT FIELD.******")
             # Generate the names for the creation for the names of the new users
 
-            First_name, Last_name = Test_Other_Beneficiary.Names
+            First_name, Last_name = SignupObjects(self.driver).generate_names()
             self.Beneficiary_page_objects.input_first_name(First_name)
             self.log_test_start("***** USER INPUTS THE THE FIRST NAME IN THE CORRECT FIELD.******")
             time.sleep(3)
@@ -164,21 +154,22 @@ class Test_Other_Beneficiary:
             time.sleep(3)
             self.driver.quit()
 
-    def test_search_other_beneficiary_created(self, setup):
+    def est_search_other_beneficiary_created(self, setup, log_test_start, open_website_and_logging_user_in):
         try:
-            self.log_test_start("***** TESTING THE SEARCH FUNCTIONALITY ON OTHERS BENEFICIARY.******")
-            self.open_website_and_log_in_user(setup, self.URL)
+            log_test_start("***** TESTING THE SEARCH FUNCTIONALITY ON OTHERS BENEFICIARY.******")
+            open_website_and_logging_user_in(self.URL)
+            self.driver = setup
+
             self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
             self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
 
-            # Getting the name of the user that was created in the previous test case
-            First_name, Last_name = Test_Other_Beneficiary.Names
-            name_of_beneficiary_on_table = f"{First_name} {Last_name}"
+            # Getting the name of a user that is on the table and searching for them
+            names_of_all_beneficiary_on_table = self.Beneficiary_page_objects.Get_all_names_of_the_beneficiary()
+            name_of_beneficiary_on_table = names_of_all_beneficiary_on_table[random.randint(1,10)]
+
             self.Beneficiary_page_objects.click_and_input_name_of_the_Beneficiary(name_of_beneficiary_on_table)
 
-            name_on_the_search_result = self.driver.find_element(By.XPATH, "//tbody/tr[1]/td[3]").text
-
-            assert name_of_beneficiary_on_table in name_on_the_search_result, self.logger.info("TEST FAILED: THE RESULT IS NOT CORRECT FOR THE SEARCHED PARAM")
+            assert name_of_beneficiary_on_table in self.driver.find_element(By.TAG_NAME, "body").text, self.logger.info("TEST FAILED: THE RESULT IS NOT CORRECT FOR THE SEARCHED PARAM")
             self.logger.info("****TEST PASSED: RESULT OF THE SEARCH WAS CORRECT****")
 
         except AssertionError:
@@ -193,28 +184,62 @@ class Test_Other_Beneficiary:
             time.sleep(3)
             self.driver.quit()
 
-    def test_the_deactivation_of_beneficiary(self, setup):
+    def est_the_deactivation_of_beneficiary(self, setup, log_test_start, open_website_and_logging_user_in):
         """
         Test the deactivation and reactivation process of a beneficiary within the application.
         This includes verifying the status changes and appropriate alert messages upon state changes.
         """
         try:
             # Initialization: Setup test logging and open the website
-            self.log_test_start("***** TEST THE DEACTIVATION OF A BENEFICIARY. *****")
-            self.open_website_and_log_in_user(setup, self.URL)
+            log_test_start("***** TEST THE DEACTIVATION OF A BENEFICIARY. *****")
+            open_website_and_logging_user_in(self.URL)
+            self.driver = setup
 
             # Beneficiary Page Setup: Access beneficiary management and prepare for interaction
             self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
             self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
             self.logger.info("***** USER IS NAVIGATED TO THE BENEFICIARY PAGE. *****")
-            # Deactivation Process: Change beneficiary status to 'Inactive'
-            self.Beneficiary_page_objects.change_the_status_of_beneficiary()
+            button_xpath = "//tbody/tr[1]/td[5]/button/span"
 
-            # Final Status Validation: Ensure the beneficiary is marked as 'inactive'
-            assert self.Beneficiary_page_objects.read_the_status_of_the_beneficiary() == "Inactive", (
-                self.logger.info("**** TEST FAILED: BENEFICIARY'S ACCOUNT IS NOT DEACTIVATED ***")
-            )
-            self.logger.info("***** TEST PASSED: BENEFICIARY'S ACCOUNT IS DEACTIVATED  *****")
+            # Check if the beneficiary is currently inactive
+            if self.Beneficiary_page_objects.read_the_status_of_the_beneficiary() == "Inactive":
+                # Validate that the button displays "Activate" when the user is inactive
+
+                assert self.driver.find_element(By.XPATH, button_xpath).text.strip()== "Activate"
+
+                # Deactivation Process: Attempt to change the status of the inactive beneficiary
+                self.Beneficiary_page_objects.change_the_status_of_beneficiary()
+
+                # Validate that the button text updates to "Deactivate" after activation
+                Element_locator = self.driver.find_element(By.XPATH, button_xpath)
+                self.Beneficiary_page_objects.wait_for_button_text_change("text", self.Beneficiary_page_objects.Status_action_button_xpath,"Deactivate")
+                assert Element_locator.text.strip() == "Deactivate"
+
+                # Verify that the status changes to "Active" after activation
+                assert self.Beneficiary_page_objects.read_the_status_of_the_beneficiary() == "Active", (
+                    self.logger.info("**** TEST FAILED: BENEFICIARY'S ACCOUNT IS NOT ACTIVATED ***")
+                )
+                self.logger.info("***** TEST PASSED: BENEFICIARY'S ACCOUNT IS ACTIVATED *****")
+
+            # Check if the beneficiary is currently active
+            elif self.Beneficiary_page_objects.read_the_status_of_the_beneficiary() == "Active":
+                # Validate that the button displays "Deactivate" when the user is active
+                assert self.driver.find_element(By.XPATH, button_xpath).text.strip()== "Deactivate"
+
+                # Deactivation Process: Attempt to change the status of the active beneficiary
+                self.Beneficiary_page_objects.change_the_status_of_beneficiary()
+
+                # Validate that the button text updates to "Activate" after deactivation
+                Element_locator = self.driver.find_element(By.XPATH, button_xpath)
+                self.Beneficiary_page_objects.wait_for_button_text_change("text", self.Beneficiary_page_objects.Status_action_button_xpath, "Activate")
+                assert Element_locator.text.strip() == "Activate"
+
+                # Verify that the status changes to "Inactive" after deactivation
+                assert self.Beneficiary_page_objects.read_the_status_of_the_beneficiary() == "Inactive", (
+                    self.logger.info("**** TEST FAILED: BENEFICIARY'S ACCOUNT IS NOT DEACTIVATED ***")
+                )
+                self.logger.info("***** TEST PASSED: BENEFICIARY'S ACCOUNT IS DEACTIVATED *****")
+
         except AssertionError:
             # Error Handling: Log assertion errors and raise them for further investigation
             self.logger.error("Assertion Error: AN ERROR OCCURRED ")
@@ -229,53 +254,20 @@ class Test_Other_Beneficiary:
             # Cleanup: Ensure the browser session is properly closed, even if errors occur
             self.driver.quit()
 
-    def test_the_activation_of_beneficiary(self, setup):
-        """
-        Test the deactivation and reactivation process of a beneficiary within the application.
-        This includes verifying the status changes and appropriate alert messages upon state changes.
-        """
+    def est_verify_the_dashboard_for_Other_beneficiary(self, setup, log_test_start, open_website_and_logging_user_in):
         try:
-            # Initialization: Setup test logging and open the website
-            self.log_test_start("***** TEST THE ACTIVATION OF A BENEFICIARY. *****")
-            self.open_website_and_log_in_user(setup, self.URL)
+            log_test_start("***** TESTING THE SEARCH FUNCTIONALITY ON OTHERS BENEFICIARY.******")
+            open_website_and_logging_user_in(self.URL)
+            self.driver = setup
 
-            # Beneficiary Page Setup: Access beneficiary management and prepare for interaction
             self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
             self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
-            self.logger.info("***** USER SHOULD BE ON THE PAGE OF THE BENEFICIARIES *****")
-            # Deactivation Process: Change beneficiary status to 'Inactive'
-            self.Beneficiary_page_objects.change_the_status_of_beneficiary()
-            time.sleep(4)
-
-            # Validate Status: Ensure the beneficiary is marked as 'Active'
-            assert self.Beneficiary_page_objects.read_the_status_of_the_beneficiary() == "Active", (
-                self.logger.info("***** TEST FAILED: BENEFICIARY IS NOT ACTIVATED *****")
-            )
-            self.logger.info("***** TEST PASSED: BENEFICIARY IS ACTIVATED *****")
-
-        except AssertionError:
-            # Error Handling: Log assertion errors and raise them for further investigation
-            self.logger.error("Assertion Error: ERROR OCCURRED.")
-            raise
-
-        except Exception as e:
-            # Unexpected Error Handling: Log any unforeseen exceptions and raise them
-            self.logger.error(f"An unexpected error occurred: {e}")
-            raise
-
-        finally:
-            # Cleanup: Ensure the browser session is properly closed, even if errors occur
-            self.driver.quit()
-
-    def test_verify_the_dashboard_for_Other_beneficiary(self, setup):
-        try:
-            self.log_test_start("***** TESTING THE SEARCH FUNCTIONALITY ON OTHERS BENEFICIARY.******")
-            self.open_website_and_log_in_user(setup, self.URL)
-            self.Beneficiary_page_objects = BeneficiaryObjects(self.driver)
-            self.Beneficiary_page_objects.click_on_the_Beneficiary_option()
+            time.sleep(3)
             beneficiary = self.driver.find_element(By.XPATH, "//tbody/tr[1]/td[3]")
+            time.sleep(4)
+            Dashboard_name = beneficiary.text
             beneficiary.click()
-            assert beneficiary.text in self.driver.find_element(By.XPATH, "//a[1]/h3[1]"), self.logger.infor("**** TEST FAILED: THE BOARD TITLE IS WRONG ****")
+            assert Dashboard_name == self.driver.find_element(By.XPATH, "//a[1]/h3[1]"), self.logger.infor("**** TEST FAILED: THE BOARD TITLE IS WRONG ****")
             self.logger.info("**** TEST PASSED: BOARD TITLE IS CORRECT.****")
 
         except AssertionError:

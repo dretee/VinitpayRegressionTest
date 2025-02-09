@@ -12,9 +12,11 @@ class BeneficiaryObjects:
     Beneficiary_navigation_xpath = "//a[normalize-space()='Beneficiaries']"
     New_Beneficiary_xpath = "//main/div[1]/section[1]/button"
     Search_xpath= "//input[@placeholder='search beneficairies']"
+    all_beneficiary_names_xpath = (By.XPATH, "//section[3]/div[1]/table[1]/tbody[1]/tr/td[3]")
 
     # Deactivation locators
     Deactivate_ana_activate_beneficiary_button_xpath = "//tbody/tr[1]/td[5]/button"
+    Status_action_button_xpath = (By.XPATH, "//tbody/tr[1]/td[5]/button/span")
     Activation_deactivation_button_text_Xpath = ""
     Beneficiary_status_xpath = "//tbody/tr[1]/td[4]/span"
 
@@ -51,7 +53,7 @@ class BeneficiaryObjects:
     def __init__(self, driver):
         # Initialize the driver
         self.driver = driver
-        wait = WebDriverWait(self.driver, timeout=10, poll_frequency=1, ignored_exceptions=[NoSuchElementException])
+
 
     def click_on_the_Beneficiary_option(self, timeout=10):
         try:
@@ -289,3 +291,33 @@ class BeneficiaryObjects:
             element.click()
         except TimeoutException:
             print(f"Student school was not selected or seen in the dropdown within {timeout} seconds")
+
+
+    def Get_all_names_of_the_beneficiary(self, timeout =10):
+        try:
+            wait = WebDriverWait(self.driver, timeout= 10, poll_frequency=1, ignored_exceptions=[NoSuchElementException])
+            element_list = wait.until(ec.presence_of_all_elements_located(self.all_beneficiary_names_xpath))
+            names = [element.text for element in element_list]
+            return names
+        except TimeoutException:
+            print(f"Names were not for for the beneficiary")
+
+    def wait_for_button_text_change(self, type, locator, expected_text=None, timeout=10):
+        try:
+            if type == "text":
+                WebDriverWait(self.driver, timeout).until(
+                    ec.text_to_be_present_in_element(locator, expected_text)
+                )
+            elif type == "presence":
+                WebDriverWait(self.driver, timeout).until(
+                    ec.presence_of_element_located((By.XPATH, self.New_Beneficiary_xpath))
+                )
+        except TimeoutException:
+            print(f"Timeout: Expected condition '{type}' not met for {locator}")
+            raise
+
+
+
+
+
+

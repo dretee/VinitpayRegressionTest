@@ -9,6 +9,7 @@ from PageObject.BusinessObjects import BusinessObjects
 
 # to run the test use:   pytest -v -s TestCases/Negative_Login_Test_Case.py--browser chrome to run and also generate
 # the html report use: pytest -v -s --html=Reports\reports.html TestCases/Positive_Login_Test_Case.py --browser chrome
+
 """
 Test cases for the adding a business to the system 
 

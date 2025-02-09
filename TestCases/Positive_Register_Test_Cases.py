@@ -18,16 +18,6 @@ class Test_fo_Registration_of_new_user:
     ProductionURL = ReadProperties.getProductionPageURL()
     logger = RecordLogger.log_generator_info()
 
-    Emails = []
-    Names = []
-
-    def log_test_start(self, test_name):
-        self.logger.info(f"****** STARTING TEST: {test_name} ******")
-
-    # Method to log the end of a test
-    def log_test_end(self, test_name):
-        self.logger.info(f"****** ENDING TEST: {test_name} ******")
-
     # Method to open the website
     def Signup_Page_Navigator(self, setup):
         self.driver = setup
@@ -37,15 +27,16 @@ class Test_fo_Registration_of_new_user:
         self.LO = LoginObjects(self.driver)
         return self.signUp
 
-    def test_Registration_of_Account_with_valid_Details_001(self, setup):
+    def test_Registration_of_Account_with_valid_Details_001(self, setup, log_test_end, log_test_start):
         try:
+            # Logging the beginning of the test case
+            log_test_start ("**** Verify the creation of accounts with valid data ****")
             # Navigate to the signup page
-            Page_object = self.Signup_Page_Navigator(setup)
+            Signup_controller = self.Signup_Page_Navigator(setup)
             self.LO.click_on_the_register_link()
 
             #checking if the login link is functional on the sign up page
-
-            Page_object.click_on_the_login_link()
+            Signup_controller.click_on_the_login_link()
             message = "Log in to your Vnitpay account"
 
             body_text = self.driver.find_element(By.TAG_NAME, "body").text
@@ -57,14 +48,14 @@ class Test_fo_Registration_of_new_user:
             self.LO.click_on_the_register_link()
 
             # Fill in the form with valid details
-            Page_object.input_name("John Doe")
-            password = Page_object.generatePaassword()
-            Page_object.input_email(Page_object.email_generator())
-            Page_object.input_password(password)
-            Page_object.input_confirm_password(password)
+            Signup_controller.input_name("John Doe")
+            password = Signup_controller.generatePaassword()
+            Signup_controller.input_email(Signup_controller.email_generator())
+            Signup_controller.input_password(password)
+            Signup_controller.input_confirm_password(password)
 
             # Submit the form
-            Page_object.click_on_the_signup_button()
+            Signup_controller.click_on_the_signup_button()
             time.sleep(10)
 
             # Check for the success messages
@@ -84,10 +75,12 @@ class Test_fo_Registration_of_new_user:
             raise  # Re-raise the exception to indicate test failure
 
         finally:
+            log_test_end("***TEST HAS ENDED***")
             self.driver.quit()
 
-    def test_Registration_of_Account_with_already_registered_email_002(self, setup):
+    def test_Registration_of_Account_with_already_registered_email_002(self, setup, log_test_start, log_test_end):
         try:
+            log_test_start("**** Verify the creation of a user with the data of an existing user ****")
             Page_object = self.Signup_Page_Navigator(setup)
             self.LO.click_on_the_register_link()
             Page_object.input_name("John Doe")
@@ -112,10 +105,12 @@ class Test_fo_Registration_of_new_user:
             raise  # Re-raise the exception to indicate test failure
 
         finally:
+            log_test_end("***TEST IS ENDED***")
             self.driver.quit()
 
-    def test_Registration_of_Account_with_Different_Passwords_002(self, setup):
+    def test_Registration_of_Account_with_Different_Passwords_002(self, setup,log_test_start, log_test_end):
         try:
+            log_test_start("**** Verify the creation of a user with different passwords****")
             Page_object = self.Signup_Page_Navigator(setup)
             self.LO.click_on_the_register_link()
             Page_object.input_name("John Doe")
@@ -141,6 +136,7 @@ class Test_fo_Registration_of_new_user:
             raise  # Re-raise the exception to indicate test failure
 
         finally:
+            log_test_end("***TEST IS ENDED***")
             self.driver.quit()
 
 

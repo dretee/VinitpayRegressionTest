@@ -799,3 +799,701 @@ Stacktrace:
 07/02/2025 12:08:31 PM: INFO: ****** STARTING TEST: ***** TESTING THE SEARCH FUNCTIONALITY ON STUDENT BENEFICIARY.****** ******
 07/02/2025 12:08:38 PM: ERROR: An unexpected error occurred: cannot unpack non-iterable NoneType object
 07/02/2025 12:08:44 PM: ERROR: An unexpected error occurred: 'Test_Student_Beneficiary_Positive_Tests' object has no attribute 'log_test_start'
+09/02/2025 07:20:07 PM: INFO: ****** STARTING TEST: ***** TEST THE FUNCTIONALITY OF THE BENEFICIARY NAVIGATION ***** ******
+09/02/2025 07:20:07 PM: ERROR: An unexpected error occurred: open_website_and_logging_user_in.<locals>._open_website_and_log_in_user() takes 1 positional argument but 2 were given
+09/02/2025 07:20:14 PM: INFO: ****** STARTING TEST: Test_the_functionality_of_the_others_beneficiary_navigation ******
+09/02/2025 07:20:14 PM: ERROR: An unexpected error occurred: open_website_and_logging_user_in.<locals>._open_website_and_log_in_user() takes 1 positional argument but 2 were given
+09/02/2025 07:20:20 PM: INFO: ****** STARTING TEST: ***** TESTING THE SEARCH FUNCTIONALITY ON OTHERS BENEFICIARY.****** ******
+09/02/2025 07:20:20 PM: ERROR: An unexpected error occurred: open_website_and_logging_user_in.<locals>._open_website_and_log_in_user() takes 1 positional argument but 2 were given
+09/02/2025 07:20:28 PM: INFO: ****** STARTING TEST: ***** TEST THE DEACTIVATION OF A BENEFICIARY. ***** ******
+09/02/2025 07:20:28 PM: ERROR: An unexpected error occurred: open_website_and_logging_user_in.<locals>._open_website_and_log_in_user() takes 1 positional argument but 2 were given
+09/02/2025 07:20:36 PM: INFO: ****** STARTING TEST: ***** TESTING THE SEARCH FUNCTIONALITY ON OTHERS BENEFICIARY.****** ******
+09/02/2025 07:20:36 PM: ERROR: An unexpected error occurred: open_website_and_logging_user_in.<locals>._open_website_and_log_in_user() takes 1 positional argument but 2 were given
+09/02/2025 07:23:12 PM: INFO: ****** STARTING TEST: Open Test ******
+09/02/2025 07:24:29 PM: INFO: ****** STARTING TEST: ***** TEST THE FUNCTIONALITY OF THE BENEFICIARY NAVIGATION ***** ******
+09/02/2025 07:24:43 PM: INFO: *****THE BENEFICIARY'S DATA LOGGING TABLE I SEEN WITH ALL THE BENEFICIARY *****
+09/02/2025 07:24:43 PM: INFO: ***** TEST PASSED: NAVIGATION TO THE BENEFICIARY PAGE IS FUNCTIONAL *****
+09/02/2025 07:24:43 PM: INFO: ****TEST FAILED: THE MODAL WAS NOT FOUND FOR THE BENEFICIARY OPTIONS. ******
+09/02/2025 07:24:43 PM: ERROR: Assertion Error: this is not the page the user intends to go to.
+09/02/2025 07:24:52 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002A639B746E0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/f52d135a121ce163c39c3b2cd0e5e55f
+09/02/2025 07:24:56 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002A63AB99610>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/f52d135a121ce163c39c3b2cd0e5e55f
+09/02/2025 07:25:00 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002A638323530>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/f52d135a121ce163c39c3b2cd0e5e55f
+09/02/2025 07:25:13 PM: INFO: ****** STARTING TEST: Test_the_functionality_of_the_others_beneficiary_navigation ******
+09/02/2025 07:25:38 PM: ERROR: An unexpected error occurred: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@id='__layout']//div//main//h2"}
+  (Session info: chrome=132.0.6834.160); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF635BB02F5+28725]
+	(No symbol) [0x00007FF635B12AE0]
+	(No symbol) [0x00007FF6359A510A]
+	(No symbol) [0x00007FF6359F93D2]
+	(No symbol) [0x00007FF6359F95FC]
+	(No symbol) [0x00007FF635A43407]
+	(No symbol) [0x00007FF635A1FFEF]
+	(No symbol) [0x00007FF635A40181]
+	(No symbol) [0x00007FF635A1FD53]
+	(No symbol) [0x00007FF6359EA0E3]
+	(No symbol) [0x00007FF6359EB471]
+	GetHandleVerifier [0x00007FF635EDF30D+3366989]
+	GetHandleVerifier [0x00007FF635EF12F0+3440688]
+	GetHandleVerifier [0x00007FF635EE78FD+3401277]
+	GetHandleVerifier [0x00007FF635C7AAAB+858091]
+	(No symbol) [0x00007FF635B1E74F]
+	(No symbol) [0x00007FF635B1A304]
+	(No symbol) [0x00007FF635B1A49D]
+	(No symbol) [0x00007FF635B08B69]
+	BaseThreadInitThunk [0x00007FFF60C57374+20]
+	RtlUserThreadStart [0x00007FFF61B5CC91+33]
+
+09/02/2025 07:25:45 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002A639B75220>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/6d50fa9e8afe5920c6cf4a39b78bc8bc
+09/02/2025 07:25:50 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002A63AB183E0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/6d50fa9e8afe5920c6cf4a39b78bc8bc
+09/02/2025 07:25:54 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002A63AD209B0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/6d50fa9e8afe5920c6cf4a39b78bc8bc
+09/02/2025 07:26:05 PM: INFO: ****** STARTING TEST: ***** TESTING THE SEARCH FUNCTIONALITY ON OTHERS BENEFICIARY.****** ******
+09/02/2025 07:26:28 PM: ERROR: An unexpected error occurred: 'NoneType' object is not subscriptable
+09/02/2025 07:26:38 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002A63AAB0200>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/50f32b4e9ba3c2283653b803ccc5049e
+09/02/2025 07:26:42 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002A63AAB2570>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/50f32b4e9ba3c2283653b803ccc5049e
+09/02/2025 07:26:46 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002A63AAA0230>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/50f32b4e9ba3c2283653b803ccc5049e
+09/02/2025 07:26:56 PM: INFO: ****** STARTING TEST: ***** TEST THE DEACTIVATION OF A BENEFICIARY. ***** ******
+09/02/2025 07:27:05 PM: INFO: ***** USER IS NAVIGATED TO THE BENEFICIARY PAGE. *****
+09/02/2025 07:27:08 PM: ERROR: Assertion Error: AN ERROR OCCURRED 
+09/02/2025 07:27:14 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002A639C625A0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/5bc48e16a31631ced16fa23d8ebbe4a8
+09/02/2025 07:27:19 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002A63AAB3440>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/5bc48e16a31631ced16fa23d8ebbe4a8
+09/02/2025 07:27:23 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002A63AAB0200>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/5bc48e16a31631ced16fa23d8ebbe4a8
+09/02/2025 07:27:33 PM: INFO: ****** STARTING TEST: ***** TESTING THE SEARCH FUNCTIONALITY ON OTHERS BENEFICIARY.****** ******
+09/02/2025 07:27:44 PM: ERROR: An unexpected error occurred: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//tbody/tr[1]/td[3]"}
+  (Session info: chrome=132.0.6834.160); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF635BB02F5+28725]
+	(No symbol) [0x00007FF635B12AE0]
+	(No symbol) [0x00007FF6359A510A]
+	(No symbol) [0x00007FF6359F93D2]
+	(No symbol) [0x00007FF6359F95FC]
+	(No symbol) [0x00007FF635A43407]
+	(No symbol) [0x00007FF635A1FFEF]
+	(No symbol) [0x00007FF635A40181]
+	(No symbol) [0x00007FF635A1FD53]
+	(No symbol) [0x00007FF6359EA0E3]
+	(No symbol) [0x00007FF6359EB471]
+	GetHandleVerifier [0x00007FF635EDF30D+3366989]
+	GetHandleVerifier [0x00007FF635EF12F0+3440688]
+	GetHandleVerifier [0x00007FF635EE78FD+3401277]
+	GetHandleVerifier [0x00007FF635C7AAAB+858091]
+	(No symbol) [0x00007FF635B1E74F]
+	(No symbol) [0x00007FF635B1A304]
+	(No symbol) [0x00007FF635B1A49D]
+	(No symbol) [0x00007FF635B08B69]
+	BaseThreadInitThunk [0x00007FFF60C57374+20]
+	RtlUserThreadStart [0x00007FFF61B5CC91+33]
+
+09/02/2025 07:27:54 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002A639DE94F0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/4424440f37987b6b63864eba157e6a36
+09/02/2025 07:27:58 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002A63AAB3EF0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/4424440f37987b6b63864eba157e6a36
+09/02/2025 07:28:02 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002A63AAB00E0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/4424440f37987b6b63864eba157e6a36
+09/02/2025 07:29:42 PM: INFO: ****** STARTING TEST: ***** TEST THE DEACTIVATION OF A BENEFICIARY. ***** ******
+09/02/2025 07:29:51 PM: INFO: ***** USER IS NAVIGATED TO THE BENEFICIARY PAGE. *****
+09/02/2025 07:29:54 PM: INFO: **** TEST FAILED: BENEFICIARY'S ACCOUNT IS NOT ACTIVATED ***
+09/02/2025 07:29:54 PM: ERROR: Assertion Error: AN ERROR OCCURRED 
+09/02/2025 07:30:02 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001CC4EE3E480>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/e872066c83d1e1ee0de306b2922f36cf
+09/02/2025 07:30:06 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001CC4EE3C710>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/e872066c83d1e1ee0de306b2922f36cf
+09/02/2025 07:30:10 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001CC4EE3FF50>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/e872066c83d1e1ee0de306b2922f36cf
+09/02/2025 07:33:02 PM: INFO: ****** STARTING TEST: ***** TEST THE DEACTIVATION OF A BENEFICIARY. ***** ******
+09/02/2025 07:33:10 PM: INFO: ***** USER IS NAVIGATED TO THE BENEFICIARY PAGE. *****
+09/02/2025 07:33:12 PM: INFO: ***** TEST PASSED: BENEFICIARY'S ACCOUNT IS DEACTIVATED *****
+09/02/2025 07:33:12 PM: ERROR: Assertion Error: AN ERROR OCCURRED 
+09/02/2025 07:33:19 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002083CABE690>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/6126228a1dcda71782140a823e24072f
+09/02/2025 07:33:24 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002083CABE750>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/6126228a1dcda71782140a823e24072f
+09/02/2025 07:33:28 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002083CABE630>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/6126228a1dcda71782140a823e24072f
+09/02/2025 07:34:35 PM: INFO: ****** STARTING TEST: ***** TEST THE DEACTIVATION OF A BENEFICIARY. ***** ******
+09/02/2025 07:34:46 PM: INFO: ***** USER IS NAVIGATED TO THE BENEFICIARY PAGE. *****
+09/02/2025 07:34:48 PM: INFO: ***** TEST PASSED: BENEFICIARY'S ACCOUNT IS ACTIVATED *****
+09/02/2025 07:34:48 PM: ERROR: Assertion Error: AN ERROR OCCURRED 
+09/02/2025 07:34:56 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000178E834A3F0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/2da41cd47d8dd90f485cf9814af9710f
+09/02/2025 07:35:00 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000178E7FA3BC0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/2da41cd47d8dd90f485cf9814af9710f
+09/02/2025 07:35:04 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000178E7FA21B0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/2da41cd47d8dd90f485cf9814af9710f
+09/02/2025 07:35:45 PM: INFO: ****** STARTING TEST: ***** TEST THE DEACTIVATION OF A BENEFICIARY. ***** ******
+09/02/2025 07:35:52 PM: INFO: ***** USER IS NAVIGATED TO THE BENEFICIARY PAGE. *****
+09/02/2025 07:35:55 PM: INFO: ***** TEST PASSED: BENEFICIARY'S ACCOUNT IS DEACTIVATED *****
+09/02/2025 07:36:02 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000287F990ECC0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/2489194c700d214a419d19f03c6913cf
+09/02/2025 07:36:06 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000287F990E120>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/2489194c700d214a419d19f03c6913cf
+09/02/2025 07:36:10 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000287F98DF4A0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/2489194c700d214a419d19f03c6913cf
+09/02/2025 07:36:35 PM: INFO: ****** STARTING TEST: ***** TEST THE DEACTIVATION OF A BENEFICIARY. ***** ******
+09/02/2025 07:36:43 PM: INFO: ***** USER IS NAVIGATED TO THE BENEFICIARY PAGE. *****
+09/02/2025 07:36:45 PM: INFO: ***** TEST PASSED: BENEFICIARY'S ACCOUNT IS ACTIVATED *****
+09/02/2025 07:36:52 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001D0A8E0C440>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/5e41181a83401a42a3bb256487c0bc13
+09/02/2025 07:36:57 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001D0A8E0D6D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/5e41181a83401a42a3bb256487c0bc13
+09/02/2025 07:37:01 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001D0A8DFD370>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/5e41181a83401a42a3bb256487c0bc13
+09/02/2025 07:42:05 PM: INFO: ****** STARTING TEST: ***** TEST THE DEACTIVATION OF A BENEFICIARY. ***** ******
+09/02/2025 07:42:12 PM: INFO: ***** USER IS NAVIGATED TO THE BENEFICIARY PAGE. *****
+09/02/2025 07:42:15 PM: INFO: **** TEST FAILED: BENEFICIARY'S ACCOUNT IS NOT DEACTIVATED ***
+09/02/2025 07:42:15 PM: ERROR: Assertion Error: AN ERROR OCCURRED 
+09/02/2025 07:42:22 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001AC95EFC710>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/cab5ce767d6da9951e877aa9a4148c9a
+09/02/2025 07:42:26 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001AC95EF1610>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/cab5ce767d6da9951e877aa9a4148c9a
+09/02/2025 07:42:30 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001AC95EF0A70>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/cab5ce767d6da9951e877aa9a4148c9a
+09/02/2025 07:44:27 PM: INFO: ****** STARTING TEST: ***** TEST THE DEACTIVATION OF A BENEFICIARY. ***** ******
+09/02/2025 07:44:34 PM: INFO: ***** USER IS NAVIGATED TO THE BENEFICIARY PAGE. *****
+09/02/2025 07:44:40 PM: INFO: ***** TEST PASSED: BENEFICIARY'S ACCOUNT IS ACTIVATED *****
+09/02/2025 07:44:46 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001F03003E4E0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/da73159578ea931e50923605f08754f1
+09/02/2025 07:45:06 PM: INFO: ****** STARTING TEST: ***** TEST THE DEACTIVATION OF A BENEFICIARY. ***** ******
+09/02/2025 07:45:13 PM: INFO: ***** USER IS NAVIGATED TO THE BENEFICIARY PAGE. *****
+09/02/2025 07:45:21 PM: INFO: ***** TEST PASSED: BENEFICIARY'S ACCOUNT IS DEACTIVATED *****
+09/02/2025 07:45:28 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002003C2AB980>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/49e17fa7734f857ffb7c976ba81714ae
+09/02/2025 07:45:32 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002003C2B2450>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/49e17fa7734f857ffb7c976ba81714ae
+09/02/2025 07:45:36 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002003C2B3C50>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/49e17fa7734f857ffb7c976ba81714ae
+09/02/2025 07:47:43 PM: INFO: ****** STARTING TEST: ***** TEST THE DEACTIVATION OF A BENEFICIARY. ***** ******
+09/02/2025 07:47:52 PM: INFO: ***** USER IS NAVIGATED TO THE BENEFICIARY PAGE. *****
+09/02/2025 07:47:54 PM: INFO: **** TEST FAILED: BENEFICIARY'S ACCOUNT IS NOT ACTIVATED ***
+09/02/2025 07:47:54 PM: ERROR: Assertion Error: AN ERROR OCCURRED 
+09/02/2025 07:48:01 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000027818E0FD40>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/c01c191d4cb550a96aa8dde3051c416f
+09/02/2025 07:48:05 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000027818E0FC50>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/c01c191d4cb550a96aa8dde3051c416f
+09/02/2025 07:48:10 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000027818E0F350>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/c01c191d4cb550a96aa8dde3051c416f
+09/02/2025 08:03:29 PM: INFO: ****** STARTING TEST: ***** TEST THE DEACTIVATION OF A BENEFICIARY. ***** ******
+09/02/2025 08:03:38 PM: INFO: ***** USER IS NAVIGATED TO THE BENEFICIARY PAGE. *****
+09/02/2025 08:03:40 PM: INFO: **** TEST FAILED: BENEFICIARY'S ACCOUNT IS NOT ACTIVATED ***
+09/02/2025 08:03:40 PM: ERROR: Assertion Error: AN ERROR OCCURRED 
+09/02/2025 08:03:47 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000234C51AE120>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/e6f0a87446317f999b57bf150adc3ec4
+09/02/2025 08:03:51 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000234C5204B60>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/e6f0a87446317f999b57bf150adc3ec4
+09/02/2025 08:03:55 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000234C5570380>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/e6f0a87446317f999b57bf150adc3ec4
+09/02/2025 08:06:34 PM: INFO: ****** STARTING TEST: ***** TEST THE DEACTIVATION OF A BENEFICIARY. ***** ******
+09/02/2025 08:06:41 PM: INFO: ***** USER IS NAVIGATED TO THE BENEFICIARY PAGE. *****
+09/02/2025 08:06:43 PM: ERROR: An unexpected error occurred: Message: invalid argument: 'using' must be a string
+  (Session info: chrome=132.0.6834.160)
+Stacktrace:
+	GetHandleVerifier [0x00007FF635BB02F5+28725]
+	(No symbol) [0x00007FF635B12AE0]
+	(No symbol) [0x00007FF6359A510A]
+	(No symbol) [0x00007FF6359F9194]
+	(No symbol) [0x00007FF6359F95FC]
+	(No symbol) [0x00007FF635A43407]
+	(No symbol) [0x00007FF635A1FFEF]
+	(No symbol) [0x00007FF635A40181]
+	(No symbol) [0x00007FF635A1FD53]
+	(No symbol) [0x00007FF6359EA0E3]
+	(No symbol) [0x00007FF6359EB471]
+	GetHandleVerifier [0x00007FF635EDF30D+3366989]
+	GetHandleVerifier [0x00007FF635EF12F0+3440688]
+	GetHandleVerifier [0x00007FF635EE78FD+3401277]
+	GetHandleVerifier [0x00007FF635C7AAAB+858091]
+	(No symbol) [0x00007FF635B1E74F]
+	(No symbol) [0x00007FF635B1A304]
+	(No symbol) [0x00007FF635B1A49D]
+	(No symbol) [0x00007FF635B08B69]
+	BaseThreadInitThunk [0x00007FFF60C57374+20]
+	RtlUserThreadStart [0x00007FFF61B5CC91+33]
+
+09/02/2025 08:06:51 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001C9EE434B00>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/b35e1c1e4400957bccf9ff2add861f33
+09/02/2025 08:06:55 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001C9EE05F0E0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/b35e1c1e4400957bccf9ff2add861f33
+09/02/2025 08:06:59 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001C9EE05E3F0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/b35e1c1e4400957bccf9ff2add861f33
+09/02/2025 08:10:16 PM: INFO: ****** STARTING TEST: ***** TEST THE DEACTIVATION OF A BENEFICIARY. ***** ******
+09/02/2025 08:10:26 PM: INFO: ***** USER IS NAVIGATED TO THE BENEFICIARY PAGE. *****
+09/02/2025 08:10:28 PM: ERROR: An unexpected error occurred: selenium.webdriver.remote.webdriver.WebDriver.find_element() argument after * must be an iterable, not WebElement
+09/02/2025 08:10:36 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022B0E0FC260>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/811f05d21a0f59628e6de38fac5dd2cd
+09/02/2025 08:10:40 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022B0E0CAC30>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/811f05d21a0f59628e6de38fac5dd2cd
+09/02/2025 08:10:44 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022B0E0CB2C0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/811f05d21a0f59628e6de38fac5dd2cd
+09/02/2025 08:17:44 PM: INFO: ****** STARTING TEST: ***** TEST THE DEACTIVATION OF A BENEFICIARY. ***** ******
+09/02/2025 08:17:53 PM: INFO: ***** USER IS NAVIGATED TO THE BENEFICIARY PAGE. *****
+09/02/2025 08:17:57 PM: INFO: ***** TEST PASSED: BENEFICIARY'S ACCOUNT IS ACTIVATED *****
+09/02/2025 08:18:03 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001D8068904A0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/68735b18dd9b41df3d7fc132a1f39448
+09/02/2025 08:18:07 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001D8064C2150>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/68735b18dd9b41df3d7fc132a1f39448
+09/02/2025 08:18:11 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001D8064C32C0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/68735b18dd9b41df3d7fc132a1f39448
+09/02/2025 08:18:42 PM: INFO: ****** STARTING TEST: ***** TESTING THE SEARCH FUNCTIONALITY ON OTHERS BENEFICIARY.****** ******
+09/02/2025 08:18:52 PM: ERROR: An unexpected error occurred: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//tbody/tr[1]/td[3]"}
+  (Session info: chrome=132.0.6834.160); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF635BB02F5+28725]
+	(No symbol) [0x00007FF635B12AE0]
+	(No symbol) [0x00007FF6359A510A]
+	(No symbol) [0x00007FF6359F93D2]
+	(No symbol) [0x00007FF6359F95FC]
+	(No symbol) [0x00007FF635A43407]
+	(No symbol) [0x00007FF635A1FFEF]
+	(No symbol) [0x00007FF635A40181]
+	(No symbol) [0x00007FF635A1FD53]
+	(No symbol) [0x00007FF6359EA0E3]
+	(No symbol) [0x00007FF6359EB471]
+	GetHandleVerifier [0x00007FF635EDF30D+3366989]
+	GetHandleVerifier [0x00007FF635EF12F0+3440688]
+	GetHandleVerifier [0x00007FF635EE78FD+3401277]
+	GetHandleVerifier [0x00007FF635C7AAAB+858091]
+	(No symbol) [0x00007FF635B1E74F]
+	(No symbol) [0x00007FF635B1A304]
+	(No symbol) [0x00007FF635B1A49D]
+	(No symbol) [0x00007FF635B08B69]
+	BaseThreadInitThunk [0x00007FFF60C57374+20]
+	RtlUserThreadStart [0x00007FFF61B5CC91+33]
+
+09/02/2025 08:19:02 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000290F3FC37D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/072488396108776f16433313936287d4
+09/02/2025 08:19:06 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000290F3FC2420>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/072488396108776f16433313936287d4
+09/02/2025 08:19:10 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000290F4368A10>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/072488396108776f16433313936287d4
+09/02/2025 08:23:42 PM: INFO: ****** STARTING TEST: ***** TESTING THE SEARCH FUNCTIONALITY ON OTHERS BENEFICIARY.****** ******
+09/02/2025 08:23:53 PM: ERROR: An unexpected error occurred: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//tbody/tr[1]/td[3]"}
+  (Session info: chrome=132.0.6834.160); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF635BB02F5+28725]
+	(No symbol) [0x00007FF635B12AE0]
+	(No symbol) [0x00007FF6359A510A]
+	(No symbol) [0x00007FF6359F93D2]
+	(No symbol) [0x00007FF6359F95FC]
+	(No symbol) [0x00007FF635A43407]
+	(No symbol) [0x00007FF635A1FFEF]
+	(No symbol) [0x00007FF635A40181]
+	(No symbol) [0x00007FF635A1FD53]
+	(No symbol) [0x00007FF6359EA0E3]
+	(No symbol) [0x00007FF6359EB471]
+	GetHandleVerifier [0x00007FF635EDF30D+3366989]
+	GetHandleVerifier [0x00007FF635EF12F0+3440688]
+	GetHandleVerifier [0x00007FF635EE78FD+3401277]
+	GetHandleVerifier [0x00007FF635C7AAAB+858091]
+	(No symbol) [0x00007FF635B1E74F]
+	(No symbol) [0x00007FF635B1A304]
+	(No symbol) [0x00007FF635B1A49D]
+	(No symbol) [0x00007FF635B08B69]
+	BaseThreadInitThunk [0x00007FFF60C57374+20]
+	RtlUserThreadStart [0x00007FFF61B5CC91+33]
+
+09/02/2025 08:24:03 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001457A9E29C0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/d1b92fc3d97dac37bd009a71407c9df2
+09/02/2025 08:24:07 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001457A9E26C0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/d1b92fc3d97dac37bd009a71407c9df2
+09/02/2025 08:24:11 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000014579E55FD0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/d1b92fc3d97dac37bd009a71407c9df2
+09/02/2025 08:25:27 PM: INFO: ****** STARTING TEST: ***** TESTING THE SEARCH FUNCTIONALITY ON OTHERS BENEFICIARY.****** ******
+09/02/2025 08:25:42 PM: ERROR: An unexpected error occurred: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//a[1]/h3[1]"}
+  (Session info: chrome=132.0.6834.160); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF635BB02F5+28725]
+	(No symbol) [0x00007FF635B12AE0]
+	(No symbol) [0x00007FF6359A510A]
+	(No symbol) [0x00007FF6359F93D2]
+	(No symbol) [0x00007FF6359F95FC]
+	(No symbol) [0x00007FF635A43407]
+	(No symbol) [0x00007FF635A1FFEF]
+	(No symbol) [0x00007FF635A40181]
+	(No symbol) [0x00007FF635A1FD53]
+	(No symbol) [0x00007FF6359EA0E3]
+	(No symbol) [0x00007FF6359EB471]
+	GetHandleVerifier [0x00007FF635EDF30D+3366989]
+	GetHandleVerifier [0x00007FF635EF12F0+3440688]
+	GetHandleVerifier [0x00007FF635EE78FD+3401277]
+	GetHandleVerifier [0x00007FF635C7AAAB+858091]
+	(No symbol) [0x00007FF635B1E74F]
+	(No symbol) [0x00007FF635B1A304]
+	(No symbol) [0x00007FF635B1A49D]
+	(No symbol) [0x00007FF635B08B69]
+	BaseThreadInitThunk [0x00007FFF60C57374+20]
+	RtlUserThreadStart [0x00007FFF61B5CC91+33]
+
+09/02/2025 08:25:54 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DC51F031D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/747ae86a77f20b8445b7124f03b9bff0
+09/02/2025 08:25:58 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DC51F01040>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/747ae86a77f20b8445b7124f03b9bff0
+09/02/2025 08:26:02 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DC51F02870>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/747ae86a77f20b8445b7124f03b9bff0
+09/02/2025 08:26:37 PM: INFO: ****** STARTING TEST: ***** TESTING THE SEARCH FUNCTIONALITY ON OTHERS BENEFICIARY.****** ******
+09/02/2025 08:26:48 PM: INFO: TEST FAILED: THE RESULT IS NOT CORRECT FOR THE SEARCHED PARAM
+09/02/2025 08:26:48 PM: ERROR: Assertion Error: User's account was not created as expected.
+09/02/2025 08:27:00 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DDE59F31A0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/d3442d04fe2e226a530d605ef03e573f
+09/02/2025 08:27:04 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DDE59F1370>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/d3442d04fe2e226a530d605ef03e573f
+09/02/2025 08:27:08 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DDE59F0B90>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/d3442d04fe2e226a530d605ef03e573f
+09/02/2025 08:29:23 PM: INFO: ****** STARTING TEST: ***** TESTING THE SEARCH FUNCTIONALITY ON OTHERS BENEFICIARY.****** ******
+09/02/2025 08:29:37 PM: INFO: TEST FAILED: THE RESULT IS NOT CORRECT FOR THE SEARCHED PARAM
+09/02/2025 08:29:37 PM: ERROR: Assertion Error: User's account was not created as expected.
+09/02/2025 08:29:47 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000023D1C8DCCB0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/648b9624ad4a2987d27added80d758d5
+09/02/2025 08:29:52 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000023D1C8DC470>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/648b9624ad4a2987d27added80d758d5
+09/02/2025 08:29:56 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000023D1C8C2300>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/648b9624ad4a2987d27added80d758d5
+09/02/2025 08:30:59 PM: INFO: ****** STARTING TEST: ***** TESTING THE SEARCH FUNCTIONALITY ON OTHERS BENEFICIARY.****** ******
+09/02/2025 08:31:10 PM: INFO: TEST FAILED: THE RESULT IS NOT CORRECT FOR THE SEARCHED PARAM
+09/02/2025 08:31:10 PM: ERROR: Assertion Error: User's account was not created as expected.
+09/02/2025 08:31:20 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002206AF711C0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/3eeedfa50bbcc209e2beab908d3eea57
+09/02/2025 08:31:24 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002206AF4C7A0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/3eeedfa50bbcc209e2beab908d3eea57
+09/02/2025 08:31:28 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002206AF4E6F0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/3eeedfa50bbcc209e2beab908d3eea57
+09/02/2025 08:34:58 PM: INFO: ****** STARTING TEST: ***** TESTING THE SEARCH FUNCTIONALITY ON OTHERS BENEFICIARY.****** ******
+09/02/2025 08:35:12 PM: INFO: TEST FAILED: THE RESULT IS NOT CORRECT FOR THE SEARCHED PARAM
+09/02/2025 08:35:12 PM: ERROR: Assertion Error: User's account was not created as expected.
+09/02/2025 08:35:22 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000028150CEA9F0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/11220d12a83d3d49e05820fa01c9e2f2
+09/02/2025 08:35:26 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002814FFA3560>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/11220d12a83d3d49e05820fa01c9e2f2
+09/02/2025 08:35:31 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002814FFA2E10>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/11220d12a83d3d49e05820fa01c9e2f2
+09/02/2025 08:36:09 PM: INFO: ****** STARTING TEST: ***** TESTING THE SEARCH FUNCTIONALITY ON OTHERS BENEFICIARY.****** ******
+09/02/2025 08:36:20 PM: INFO: ****TEST PASSED: RESULT OF THE SEARCH WAS CORRECT****
+09/02/2025 08:36:29 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000028BCE87E660>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/392d7e886a2182851b488cc3f17ada07
+09/02/2025 08:36:33 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000028BCE4C77A0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/392d7e886a2182851b488cc3f17ada07
+09/02/2025 08:36:37 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000028BCE4C7920>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/392d7e886a2182851b488cc3f17ada07
+09/02/2025 08:37:05 PM: INFO: ****** STARTING TEST: ***** TEST THE FUNCTIONALITY OF THE BENEFICIARY NAVIGATION ***** ******
+09/02/2025 08:37:12 PM: INFO: *****THE BENEFICIARY'S DATA LOGGING TABLE I SEEN WITH ALL THE BENEFICIARY *****
+09/02/2025 08:37:12 PM: ERROR: An unexpected error occurred: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//button[normalize-space()='New Beneficiary']"}
+  (Session info: chrome=132.0.6834.160); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF635BB02F5+28725]
+	(No symbol) [0x00007FF635B12AE0]
+	(No symbol) [0x00007FF6359A510A]
+	(No symbol) [0x00007FF6359F93D2]
+	(No symbol) [0x00007FF6359F95FC]
+	(No symbol) [0x00007FF635A43407]
+	(No symbol) [0x00007FF635A1FFEF]
+	(No symbol) [0x00007FF635A40181]
+	(No symbol) [0x00007FF635A1FD53]
+	(No symbol) [0x00007FF6359EA0E3]
+	(No symbol) [0x00007FF6359EB471]
+	GetHandleVerifier [0x00007FF635EDF30D+3366989]
+	GetHandleVerifier [0x00007FF635EF12F0+3440688]
+	GetHandleVerifier [0x00007FF635EE78FD+3401277]
+	GetHandleVerifier [0x00007FF635C7AAAB+858091]
+	(No symbol) [0x00007FF635B1E74F]
+	(No symbol) [0x00007FF635B1A304]
+	(No symbol) [0x00007FF635B1A49D]
+	(No symbol) [0x00007FF635B08B69]
+	BaseThreadInitThunk [0x00007FFF60C57374+20]
+	RtlUserThreadStart [0x00007FFF61B5CC91+33]
+
+09/02/2025 08:37:20 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000019A31660B60>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/f64256b0fab367d69ba45b47583ec50d
+09/02/2025 08:37:24 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000019A31663D10>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/f64256b0fab367d69ba45b47583ec50d
+09/02/2025 08:37:28 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000019A31660710>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/f64256b0fab367d69ba45b47583ec50d
+09/02/2025 08:43:41 PM: INFO: ****** STARTING TEST: ***** TEST THE FUNCTIONALITY OF THE BENEFICIARY NAVIGATION ***** ******
+09/02/2025 08:43:52 PM: INFO: *****THE BENEFICIARY'S DATA LOGGING TABLE I SEEN WITH ALL THE BENEFICIARY *****
+09/02/2025 08:43:52 PM: ERROR: An unexpected error occurred: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//button[normalize-space()='New Beneficiary']"}
+  (Session info: chrome=132.0.6834.160); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF635BB02F5+28725]
+	(No symbol) [0x00007FF635B12AE0]
+	(No symbol) [0x00007FF6359A510A]
+	(No symbol) [0x00007FF6359F93D2]
+	(No symbol) [0x00007FF6359F95FC]
+	(No symbol) [0x00007FF635A43407]
+	(No symbol) [0x00007FF635A1FFEF]
+	(No symbol) [0x00007FF635A40181]
+	(No symbol) [0x00007FF635A1FD53]
+	(No symbol) [0x00007FF6359EA0E3]
+	(No symbol) [0x00007FF6359EB471]
+	GetHandleVerifier [0x00007FF635EDF30D+3366989]
+	GetHandleVerifier [0x00007FF635EF12F0+3440688]
+	GetHandleVerifier [0x00007FF635EE78FD+3401277]
+	GetHandleVerifier [0x00007FF635C7AAAB+858091]
+	(No symbol) [0x00007FF635B1E74F]
+	(No symbol) [0x00007FF635B1A304]
+	(No symbol) [0x00007FF635B1A49D]
+	(No symbol) [0x00007FF635B08B69]
+	BaseThreadInitThunk [0x00007FFF60C57374+20]
+	RtlUserThreadStart [0x00007FFF61B5CC91+33]
+
+09/02/2025 08:43:59 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000206A5D47080>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/f5bcb19eacd2054da44a1a72872ebe37
+09/02/2025 08:44:03 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000206A8766A50>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/f5bcb19eacd2054da44a1a72872ebe37
+09/02/2025 08:44:07 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000206A87C1BB0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/f5bcb19eacd2054da44a1a72872ebe37
+09/02/2025 08:54:15 PM: INFO: ****** STARTING TEST: ***** TEST THE FUNCTIONALITY OF THE BENEFICIARY NAVIGATION ***** ******
+09/02/2025 08:54:27 PM: INFO: *****THE BENEFICIARY'S DATA LOGGING TABLE IS SEEN WITH ALL THE BENEFICIARY *****
+09/02/2025 08:54:27 PM: ERROR: An unexpected error occurred: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//button[normalize-space()='New Beneficiary']"}
+  (Session info: chrome=132.0.6834.160); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF635BB02F5+28725]
+	(No symbol) [0x00007FF635B12AE0]
+	(No symbol) [0x00007FF6359A510A]
+	(No symbol) [0x00007FF6359F93D2]
+	(No symbol) [0x00007FF6359F95FC]
+	(No symbol) [0x00007FF635A43407]
+	(No symbol) [0x00007FF635A1FFEF]
+	(No symbol) [0x00007FF635A40181]
+	(No symbol) [0x00007FF635A1FD53]
+	(No symbol) [0x00007FF6359EA0E3]
+	(No symbol) [0x00007FF6359EB471]
+	GetHandleVerifier [0x00007FF635EDF30D+3366989]
+	GetHandleVerifier [0x00007FF635EF12F0+3440688]
+	GetHandleVerifier [0x00007FF635EE78FD+3401277]
+	GetHandleVerifier [0x00007FF635C7AAAB+858091]
+	(No symbol) [0x00007FF635B1E74F]
+	(No symbol) [0x00007FF635B1A304]
+	(No symbol) [0x00007FF635B1A49D]
+	(No symbol) [0x00007FF635B08B69]
+	BaseThreadInitThunk [0x00007FFF60C57374+20]
+	RtlUserThreadStart [0x00007FFF61B5CC91+33]
+
+09/02/2025 08:54:35 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001D3F5F735F0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/fa5ab1c38e3676a3c9f3767fee6185dd
+09/02/2025 08:54:39 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001D3F6592D80>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/fa5ab1c38e3676a3c9f3767fee6185dd
+09/02/2025 08:54:43 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001D3F6593E60>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/fa5ab1c38e3676a3c9f3767fee6185dd
+09/02/2025 08:55:31 PM: INFO: ****** STARTING TEST: ***** TEST THE FUNCTIONALITY OF THE BENEFICIARY NAVIGATION ***** ******
+09/02/2025 08:55:38 PM: INFO: *****THE BENEFICIARY'S DATA LOGGING TABLE IS SEEN WITH ALL THE BENEFICIARY *****
+09/02/2025 08:55:42 PM: ERROR: An unexpected error occurred: selenium.webdriver.remote.webdriver.WebDriver.find_element() argument after * must be an iterable, not WebElement
+09/02/2025 08:55:49 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000017421E5DFD0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/1c2fcdbb87e6e4e3930d740d9ea49587
+09/02/2025 08:55:53 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000017421E5CE00>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/1c2fcdbb87e6e4e3930d740d9ea49587
+09/02/2025 08:55:57 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000017421E5CB60>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/1c2fcdbb87e6e4e3930d740d9ea49587
+09/02/2025 08:58:51 PM: INFO: ****** STARTING TEST: ***** TEST THE FUNCTIONALITY OF THE BENEFICIARY NAVIGATION ***** ******
+09/02/2025 08:59:02 PM: INFO: *****THE BENEFICIARY'S DATA LOGGING TABLE IS SEEN WITH ALL THE BENEFICIARY *****
+09/02/2025 08:59:06 PM: INFO: **** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***
+09/02/2025 08:59:06 PM: ERROR: Assertion Error: this is not the page the user intends to go to.
+09/02/2025 08:59:13 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000023A9DAA0DA0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/6f45fa4a8c63c334dc81900eb3a74c3b
+09/02/2025 08:59:17 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000023A9DA06120>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/6f45fa4a8c63c334dc81900eb3a74c3b
+09/02/2025 08:59:22 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000023A9DA07200>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/6f45fa4a8c63c334dc81900eb3a74c3b
+09/02/2025 08:59:57 PM: INFO: ****** STARTING TEST: ***** TEST THE FUNCTIONALITY OF THE BENEFICIARY NAVIGATION ***** ******
+09/02/2025 09:00:04 PM: INFO: *****THE BENEFICIARY'S DATA LOGGING TABLE IS SEEN WITH ALL THE BENEFICIARY *****
+09/02/2025 09:00:04 PM: INFO: **** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***
+09/02/2025 09:00:04 PM: ERROR: Assertion Error: this is not the page the user intends to go to.
+09/02/2025 09:00:12 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000204A75A0890>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/a614a71889d7b7509b01a2aaee68cf9f
+09/02/2025 09:00:17 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000204A75A0C50>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/a614a71889d7b7509b01a2aaee68cf9f
+09/02/2025 09:00:21 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000204A75A3440>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/a614a71889d7b7509b01a2aaee68cf9f
+09/02/2025 09:00:41 PM: INFO: ****** STARTING TEST: ***** TEST THE FUNCTIONALITY OF THE BENEFICIARY NAVIGATION ***** ******
+09/02/2025 09:00:47 PM: INFO: *****THE BENEFICIARY'S DATA LOGGING TABLE IS SEEN WITH ALL THE BENEFICIARY *****
+09/02/2025 09:00:47 PM: ERROR: An unexpected error occurred: selenium.webdriver.remote.webdriver.WebDriver.find_element() argument after * must be an iterable, not WebElement
+09/02/2025 09:00:54 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000027C7D822C30>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/8507ebeaf0c333ac09ffc0ab68999b9a
+09/02/2025 09:00:58 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000027C7D473A70>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/8507ebeaf0c333ac09ffc0ab68999b9a
+09/02/2025 09:01:02 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000027C7D472360>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/8507ebeaf0c333ac09ffc0ab68999b9a
+09/02/2025 09:02:22 PM: INFO: ****** STARTING TEST: ***** TEST THE DEACTIVATION OF A BENEFICIARY. ***** ******
+09/02/2025 09:02:31 PM: INFO: ***** USER IS NAVIGATED TO THE BENEFICIARY PAGE. *****
+09/02/2025 09:02:35 PM: INFO: ***** TEST PASSED: BENEFICIARY'S ACCOUNT IS DEACTIVATED *****
+09/02/2025 09:02:42 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000275F127EF90>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/457bcfe99186fee9f2295667cf2ccc72
+09/02/2025 09:02:46 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000275F127D6A0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/457bcfe99186fee9f2295667cf2ccc72
+09/02/2025 09:02:50 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000275F127D280>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/457bcfe99186fee9f2295667cf2ccc72
+09/02/2025 09:10:49 PM: INFO: ****** STARTING TEST: ***** TEST THE FUNCTIONALITY OF THE BENEFICIARY NAVIGATION ***** ******
+09/02/2025 09:11:00 PM: INFO: *****THE BENEFICIARY'S DATA LOGGING TABLE IS SEEN WITH ALL THE BENEFICIARY *****
+09/02/2025 09:11:00 PM: ERROR: An unexpected error occurred: selenium.webdriver.remote.webdriver.WebDriver.find_element() argument after * must be an iterable, not WebElement
+09/02/2025 09:11:07 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002865E6BF050>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/18dcb9a322042930c523302c8e82b0e0
+09/02/2025 09:11:11 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002865E6BC830>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/18dcb9a322042930c523302c8e82b0e0
+09/02/2025 09:11:15 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002865E6BCAD0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/18dcb9a322042930c523302c8e82b0e0
+09/02/2025 09:11:55 PM: INFO: ****** STARTING TEST: ***** TEST THE FUNCTIONALITY OF THE BENEFICIARY NAVIGATION ***** ******
+09/02/2025 09:12:04 PM: INFO: *****THE BENEFICIARY'S DATA LOGGING TABLE IS SEEN WITH ALL THE BENEFICIARY *****
+09/02/2025 09:12:04 PM: ERROR: An unexpected error occurred: WebDriver.find_element() takes from 1 to 3 positional arguments but 23 were given
+09/02/2025 09:12:12 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001BEE6853140>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/25f9e4f2a06c2530f2be5820ed6a6e2d
+09/02/2025 09:12:16 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001BEE4473170>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/25f9e4f2a06c2530f2be5820ed6a6e2d
+09/02/2025 09:12:20 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001BEE6E6CEC0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/25f9e4f2a06c2530f2be5820ed6a6e2d
+09/02/2025 09:13:01 PM: INFO: ****** STARTING TEST: ***** TEST THE FUNCTIONALITY OF THE BENEFICIARY NAVIGATION ***** ******
+09/02/2025 09:13:10 PM: INFO: *****THE BENEFICIARY'S DATA LOGGING TABLE IS SEEN WITH ALL THE BENEFICIARY *****
+09/02/2025 09:13:10 PM: ERROR: An unexpected error occurred: WebDriver.find_element() takes from 1 to 3 positional arguments but 6 were given
+09/02/2025 09:13:17 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001B32CBB3200>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/89b34f29f4c4abec98a6a303265623ec
+09/02/2025 09:13:21 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001B32CBB30B0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/89b34f29f4c4abec98a6a303265623ec
+09/02/2025 09:13:25 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001B32CF43C80>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/89b34f29f4c4abec98a6a303265623ec
+09/02/2025 09:14:06 PM: INFO: ****** STARTING TEST: ***** TEST THE FUNCTIONALITY OF THE BENEFICIARY NAVIGATION ***** ******
+09/02/2025 09:14:15 PM: INFO: *****THE BENEFICIARY'S DATA LOGGING TABLE IS SEEN WITH ALL THE BENEFICIARY *****
+09/02/2025 09:14:15 PM: ERROR: An unexpected error occurred: Message: invalid argument: 'using' must be a string
+  (Session info: chrome=132.0.6834.160)
+Stacktrace:
+	GetHandleVerifier [0x00007FF635BB02F5+28725]
+	(No symbol) [0x00007FF635B12AE0]
+	(No symbol) [0x00007FF6359A510A]
+	(No symbol) [0x00007FF6359F9194]
+	(No symbol) [0x00007FF6359F95FC]
+	(No symbol) [0x00007FF635A43407]
+	(No symbol) [0x00007FF635A1FFEF]
+	(No symbol) [0x00007FF635A40181]
+	(No symbol) [0x00007FF635A1FD53]
+	(No symbol) [0x00007FF6359EA0E3]
+	(No symbol) [0x00007FF6359EB471]
+	GetHandleVerifier [0x00007FF635EDF30D+3366989]
+	GetHandleVerifier [0x00007FF635EF12F0+3440688]
+	GetHandleVerifier [0x00007FF635EE78FD+3401277]
+	GetHandleVerifier [0x00007FF635C7AAAB+858091]
+	(No symbol) [0x00007FF635B1E74F]
+	(No symbol) [0x00007FF635B1A304]
+	(No symbol) [0x00007FF635B1A49D]
+	(No symbol) [0x00007FF635B08B69]
+	BaseThreadInitThunk [0x00007FFF60C57374+20]
+	RtlUserThreadStart [0x00007FFF61B5CC91+33]
+
+09/02/2025 09:14:22 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000017D7FA82300>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/f9f139279720d4f278d5d14dbd1e05ce
+09/02/2025 09:14:26 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000017D0013FFE0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/f9f139279720d4f278d5d14dbd1e05ce
+09/02/2025 09:14:30 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000017D0014E2D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/f9f139279720d4f278d5d14dbd1e05ce
+09/02/2025 09:15:01 PM: INFO: ****** STARTING TEST: ***** TEST THE FUNCTIONALITY OF THE BENEFICIARY NAVIGATION ***** ******
+09/02/2025 09:15:13 PM: INFO: *****THE BENEFICIARY'S DATA LOGGING TABLE IS SEEN WITH ALL THE BENEFICIARY *****
+09/02/2025 09:15:13 PM: ERROR: An unexpected error occurred: Message: invalid argument: 'using' must be a string
+  (Session info: chrome=132.0.6834.160)
+Stacktrace:
+	GetHandleVerifier [0x00007FF635BB02F5+28725]
+	(No symbol) [0x00007FF635B12AE0]
+	(No symbol) [0x00007FF6359A510A]
+	(No symbol) [0x00007FF6359F9194]
+	(No symbol) [0x00007FF6359F95FC]
+	(No symbol) [0x00007FF635A43407]
+	(No symbol) [0x00007FF635A1FFEF]
+	(No symbol) [0x00007FF635A40181]
+	(No symbol) [0x00007FF635A1FD53]
+	(No symbol) [0x00007FF6359EA0E3]
+	(No symbol) [0x00007FF6359EB471]
+	GetHandleVerifier [0x00007FF635EDF30D+3366989]
+	GetHandleVerifier [0x00007FF635EF12F0+3440688]
+	GetHandleVerifier [0x00007FF635EE78FD+3401277]
+	GetHandleVerifier [0x00007FF635C7AAAB+858091]
+	(No symbol) [0x00007FF635B1E74F]
+	(No symbol) [0x00007FF635B1A304]
+	(No symbol) [0x00007FF635B1A49D]
+	(No symbol) [0x00007FF635B08B69]
+	BaseThreadInitThunk [0x00007FFF60C57374+20]
+	RtlUserThreadStart [0x00007FFF61B5CC91+33]
+
+09/02/2025 09:15:20 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001FB54F877A0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/60d3a477314a3b1aa3b96e1450e90bad
+09/02/2025 09:15:24 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001FB54F87590>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/60d3a477314a3b1aa3b96e1450e90bad
+09/02/2025 09:15:28 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001FB54F858B0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/60d3a477314a3b1aa3b96e1450e90bad
+09/02/2025 09:17:07 PM: INFO: ****** STARTING TEST: ***** TEST THE FUNCTIONALITY OF THE BENEFICIARY NAVIGATION ***** ******
+09/02/2025 09:17:17 PM: INFO: *****THE BENEFICIARY'S DATA LOGGING TABLE IS SEEN WITH ALL THE BENEFICIARY *****
+09/02/2025 09:17:17 PM: ERROR: An unexpected error occurred: Message: invalid argument: 'using' must be a string
+  (Session info: chrome=132.0.6834.160)
+Stacktrace:
+	GetHandleVerifier [0x00007FF635BB02F5+28725]
+	(No symbol) [0x00007FF635B12AE0]
+	(No symbol) [0x00007FF6359A510A]
+	(No symbol) [0x00007FF6359F9194]
+	(No symbol) [0x00007FF6359F95FC]
+	(No symbol) [0x00007FF635A43407]
+	(No symbol) [0x00007FF635A1FFEF]
+	(No symbol) [0x00007FF635A40181]
+	(No symbol) [0x00007FF635A1FD53]
+	(No symbol) [0x00007FF6359EA0E3]
+	(No symbol) [0x00007FF6359EB471]
+	GetHandleVerifier [0x00007FF635EDF30D+3366989]
+	GetHandleVerifier [0x00007FF635EF12F0+3440688]
+	GetHandleVerifier [0x00007FF635EE78FD+3401277]
+	GetHandleVerifier [0x00007FF635C7AAAB+858091]
+	(No symbol) [0x00007FF635B1E74F]
+	(No symbol) [0x00007FF635B1A304]
+	(No symbol) [0x00007FF635B1A49D]
+	(No symbol) [0x00007FF635B08B69]
+	BaseThreadInitThunk [0x00007FFF60C57374+20]
+	RtlUserThreadStart [0x00007FFF61B5CC91+33]
+
+09/02/2025 09:17:24 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000020CA4D75220>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/703a36c3af4fbf7cab14f86cf0e71591
+09/02/2025 09:17:28 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000020CA4832EA0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/703a36c3af4fbf7cab14f86cf0e71591
+09/02/2025 09:17:33 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000020CA4E53E60>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/703a36c3af4fbf7cab14f86cf0e71591
+09/02/2025 09:22:35 PM: INFO: ****** STARTING TEST: ***** TEST THE FUNCTIONALITY OF THE BENEFICIARY NAVIGATION ***** ******
+09/02/2025 09:22:49 PM: INFO: *****THE BENEFICIARY'S DATA LOGGING TABLE IS SEEN WITH ALL THE BENEFICIARY *****
+09/02/2025 09:22:49 PM: ERROR: An unexpected error occurred: Message: invalid argument: 'using' must be a string
+  (Session info: chrome=132.0.6834.160)
+Stacktrace:
+	GetHandleVerifier [0x00007FF635BB02F5+28725]
+	(No symbol) [0x00007FF635B12AE0]
+	(No symbol) [0x00007FF6359A510A]
+	(No symbol) [0x00007FF6359F9194]
+	(No symbol) [0x00007FF6359F95FC]
+	(No symbol) [0x00007FF635A43407]
+	(No symbol) [0x00007FF635A1FFEF]
+	(No symbol) [0x00007FF635A40181]
+	(No symbol) [0x00007FF635A1FD53]
+	(No symbol) [0x00007FF6359EA0E3]
+	(No symbol) [0x00007FF6359EB471]
+	GetHandleVerifier [0x00007FF635EDF30D+3366989]
+	GetHandleVerifier [0x00007FF635EF12F0+3440688]
+	GetHandleVerifier [0x00007FF635EE78FD+3401277]
+	GetHandleVerifier [0x00007FF635C7AAAB+858091]
+	(No symbol) [0x00007FF635B1E74F]
+	(No symbol) [0x00007FF635B1A304]
+	(No symbol) [0x00007FF635B1A49D]
+	(No symbol) [0x00007FF635B08B69]
+	BaseThreadInitThunk [0x00007FFF60C57374+20]
+	RtlUserThreadStart [0x00007FFF61B5CC91+33]
+
+09/02/2025 09:22:57 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000187D2372600>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/35688ff941e3b849c177ec4f9d9d00d4
+09/02/2025 09:23:01 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000187D2733A10>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/35688ff941e3b849c177ec4f9d9d00d4
+09/02/2025 09:23:05 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000187D2731550>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/35688ff941e3b849c177ec4f9d9d00d4
+09/02/2025 09:29:44 PM: INFO: ****** STARTING TEST: ***** TEST THE FUNCTIONALITY OF THE BENEFICIARY NAVIGATION ***** ******
+09/02/2025 09:29:56 PM: ERROR: An unexpected error occurred: BeneficiaryObjects.wait_for_button_text_change() missing 1 required positional argument: 'locator'
+09/02/2025 09:30:03 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002209DB16840>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/7767af562c74e508b8c3a627287f5867
+09/02/2025 09:30:08 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002209DB17D40>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/7767af562c74e508b8c3a627287f5867
+09/02/2025 09:30:12 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002209DB169C0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/7767af562c74e508b8c3a627287f5867
+09/02/2025 09:31:58 PM: INFO: ****** STARTING TEST: ***** TEST THE FUNCTIONALITY OF THE BENEFICIARY NAVIGATION ***** ******
+09/02/2025 09:32:13 PM: INFO: *****THE BENEFICIARY'S DATA LOGGING TABLE IS SEEN WITH ALL THE BENEFICIARY *****
+09/02/2025 09:32:13 PM: ERROR: An unexpected error occurred: Message: invalid argument: invalid locator
+  (Session info: chrome=132.0.6834.160)
+Stacktrace:
+	GetHandleVerifier [0x00007FF635BB02F5+28725]
+	(No symbol) [0x00007FF635B12AE0]
+	(No symbol) [0x00007FF6359A510A]
+	(No symbol) [0x00007FF6359F9194]
+	(No symbol) [0x00007FF6359F95FC]
+	(No symbol) [0x00007FF635A43407]
+	(No symbol) [0x00007FF635A1FFEF]
+	(No symbol) [0x00007FF635A40181]
+	(No symbol) [0x00007FF635A1FD53]
+	(No symbol) [0x00007FF6359EA0E3]
+	(No symbol) [0x00007FF6359EB471]
+	GetHandleVerifier [0x00007FF635EDF30D+3366989]
+	GetHandleVerifier [0x00007FF635EF12F0+3440688]
+	GetHandleVerifier [0x00007FF635EE78FD+3401277]
+	GetHandleVerifier [0x00007FF635C7AAAB+858091]
+	(No symbol) [0x00007FF635B1E74F]
+	(No symbol) [0x00007FF635B1A304]
+	(No symbol) [0x00007FF635B1A49D]
+	(No symbol) [0x00007FF635B08B69]
+	BaseThreadInitThunk [0x00007FFF60C57374+20]
+	RtlUserThreadStart [0x00007FFF61B5CC91+33]
+
+09/02/2025 09:32:20 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001612FDCA660>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/d873cdce94220974d103d7ffb89f720d
+09/02/2025 09:32:25 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001612FDC9940>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/d873cdce94220974d103d7ffb89f720d
+09/02/2025 09:32:29 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001612FDCA000>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/d873cdce94220974d103d7ffb89f720d
+09/02/2025 09:34:51 PM: INFO: ****** STARTING TEST: ***** TEST THE FUNCTIONALITY OF THE BENEFICIARY NAVIGATION ***** ******
+09/02/2025 09:35:01 PM: INFO: *****THE BENEFICIARY'S DATA LOGGING TABLE IS SEEN WITH ALL THE BENEFICIARY *****
+09/02/2025 09:35:01 PM: INFO: **** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***
+09/02/2025 09:35:01 PM: ERROR: Assertion Error: this is not the page the user intends to go to.
+09/02/2025 09:35:08 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002DFAA4C1D00>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/94ad04b9a230760817327faf60f2a011
+09/02/2025 09:35:12 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002DFAA4C1CA0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/94ad04b9a230760817327faf60f2a011
+09/02/2025 09:35:16 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002DFAA4C1FA0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/94ad04b9a230760817327faf60f2a011
+09/02/2025 09:37:11 PM: INFO: ****** STARTING TEST: ***** TEST THE FUNCTIONALITY OF THE BENEFICIARY NAVIGATION ***** ******
+09/02/2025 09:37:22 PM: INFO: *****THE BENEFICIARY'S DATA LOGGING TABLE IS SEEN WITH ALL THE BENEFICIARY *****
+09/02/2025 09:37:23 PM: INFO: ***** TEST PASSED: NAVIGATION TO THE BENEFICIARY PAGE IS FUNCTIONAL *****
+09/02/2025 09:37:23 PM: INFO: *****TEST PASSED: THE MODAL WAS FOUND AND THE NAME WAS CORRECT.*****
+09/02/2025 09:37:30 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000010AFE539E20>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/cb943532b6348736c14f997adedeb39a
+09/02/2025 09:37:34 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000010AFE539D60>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/cb943532b6348736c14f997adedeb39a
+09/02/2025 09:37:38 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000010AFE539550>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/cb943532b6348736c14f997adedeb39a
+09/02/2025 09:38:45 PM: INFO: ****** STARTING TEST: Test_the_functionality_of_the_others_beneficiary_navigation ******
+09/02/2025 09:38:52 PM: ERROR: An unexpected error occurred: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=132.0.6834.160); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF635BB02F5+28725]
+	(No symbol) [0x00007FF635B12AE0]
+	(No symbol) [0x00007FF6359A510A]
+	(No symbol) [0x00007FF6359ABD70]
+	(No symbol) [0x00007FF6359AEABC]
+	(No symbol) [0x00007FF6359AEB8F]
+	(No symbol) [0x00007FF635A00FE3]
+	(No symbol) [0x00007FF6359FEB42]
+	(No symbol) [0x00007FF6359FBC51]
+	(No symbol) [0x00007FF6359FABB1]
+	(No symbol) [0x00007FF6359EC6B4]
+	(No symbol) [0x00007FF635A1FFAA]
+	(No symbol) [0x00007FF6359EBF86]
+	(No symbol) [0x00007FF635A201C0]
+	(No symbol) [0x00007FF635A40181]
+	(No symbol) [0x00007FF635A1FD53]
+	(No symbol) [0x00007FF6359EA0E3]
+	(No symbol) [0x00007FF6359EB471]
+	GetHandleVerifier [0x00007FF635EDF30D+3366989]
+	GetHandleVerifier [0x00007FF635EF12F0+3440688]
+	GetHandleVerifier [0x00007FF635EE78FD+3401277]
+	GetHandleVerifier [0x00007FF635C7AAAB+858091]
+	(No symbol) [0x00007FF635B1E74F]
+	(No symbol) [0x00007FF635B1A304]
+	(No symbol) [0x00007FF635B1A49D]
+	(No symbol) [0x00007FF635B08B69]
+	BaseThreadInitThunk [0x00007FFF60C57374+20]
+	RtlUserThreadStart [0x00007FFF61B5CC91+33]
+
+09/02/2025 09:38:59 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000185FE169C10>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/de5acdabd11426c5a75541f8cde1a79e
+09/02/2025 09:39:03 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000185FE16AAB0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/de5acdabd11426c5a75541f8cde1a79e
+09/02/2025 09:39:07 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000185FE16A0F0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/de5acdabd11426c5a75541f8cde1a79e
+09/02/2025 09:42:39 PM: INFO: ****** STARTING TEST: ***** TEST THE FUNCTIONALITY OF THE BENEFICIARY NAVIGATION ***** ******
+09/02/2025 09:42:47 PM: INFO: *****THE BENEFICIARY'S DATA LOGGING TABLE IS SEEN WITH ALL THE BENEFICIARY *****
+09/02/2025 09:42:47 PM: INFO: **** TEST FAILED: USER'S ACCOUNT WAS NOT CREATED ***
+09/02/2025 09:42:47 PM: ERROR: Assertion Error: this is not the page the user intends to go to.
+09/02/2025 09:42:55 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001E766679D30>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/73502c85990bb3eb9ebaf83fe34bdbe4
+09/02/2025 09:42:59 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001E766679C40>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/73502c85990bb3eb9ebaf83fe34bdbe4
+09/02/2025 09:43:03 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001E766679F10>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/73502c85990bb3eb9ebaf83fe34bdbe4
+09/02/2025 09:43:14 PM: INFO: ****** STARTING TEST: Test_the_functionality_of_the_others_beneficiary_navigation ******
+09/02/2025 09:43:21 PM: ERROR: An unexpected error occurred: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=132.0.6834.160); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF635BB02F5+28725]
+	(No symbol) [0x00007FF635B12AE0]
+	(No symbol) [0x00007FF6359A510A]
+	(No symbol) [0x00007FF6359ABD70]
+	(No symbol) [0x00007FF6359AEABC]
+	(No symbol) [0x00007FF6359AEB8F]
+	(No symbol) [0x00007FF635A00FE3]
+	(No symbol) [0x00007FF6359FEB42]
+	(No symbol) [0x00007FF6359FBC51]
+	(No symbol) [0x00007FF6359FABB1]
+	(No symbol) [0x00007FF6359EC6B4]
+	(No symbol) [0x00007FF635A1FFAA]
+	(No symbol) [0x00007FF6359EBF86]
+	(No symbol) [0x00007FF635A201C0]
+	(No symbol) [0x00007FF635A40181]
+	(No symbol) [0x00007FF635A1FD53]
+	(No symbol) [0x00007FF6359EA0E3]
+	(No symbol) [0x00007FF6359EB471]
+	GetHandleVerifier [0x00007FF635EDF30D+3366989]
+	GetHandleVerifier [0x00007FF635EF12F0+3440688]
+	GetHandleVerifier [0x00007FF635EE78FD+3401277]
+	GetHandleVerifier [0x00007FF635C7AAAB+858091]
+	(No symbol) [0x00007FF635B1E74F]
+	(No symbol) [0x00007FF635B1A304]
+	(No symbol) [0x00007FF635B1A49D]
+	(No symbol) [0x00007FF635B08B69]
+	BaseThreadInitThunk [0x00007FFF60C57374+20]
+	RtlUserThreadStart [0x00007FFF61B5CC91+33]
+
+09/02/2025 09:43:28 PM: WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001E76667BD70>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/3fa64c72dc38f418f430380f01ff468f
+09/02/2025 09:43:32 PM: WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001E7666799A0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/3fa64c72dc38f418f430380f01ff468f
+09/02/2025 09:43:37 PM: WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001E766679580>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/3fa64c72dc38f418f430380f01ff468f
